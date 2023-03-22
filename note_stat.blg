@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: note_stat.aux
+The style file: plain.bst
+Database file #1: ref.bib
+Warning--empty year in liang
+Warning--empty publisher in suyu
+Warning--empty publisher in zheng
+You've used 6 entries,
+            2118 wiz_defined-function locations,
+            521 strings with 4261 characters,
+and the built_in function-call counts, 1313 in all, are:
+= -- 111
+> -- 42
+< -- 0
++ -- 18
+- -- 12
+* -- 56
+:= -- 234
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 72
+empty$ -- 133
+format.name$ -- 12
+if$ -- 274
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 12
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 52
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 35
+stack$ -- 0
+substring$ -- 30
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 3
+while$ -- 12
+width$ -- 7
+write$ -- 59
+(There were 3 warnings)
