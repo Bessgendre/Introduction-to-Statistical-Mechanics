@@ -1,14 +1,19 @@
 \begin{thebibliography}{1}
 
-\bibitem{Pathria}
-Pathria.
-\newblock {\em 统计力学：第三版}.
-\newblock 高等教育出版社, 2017.
-
 \bibitem{lan}
-朗道.
-\newblock {\em 统计物理学I}.
-\newblock 高等教育出版社, 2011.
+L.D. LANDAU and E.M. LIFSHITZ.
+\newblock {\em Statistical Physics (Third Edition)}.
+\newblock Butterworth-Heinemann, 1980.
+
+\bibitem{problem}
+Konstantin~K Likharev.
+\newblock {\em Statistical Mechanics: Problems with solutions}.
+\newblock 2053-2563. IOP Publishing, 2019.
+
+\bibitem{Pathria}
+R.K. Pathria and Paul~D. Beale.
+\newblock {\em Statistical Mechanics (Fourth Edition)}.
+\newblock Academic Press, fourth edition edition, 2022.
 
 \bibitem{liang}
 梁昆淼.
