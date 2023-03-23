@@ -9,4 +9,4 @@
 \contentsline {subsubsection}{\numberline {2.4.1}一些直觉}{9}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}$\Omega $ 的计算}{9}{subsubsection.2.4.2}%
 \contentsline {section}{\numberline {3}正则系综}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}统计学与热力学的联系}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}统计学与热力学的联系}{13}{subsection.3.1}%
