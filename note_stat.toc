@@ -1,12 +1,12 @@
 \contentsline {section}{\numberline {1}前言}{2}{section.1}%
-\contentsline {section}{\numberline {2}系综理论的基本原理}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}刘维尔定理}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}分布函数}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}微正则系综}{5}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}对热力学的反思}{5}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}微正则系综的研究方法}{6}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}经典理想气体}{8}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}一些直觉}{8}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}$\Omega $ 的计算}{8}{subsubsection.2.4.2}%
-\contentsline {section}{\numberline {3}正则系综}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}统计学与热力学的联系}{11}{subsection.3.1}%
+\contentsline {section}{\numberline {2}系综理论的基本原理}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}刘维尔定理}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}分布函数}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}微正则系综}{6}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}对热力学的反思}{6}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}微正则系综的研究方法}{7}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}经典理想气体}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}一些直觉}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}$\Omega $ 的计算}{9}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {3}正则系综}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}统计学与热力学的联系}{12}{subsection.3.1}%

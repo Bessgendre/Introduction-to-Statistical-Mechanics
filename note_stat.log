@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.20)  23 MAR 2023 11:09
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.20)  23 MAR 2023 20:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1186,44 +1186,44 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 217.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 217.
- [2] [3]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 281.
+ [2] [3] [4]
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 286.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 281.
+(Font)              size <5> substituted on input line 286.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 11.0pt on input line 281.
+(Font)              scaled to size 11.0pt on input line 286.
 
 LaTeX Font Warning: Font shape `TU/ntxtlf/b/n' undefined
-(Font)              using `TU/ntxtlf/m/n' instead on input line 287.
+(Font)              using `TU/ntxtlf/m/n' instead on input line 292.
 
-[4] [5] [6]
+[5] [6] [7]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 369.
+(Font)              scaled to size 8.0pt on input line 374.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 369.
- [7]
+(Font)              scaled to size 6.0pt on input line 374.
+ [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 426.
+(hyperref)                removing `math shift' on input line 431.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
+(hyperref)                removing `\Omega' on input line 431.
 
-[8] [9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 431.
+
+[9] [10]
 File: taimidu.png Graphic file (type bmp)
 <taimidu.png>
- [10] (./note_stat.bbl
+ [11] (./note_stat.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 5.
- [11]) [12] (./note_stat.aux)
+ [12]) [13] (./note_stat.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1235,12 +1235,12 @@ Package rerunfilecheck Info: File `note_stat.out' has not changed.
 (rerunfilecheck)             Checksum: FD782B4827BCBBFB0713A8E34DC614DB;1245.
  ) 
 Here is how much of TeX's memory you used:
- 33668 strings out of 476919
- 746229 string characters out of 5821840
- 1194404 words of memory out of 5000000
- 52995 multiletter control sequences out of 15000+600000
+ 33677 strings out of 476919
+ 746855 string characters out of 5821840
+ 1195407 words of memory out of 5000000
+ 53004 multiletter control sequences out of 15000+600000
  465145 words of font info for 158 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,13n,104p,514b,1280s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on note_stat.pdf (13 pages).
+Output written on note_stat.pdf (14 pages).
