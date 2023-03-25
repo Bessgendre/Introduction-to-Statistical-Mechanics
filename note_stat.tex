@@ -231,9 +231,9 @@ pdfstartview = Fit
 
 另一个问题是 \textcolor{RoyalBlue}{\textbf{\kaishu 微观可逆性与宏观不可逆性的矛盾 }}——如果用 $-t$ 替代求解结果中的 $t$ （做一个时间反演，或者说把录像带倒着放）仍然是演化方程的一个可能的解，但我们从来没有观察到滴进池塘的墨水又重新聚集成刚滴进去时的形状。这样一来， \textcolor{RoyalBlue}{\textbf{\kaishu 时间的流逝似乎就有了确定的方向。}} 这样的“热力学时间”和我们其他地方作为正则变换参量（Hamilton-Jacobi 理论）或者酉变换参量（量子力学传播子）所引入的时间有什么差别？
 
-总之，统计力学是作者本科以来最喜欢的一门理论课，它是一个关于“大”的理论。固然对“小”的研究也同样迷人（量子力学、第一性原理计算、单分子反应机理的探究等等），对这些细节的研究加深了我们对自然界的微观认识，使得我们对自然界究竟是怎样运转的有了更多的了解，甚至于在原子、电子、夸克尺度上让基本力服从我们的意志，但我仍然坚信： \textcolor{RoyalBlue}{\textbf{\kaishu More Is Different}}。具有巨大自由度数目的系统虽然系统与单一粒子遵循同样的力学规律，但是自由度的巨大却导致性质上的全新规律性。而这样的规律，是在微观层面意识不到的。
+总之，统计力学是作者本科以来最喜欢的一门理论课，它是一个关于“大”的理论。固然对“小”的研究也同样迷人（量子力学、第一性原理计算、单分子反应机理的探究等等），对这些细节的研究加深了我们对自然界的微观认识，使得我们对自然界究竟是怎样运转的有了更多的了解，甚至能在原子、电子、夸克尺度上让基本力服从我们的意志，但它能指引我们走多远呢？世界的本源有小有大，而我选择相信 \textcolor{RoyalBlue}{\textbf{\kaishu More Is Different}}。具有巨大自由度数目的系统虽然系统与单一粒子遵循同样的力学规律，但是自由度的巨大却导致性质上的全新规律性。而这样的规律，是在微观层面意识不到的。
 
-不识庐山真面目，只缘身在此山中。进入大数据时代，甚至现在的 new bing 和 ChatGPT 所引领的大语言模型时代，科学界的主要矛盾也在变化。这是统计语言大放光彩的时代，也是科技革命的浪潮之巅。
+不识庐山真面目，只缘身在此山中。进入大数据时代，甚至现在的 new bing 和 ChatGPT 所引领的大语言模型时代，科学界的主要矛盾也在变化。这是统计模型大放光彩的时代，也是科技革命的浪潮之巅。
 
 统计力学将会爆发出的能量，我想是不言而喻的。
 
@@ -270,7 +270,7 @@ pdfstartview = Fit
 
 我们也可以这样理解相点密度 $\rho$：在系综内任意划定一个区域 $\mathrm{d} \omega$，在某一相点在系综内进行遍历的过程中，在这个区域内找到这个相点的概率为 $\rho \mathrm{d} \omega$，或者说在遍历过程中，系统的代表点在此处停留的时间与总时间的比 $\Delta t / T$  收敛于 $\rho \mathrm{d} \omega$ 。
 
-代表点的演化在相空间中对应于一个正则变换在时间上的连续伸展\cite{liang}，而正则变换的Jacobi 行列式的绝对值恒等于 $1$，所以我们期望：系综的时间演化服从流体的连续性方程
+代表点的演化在相空间中对应于一个正则变换在时间上的连续伸展\cite{liang}，而正则变换的Jacobi 行列式的绝对值恒等于 $1$（见附录），所以我们期望：系综的时间演化服从流体的连续性方程
 \begin{equation}
     \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \bm{v}) = 0
 \end{equation}
@@ -337,15 +337,24 @@ pdfstartview = Fit
 
 现在，是时候给这些问题一个明确的解答了。
 
-\textcolor{RoyalBlue}{\textbf{\kaishu 一切的一切都迫使我们相信：从微观状态数的量值和它依赖于参数 $N,V$ 和 $E$ 的性质，我们可以推导出给定系统的全部热力学特性。}}
+\textcolor{RoyalBlue}{\textbf{\kaishu 一切的一切都迫使我们相信：从微观状态数 $\Omega$ 的量值和它依赖于参数 $N,V$ 和 $E$ 的性质，我们可以推导出给定系统的全部热力学特性。}}
 
 \textcolor{RoyalBlue}{\textbf{\kaishu 也就是说：配容数是第一性的，是自然界的最优化目标函数。}}
 
-我们还发现，自然界为配容数选择的决策参量有三个，分别是 $N,V,E$：$\ln\Omega(N,V,E)$，所以它的三个偏导数在优化过程中有非常重要的作用， \textcolor{RoyalBlue}{\textbf{\kaishu 它们代表了配容数上升的倾向有多大：}} 
+这是断言性质的两句话，后面的讨论都从这里出发。既然我们认为自然界为配容数选择的决策参量有三个，分别是 $N,V,E$：$\ln\Omega(N,V,E)$，那么它的三个偏导数在优化过程中有非常重要的作用， \textcolor{RoyalBlue}{\textbf{\kaishu 它们代表了配容数上升的倾向有多大：}} 
 \begin{equation}
     \beta = \left(\frac{\partial \ln\Omega}{\partial E}\right)_{N,V},\quad\quad \eta = \left(\frac{\partial \ln\Omega}{\partial V}\right)_{N,E},\quad\quad \zeta = \left(\frac{\partial \ln\Omega}{\partial N}\right)_{V,E}
 \end{equation}
-热力学起初是人类根据完全的宏观经验总结出的一些规律（而没有涉及任何微观的分子原子或者能级之类的概念）。经过经年的实践，人类通过感官的认识，将配容数的三个重要偏导数所代表的内涵分别都取了名字： \textcolor{RoyalBlue}{\textbf{\kaishu 温度、压强以及化学势}}——回忆热力学第一定律与第二定律的联合方程 $dE = TdS - PdV+ \mu dN$ 以及各种热力学平衡条件。这些是人类最初认识“热及其动力学”（Thermodynamics）的出发点。所以虽然它采用了很多数学记号，看起来具有坚实的数学基础，但它终究是一个完全唯像的理论，这些偏导数的正确性只能通过实验检验，而不是逻辑。
+
+这个最优化问题显然还受到一定的条件约束：总粒子个数、总体积、总能量不能变。这样一来，系综在相空间中所占据的区域就有了一定的边界。所以，现在我们写出自然界每时每刻都在“求解”的约束最优化问题：
+\begin{equation}\label{equ:optimizeI}
+    \begin{split}
+        \min \Omega&(N,V,E)\\
+        \text{s.t.}\sum n_i = \mathcal{N},&\quad\sum n_iE_i = \mathcal{E}
+    \end{split}
+\end{equation}
+
+现在我们再回到热力学。热力学起初是人类根据完全的宏观经验总结出的一些规律（而没有涉及任何微观的分子原子或者能级之类的概念）。经过经年的实践，人类通过感官的认识，将配容数的三个重要偏导数所代表的内涵分别都取了名字： \textcolor{RoyalBlue}{\textbf{\kaishu 温度、压强以及化学势}}——回忆热力学第一定律与第二定律的联合方程 $dE = TdS - PdV+ \mu dN$ 以及各种热力学平衡条件。这些是人类最初认识“热及其动力学”（Thermodynamics）的出发点。所以虽然它采用了很多数学记号，看起来具有坚实的数学基础，但它终究是一个完全唯像的理论，这些偏导数的正确性只能通过实验检验，而不是逻辑。
 
 但现在的情况有了一些变化。我们认识到熵这个量似乎和其他状态参量不同，因为自然界总是要熵增的方向发展，它的地位应当和其他状态参量有所差别。将熵还原为配容数之后，我们相信，或者说信仰：自然界总是想运动至配容数更大的地方。从这里出发，\textcolor{RoyalBlue}{\textbf{\kaishu 我们希望将统计学引入我们的理论体系中，并为热力学提供一个合理的解释。}} 
 
@@ -467,7 +476,7 @@ pdfstartview = Fit
     \therefore~& \ln \Omega = \ln \Sigma + \ln\left(\frac{\partial \ln\Sigma}{\partial E}\Delta E\right) \\
     ~& \ln \Omega = N \ln\left[ \frac{V}{N h^3} \left(\frac{4\pi mE}{3N} \right)^{3/2}  \right] + \frac{5}{2} N + \ln \frac{3}{2} N +\ln \frac{\Delta E}{E} 
 \end{align*}
-由于我们总是希望 $N\rightarrow \infty$ 所以后面两项和第一项相比总是可以忽略不计，所以能量分布在 $(E-\frac{1}{2} \Delta E ,E+\frac{1}{2} \Delta E)$ 之中的微观配容数可以写为
+由于我们总是希望 $N\rightarrow \infty$ ，所以后面两项和第一项相比总是可以忽略不计。能量分布在 $(E-\frac{1}{2} \Delta E ,E+\frac{1}{2} \Delta E)$ 之中的微观配容数就可以写为
 \begin{equation}
     \ln \Omega = N \ln\left[ \frac{V}{N h^3} \left(\frac{4\pi mE}{3N} \right)^{3/2}  \right] + \frac{5}{2} N 
 \end{equation}
@@ -503,6 +512,9 @@ pdfstartview = Fit
 
 \begin{understanding}{\kaishu 对微正则系综的总结}
 \kaishu \fontsize{11pt}{16pt}
+\quad\quad 微正则系综以配容数 $\Omega $ 及其对数 $S = k_B \ln \Omega$ 为第一性的量，给了热力学一个完整的逻辑解释。对于经典理想气体，为了计算以 $(N,V,E)$ 为标记的宏观态所能处于的可能的微观态数目，根据粒子能量所可能取值的特点，我们选择将微观态数目与 $3N$ 维状态空间中的球体进行对应。而热力学极限让我们可以合法地使用微分代替寻找方程的整数解，从而得到 $\ln \Omega$ 的渐进表达式。对于量子谐振子系统，则可以使用排列组合直接得到 $\Omega$ 的显式表达式。
+
+\quad\quad 使用微正则系综处理问题可以遵循这样的顺序：
     \begin{enumerate}
         \item 微正则系综的核心量是配容数 $\Omega$
         \item 根据等概率假设，通过对微观态进行简单计数得到 $\Omega(N,V,E)$
@@ -513,7 +525,78 @@ pdfstartview = Fit
 \end{understanding}
 
 \section{正则系综}
-\textcolor{RoyalBlue}{\textbf{\kaishu 正则系综和微正则系综是等价的。}}
+
+前面我们从对热力学的反思中建立了系综理论的基本原理，以 $\Omega$ 为最优化函数， $(N,V,E)$ 为决策变量，通过它们之间的依赖关系我们可以得到系统的所有热力学性质。现在，我们要对微正则系综理论进行反思，并找出一个可以弥补它缺点的解决方案。
+
+使用 $(N,V,E)$ 作为描述系统的最优化过程是一件非常自然的事，因为它们都是广度性质，而使用一些和系统大小成正比的量作为系统的状态参量无疑是非常直观的。然而，这样的直观反而使得我们的理论变得抽象与不切实际：我们很少测量一个物理系统的总能量，并且要想固定它也是很不容易的。
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 问题的根源在于：对微正则系综的三个广度决策变量的测量，不具有实际的可行性。}}  
+
+所以，我们希望找到一个容易测量的，并且和能量具有相同内涵的量来等价地替代 $E$ 作为决策变量的地位——此时我们回想起了理论力学中的勒让德变换。所以我们的目标是：找到一个作用于决策变量 $E$ 的勒让德变换，同时目标函数 $\Omega$ 变为一个新的目标函数 $A$ ：
+\[
+    A = E\frac{\partial \Omega}{\partial E} - \Omega
+\]
+此时我们再次回想起热力学公式
+\[
+    dS = \frac{1}{T} dE + \frac{P}{T} dV - \frac{\mu}{T} dN
+\]
+显然，\textcolor{RoyalBlue}{\textbf{\kaishu 温度 $T$ 就是我们要找的变量}}。随后再对我们想法的一些调整让它能够和热力学建立联系，我们将会看到：变换完全等价地将最优化问题 (\ref*{equ:optimizeI}) 转换成另一个最优化问题：
+\begin{equation}\label{equ:optimizeII}
+    \begin{split}
+        \min A&(N,V,T)\\
+        \text{s.t.}\sum n_i = &\mathcal{N},\quad T = T_0
+    \end{split}
+\end{equation}
+
+其中 $A$ 就是亥姆霍兹自由能，满足 $A = E - TS$ ，以之为核心的即是 \textcolor{RoyalBlue}{\textbf{\kaishu 正则系综}}。
+
+\subsection{正则分布最概然方法}
+
+下面我们来将前面的反思落到实处，此时有必要将系综理论的基本原理再复述一遍：
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 在单一瞬间同时考虑大量系统，他们全部是给定系统的某种“思维复本”——其特性由与原系统一样的宏观态来表征，但极其自然地处在所有各种可能的微观态中}} \cite{Pathria}。
+
+也就是说，我们考虑的不是“这个系统”，而是无数个“这个系统”所组成的更宏大的集合，但集合的元素具有一些关系，并且可能还共同分配了某个想象中的量，并且这个量的分配方式还决定了每个种类的子集所占的比例。
+
+我们考虑的就是这样一件事：把系统看成正则系综的一个成员，然后，由组成系综的 $\mathcal{N}$ 个相同系统去分配该系综总能量 $\mathcal{E}$ ，进而研究这种分配过程的统计学——也就是计算在任意时刻，发现系统处于由能量 $E_r$ 所表征的状态之一的概率 $P_r$ 究竟有多大。
+
+而要固定系统的温度是可以做到的，只需要把系统与一个大热库耦合即可。通过参量$~N~$、$~V~$、$~T~$来描述的系综我们称为正则系综。
+当系统$~A~$与一个大热库$~A'~$接触达到平衡时，他们有一个共同的温度$~T~$。它们的能量可以变化，在任意时刻$~t~$，总能量可以处在$~0~$到$~E^{(0)}~$之间的任何值。在某一时刻，系统$~A~$处于由能量$~E_r~$表征的状态下，热库有能量$~E_r'~$，于是有
+\[
+    E_r + E_r' = E^{(0)} = const
+\]
+由于热库比系统$~A~$大很多，故$~E_r~$只占$~E^{(0)}~$很少的一部分，即
+\[
+\frac{E_r}{E^{(0)}} = \left( 1 - \frac{E_r'}{E^{(0)}} \right) \ll 1
+\]
+用$~\Omega'(E_r')~$记大热库与$~E_r'~$相容的总微观状态数。热库可达到的微观状态数越大，热库具有该能量$~E_r'~$的概率就越大，且由等可能假设，可得相应的概率正比于$~\Omega'(E_r')~$，即
+\[
+P_r \propto \Omega'(E_r') \equiv \Omega'(E^{(0)} - E_r)
+\]
+由于$~E_r~$相比$~E^{(0)}~$很小，我们可以对上式在$~E_r' = E^{(0)}~$附近做对数展开，得到
+
+\begin{align*}
+\ln \Omega'(E_r') &= \ln \Omega'(E^{(0)}) + \left( \frac{\partial\ln\Omega'}{\partial E'} \right)_{E' = E^{(0)}}(E_r' - E^{(0)}) + \cdots \\
+&\simeq const - \beta'E_r
+\end{align*}
+
+其中
+\[
+\left( \frac{\partial\ln\Omega}{\partial E} \right)_{N, V}\equiv\beta
+\]
+平衡时有$~\beta' = \beta = 1/kT~$. 由展开可求得
+\[
+P_r \propto \exp(-\beta E_r)
+\]
+归一得到
+\[
+P_r = \frac{\exp(-\beta E_r)}{\sum\limits_{r}\exp(-\beta E_r)}
+\]
+分母的求和遍及了系统$~A~$所有可能达到的状态。
+
+\subsection{}
+
+
 
 \begin{justification}{反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
@@ -525,16 +608,48 @@ pdfstartview = Fit
 \textcolor{RoyalBlue}{\textbf{\kaishu }}
 
 
-关联函数与涨落相关，响应函数与耗散相关
 
 
 
-\subsection{统计学与热力学的联系}
+
+
+
 
 
 
     
     
+\section{附录}
+\subsection{无穷小正则变换的行列式的绝对值等于 1}
+将系统的状态参量 $(q_i,p_i), i = 1,2,\dots n$ 统一表达为 $\xi_\alpha, \alpha = 1,2,\dots 2n$ ，其中前一半是坐标 $q$ ，后一半是动量 $p$ 。引入求和约定，则经典 Poisson 括号可以写为
+\[
+    [f, g] = \frac{\partial f}{\partial \xi_\alpha}\Omega_{\alpha\beta}\frac{\partial g}{\partial \xi_\beta}
+\]
+其中
+\[
+    \Omega = \begin{bmatrix}
+        & -I\\
+        I&
+    \end{bmatrix}_{2n\times 2n}
+\]
+设正则变换将 $\left \{ \xi \right \}$ 变换为 $\left \{ \xi’ \right \}$ ，雅可比矩阵 $M$ 应为
+\[
+    M = \begin{bmatrix}
+        \frac{\partial \xi_1'}{\partial \xi_1} & \frac{\partial \xi_1'}{\partial \xi_2} & \dots  & \frac{\partial \xi_1'}{\partial \xi_{2n}} \\
+        \frac{\partial \xi_2'}{\partial \xi_1} & \frac{\partial \xi_2'}{\partial \xi_2} & \dots  & \frac{\partial \xi_2'}{\partial \xi_{2n}} \\
+        \vdots & \vdots &  & \vdots\\
+        \frac{\partial \xi_{2n}'}{\partial \xi_1} & \frac{\partial \xi_{2n}'}{\partial \xi_2} & \dots  & \frac{\partial \xi_{2n}'}{\partial \xi_{2n}} \\
+    \end{bmatrix}_{2n\times 2n}
+\]
+由线性代数知识可知，$\text{det}(M\Omega M^T) = \text{det}(M)^2 \text{det}(\Omega) = - \text{det}(M)^2$ ，同时它又可以写为
+\begin{align*}
+    (M\Omega M^T)_{ij} &= M_{i\alpha}\Omega_{\alpha\beta}M^T_{\beta j}
+    = M_{i\alpha}\Omega_{\alpha\beta}M_{j\beta}\\
+    &= \frac{\partial \xi'_i}{\partial \xi_\alpha}\Omega_{\alpha\beta}\frac{\partial \xi'_j}{\partial \xi_\beta}\\
+    &= [\xi'_i, \xi'_j]_\xi\\
+    &= \Omega_{ij}
+\end{align*}
+最后一个等式用到了正则变换的基本 Poisson 括号不变性。故 $\text{det}(M)^2 = 1$ ，证明完毕。
     
     
 \bibliographystyle{plain}
