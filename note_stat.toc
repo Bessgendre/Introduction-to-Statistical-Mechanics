@@ -10,6 +10,6 @@
 \contentsline {subsubsection}{\numberline {2.4.2}$\Omega $ 的计算}{9}{subsubsection.2.4.2}%
 \contentsline {section}{\numberline {3}正则系综}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}正则分布最概然方法}{13}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}}{14}{subsection.3.2}%
-\contentsline {section}{\numberline {4}附录}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}无穷小正则变换的行列式的绝对值等于 1}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {3.2}微观态与相空间}{14}{subsection.3.2}%
+\contentsline {section}{\numberline {4}附录}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}无穷小正则变换的行列式的绝对值等于 1}{14}{subsection.4.1}%

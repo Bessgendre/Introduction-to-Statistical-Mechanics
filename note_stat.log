@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.20)  25 MAR 2023 15:37
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.20)  27 MAR 2023 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1186,21 +1186,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 217.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 217.
-
-
-LaTeX Warning: Citation `suyu' on page 2 undefined on input line 219.
-
-
-LaTeX Warning: Citation `lan' on page 2 undefined on input line 228.
-
-[2] [3]
-
-LaTeX Warning: Citation `Pathria' on page 4 undefined on input line 250.
-
-
-LaTeX Warning: Citation `liang' on page 4 undefined on input line 273.
-
-[4]
+ [2] [3] [4]
 LaTeX Font Info:    Calculating math sizes for size <11> on input line 286.
 
 
@@ -1210,9 +1196,6 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 11.0pt on input line 286.
 
-LaTeX Warning: Citation `pan' on page 5 undefined on input line 288.
-
-
 LaTeX Font Warning: Font shape `TU/ntxtlf/b/n' undefined
 (Font)              using `TU/ntxtlf/m/n' instead on input line 292.
 
@@ -1221,11 +1204,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 354.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 354.
- [7]
-
-LaTeX Warning: Citation `Pathria' on page 8 undefined on input line 388.
-
-[8]
+ [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 440.
@@ -1238,20 +1217,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 440.
 
-[9] [10]
-File: taimidu.png Graphic file (type bmp)
-<taimidu.png>
 
+LaTeX Warning: Reference `fig:taimidu' on page 9 undefined on input line 446.
 
-LaTeX Warning: Citation `Pathria' on page 11 undefined on input line 506.
-
-[11] [12]
-
-LaTeX Warning: Citation `Pathria' on page 13 undefined on input line 557.
-
-[13] [14]
-No file note_stat.bbl.
-[15] (./note_stat.aux)
+[9] [10] [11] [12] [13] [14] (./note_stat.bbl
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 5.
+) [15] (./note_stat.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1263,14 +1235,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `note_stat.out' has not changed.
-(rerunfilecheck)             Checksum: A389357FEBF853FFF534247F28D7D154;1554.
+(rerunfilecheck)             Checksum: E1E3388188B2326BBCE6140CF6DBDDF5;1618.
  ) 
 Here is how much of TeX's memory you used:
- 33668 strings out of 476919
- 746135 string characters out of 5821840
- 1195637 words of memory out of 5000000
- 52998 multiletter control sequences out of 15000+600000
- 462356 words of font info for 157 fonts, out of 8000000 for 9000
+ 33689 strings out of 476919
+ 747690 string characters out of 5821840
+ 1201930 words of memory out of 5000000
+ 53019 multiletter control sequences out of 15000+600000
+ 465145 words of font info for 158 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,18n,104p,514b,1280s stack positions out of 5000i,500n,10000p,200000b,80000s
 

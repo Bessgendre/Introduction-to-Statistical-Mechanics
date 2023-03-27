@@ -349,7 +349,7 @@ pdfstartview = Fit
 这个最优化问题显然还受到一定的条件约束：总粒子个数、总体积、总能量不能变。这样一来，系综在相空间中所占据的区域就有了一定的边界。所以，现在我们写出自然界每时每刻都在“求解”的约束最优化问题：
 \begin{equation}\label{equ:optimizeI}
     \begin{split}
-        \min \Omega&(N,V,E)\\
+        \max \Omega&(N,V,E)\\
         \text{s.t.}\sum n_i = \mathcal{N},&\quad\sum n_iE_i = \mathcal{E}
     \end{split}
 \end{equation}
@@ -489,13 +489,6 @@ pdfstartview = Fit
 \]
 与先前的结果进行对比，将 $S$ 分别对 $E,V$ 求导，再将导数和热力学公式对应，很容易就得到 $PV = Nk_B T$ 和 $E = \frac{3}{2}N k_BT$ ，我们也就爬到了半山腰。
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{taimidu.png}
-    \caption{系统的状态分布离散而均匀}
-    \label{fig:taimidu}
-\end{figure}
-
 \begin{justification}{\kaishu 反思与质疑}
     \kaishu \fontsize{11pt}{16pt}
     
@@ -540,7 +533,7 @@ pdfstartview = Fit
 \[
     dS = \frac{1}{T} dE + \frac{P}{T} dV - \frac{\mu}{T} dN
 \]
-显然，\textcolor{RoyalBlue}{\textbf{\kaishu 温度 $T$ 就是我们要找的变量}}。随后再对我们想法的一些调整让它能够和热力学建立联系，我们将会看到：变换完全等价地将最优化问题 (\ref*{equ:optimizeI}) 转换成另一个最优化问题：
+显然，\textcolor{RoyalBlue}{\textbf{\kaishu 温度 $T$ 就是我们要找的变量}}，并且固定一个系统的温度也是可以做到的，因为只需要把系统与一个足够大的大热库耦合即可。随后，再对我们想法的一些调整让它能够和热力学建立联系，我们将会看到：变换完全等价地将最优化问题 (\ref*{equ:optimizeI}) 转换成另一个最优化问题：
 \begin{equation}\label{equ:optimizeII}
     \begin{split}
         \min A&(N,V,T)\\
@@ -560,50 +553,61 @@ pdfstartview = Fit
 
 我们考虑的就是这样一件事：把系统看成正则系综的一个成员，然后，由组成系综的 $\mathcal{N}$ 个相同系统去分配该系综总能量 $\mathcal{E}$ ，进而研究这种分配过程的统计学——也就是计算在任意时刻，发现系统处于由能量 $E_r$ 所表征的状态之一的概率 $P_r$ 究竟有多大。
 
-而要固定系统的温度是可以做到的，只需要把系统与一个大热库耦合即可。通过参量$~N~$、$~V~$、$~T~$来描述的系综我们称为正则系综。
-当系统$~A~$与一个大热库$~A'~$接触达到平衡时，他们有一个共同的温度$~T~$。它们的能量可以变化，在任意时刻$~t~$，总能量可以处在$~0~$到$~E^{(0)}~$之间的任何值。在某一时刻，系统$~A~$处于由能量$~E_r~$表征的状态下，热库有能量$~E_r'~$，于是有
+考虑由分享总能量 $\mathcal{E}$ 的 $\mathcal{N}$ 个全同系统组成的一个系综，令 $E_r$ 表示这系统的能量本征值。倘若 $n_r$ 表示在任意时刻 $t$ 具有能量 $E_r$ 的系统的数目，则这些数必须满足下面这些明显的条件：
+\begin{align}
+    \sum_r n_r&=\mathcal{N} \\
+    \sum_r n_r E_r&=\mathcal{E}=\mathcal{N} U, \quad\text{where}\; U \equiv \frac{\mathcal{E}}{\mathcal{N}}  
+\end{align}
+显然，将 $\mathcal{N}$ 个系统分成 $\{n_0,n_1,\dots\}$ 份，分配方式服从多项分布：
+\begin{equation}
+    W\left\{n_r\right\}=\frac{\mathcal{N} !}{n_{0} ! n_{1} ! n_{2} ! \ldots}
+\end{equation}
+取对数，并引入斯特林近似则有
+\begin{equation}
+    \ln W=\mathcal{N} \ln \mathcal{N}-\sum_r n_r \ln n_r
+\end{equation}
+依照微正则系综的观点，我们要求解的是以下的约束最优化问题：
+\begin{equation}\label{equ:optimizeIII}
+    \begin{split}
+        \max \ln W,&\\
+        \text{s.t.}\sum n_i = \mathcal{N},\quad\sum_r &n_r E_r=\mathcal{E}
+    \end{split}
+\end{equation}
+我们将它转化为约束变分问题。既然要求 $\ln W$ 在 $\{n_r\}$ 这一组条件下取得最大值，那么其变分应当取为 $0$：
 \[
-    E_r + E_r' = E^{(0)} = const
+    \delta(\ln W)=-\sum_r\left(\ln n_r+1\right) \delta n_r = 0
 \]
-由于热库比系统$~A~$大很多，故$~E_r~$只占$~E^{(0)}~$很少的一部分，即
+并且，这些变分满足条件
 \[
-\frac{E_r}{E^{(0)}} = \left( 1 - \frac{E_r'}{E^{(0)}} \right) \ll 1
+    \left.\begin{array}{l}
+        \sum_r \delta n_r=0 \\
+        \sum_r^r E_r \delta n_r=0
+        \end{array}\right\}
 \]
-用$~\Omega'(E_r')~$记大热库与$~E_r'~$相容的总微观状态数。热库可达到的微观状态数越大，热库具有该能量$~E_r'~$的概率就越大，且由等可能假设，可得相应的概率正比于$~\Omega'(E_r')~$，即
-\[
-P_r \propto \Omega'(E_r') \equiv \Omega'(E^{(0)} - E_r)
-\]
-由于$~E_r~$相比$~E^{(0)}~$很小，我们可以对上式在$~E_r' = E^{(0)}~$附近做对数展开，得到
+拉格朗日乘子法使得我们可以将约束变分问题转化为无约束变分问题：
+\begin{equation}
+    \sum_r\left\{-\left(\ln n_r+1\right)-\alpha-\beta E_r\right\} \delta n_r=0
+\end{equation}
+所以，当且仅当对每一个 $\delta n_r$ 来说系数都取 $0$ ，才有整体求和为 $0$。所以我们得到
+\begin{equation}
+        \begin{aligned}
+            \ln n_r&=-(\alpha+1)-\beta E_r,\\
+            n_r&=C \exp \left(-\beta E_r\right),
+            \end{aligned}
+\end{equation}
+归一化就有
+\begin{equation}\label{equ:canonicalprobability}
+    P_r = \frac{n_r}{\mathcal{N}}=\frac{\exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}
+\end{equation}
 
-\begin{align*}
-\ln \Omega'(E_r') &= \ln \Omega'(E^{(0)}) + \left( \frac{\partial\ln\Omega'}{\partial E'} \right)_{E' = E^{(0)}}(E_r' - E^{(0)}) + \cdots \\
-&\simeq const - \beta'E_r
-\end{align*}
-
-其中
-\[
-\left( \frac{\partial\ln\Omega}{\partial E} \right)_{N, V}\equiv\beta
-\]
-平衡时有$~\beta' = \beta = 1/kT~$. 由展开可求得
-\[
-P_r \propto \exp(-\beta E_r)
-\]
-归一得到
-\[
-P_r = \frac{\exp(-\beta E_r)}{\sum\limits_{r}\exp(-\beta E_r)}
-\]
-分母的求和遍及了系统$~A~$所有可能达到的状态。
-
-\subsection{}
-
-
-
-\begin{justification}{反思与质疑}
+\begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
     \quad\quad 微正则系综专注于具有同一本征能量的简并微观态，并认为在这些微观态中，没有哪一个是主导，所以引入等概率假设；正则系综则关注具有不同本征能量的各简并集合之间的联系——不同简并集合的大小不同，这些集合之间的比例也有所差异。
 
     \quad\quad 所以等概率假设与 $e^{\beta E_\nu}$ 并不矛盾，因为一个描述的是简并集合内部的等概率性，一个描述的是这些简并集合之间的比例差异。并且，当我们说出“比例差异”的时候，也就自然地将问题理解为了一个几何概型：具有不同能量的各微观态仍然是等概率的，只是个数不一样。
 \end{justification}
+
+\subsection{微观态与相空间}
 
 \textcolor{RoyalBlue}{\textbf{\kaishu }}
 
