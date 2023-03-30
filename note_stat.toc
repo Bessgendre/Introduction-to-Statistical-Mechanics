@@ -8,8 +8,14 @@
 \contentsline {subsection}{\numberline {2.4}经典理想气体}{9}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}一些直觉}{9}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}$\Omega $ 的计算}{9}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}总结}{11}{subsection.2.5}%
 \contentsline {section}{\numberline {3}正则系综}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}正则分布最概然方法}{13}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}微观态与相空间}{14}{subsection.3.2}%
-\contentsline {section}{\numberline {4}附录}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}无穷小正则变换的行列式的绝对值等于 1}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {3.2}统计量的物理含义}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}微观态与相空间}{16}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}经典气体}{16}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}谐振子系统}{16}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}总结}{16}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}}{16}{subsection.3.7}%
+\contentsline {section}{\numberline {4}附录}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}无穷小正则变换的行列式的绝对值等于 1}{16}{subsection.4.1}%

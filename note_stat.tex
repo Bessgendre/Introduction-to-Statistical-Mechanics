@@ -499,6 +499,8 @@ pdfstartview = Fit
     \quad\quad 不过，对于不可分辨粒子设定的合理性，则需要追溯至吉布斯佯谬中来。若认为组成理想气体的各个粒子是可以标号的，首先便会导致推出的熵公式不满足加和性。其次，在考虑同种粒子在同一压强下的混合时，也会推出此时的混合熵正定的矛盾\cite{Pathria}。基于逻辑上的考虑，认为这些粒子具有全同性会使得我们的理论自洽。
 \end{justification}
 
+\subsection{总结}
+
 微正则系综以其简单的配容数世界观为基础，帮助我们爬上了统计力学的半山腰。但如果继续向峰巅攀爬将会变得困难，因为微正则系综是一个非常形而上的理论，它对优化参量 $(N,V,E)$ 准确度的要求让我们这些有限的生命望而却步——对于大多数物理系统来说，测量 $(N,V,E)$ 将是一个非常艰巨的任务，更不要说计算出 $\Omega(N,V,E)$ 。
 
 但微正则系综作为我们的理论起点，是值得肯定的，它是我们登山过程中的一条在山脊上延伸的小径。这里先对微正则系综研究方法进行一些总结，然后在下一节中，我们将换个方向——换到沿山谷的石板路上来。
@@ -585,7 +587,7 @@ pdfstartview = Fit
         \end{array}\right\}
 \]
 拉格朗日乘子法使得我们可以将约束变分问题转化为无约束变分问题：
-\begin{equation}
+\begin{equation}\label{equ:variational}
     \sum_r\left\{-\left(\ln n_r+1\right)-\alpha-\beta E_r\right\} \delta n_r=0
 \end{equation}
 所以，当且仅当对每一个 $\delta n_r$ 来说系数都取 $0$ ，才有整体求和为 $0$。所以我们得到
@@ -607,9 +609,89 @@ pdfstartview = Fit
     \quad\quad 所以等概率假设与 $e^{\beta E_\nu}$ 并不矛盾，因为一个描述的是简并集合内部的等概率性，一个描述的是这些简并集合之间的比例差异。并且，当我们说出“比例差异”的时候，也就自然地将问题理解为了一个几何概型：具有不同能量的各微观态仍然是等概率的，只是个数不一样。
 \end{justification}
 
+\subsection{统计量的物理含义}
+
+\subsubsection{正则系综的研究方法}
+现在我们来赋予各个统计量以一定的物理含义，我们从能量开始。根据正则分布，定义系统的能量 $U$ 是随机变量 $E$ 的系综平均：
+\begin{equation}
+    U=\frac{\sum_r E_r \exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}=-\frac{\partial}{\partial \beta} \ln \left\{\sum_r \exp \left(-\beta E_r\right)\right\}
+\end{equation}
+并回忆那个以最小化亥姆霍兹自由能的热力学公式
+\[
+    \begin{aligned}
+& d A=d U-T d S-S d T=-S d T-P d V+\mu d N \\
+& S=-\left(\frac{\partial A}{\partial T}\right)_{N, V}, \quad P=-\left(\frac{\partial A}{\partial V}\right)_{N, T}, \quad \mu=\left(\frac{\partial A}{\partial N}\right)_{V, T}, \\
+&
+\end{aligned}
+\]
+以及得到它的那个勒让德变换
+\[
+    U=A+T S=A-T\left(\frac{\partial A}{\partial T}\right)_{N, V}=-T^2\left[\frac{\partial}{\partial T}\left(\frac{A}{T}\right)\right]_{N, V}=\left[\frac{\partial(A / T)}{\partial(1 / T)}\right]_{N, V}
+\]
+经过对比，我们可以将统计量与热力学量以这样的方式对应起来：
+\begin{equation}
+    \beta=\frac{1}{k T}, \quad \ln \left\{\sum_r \exp \left(-\beta E_r\right)\right\}=-\frac{A}{k T}
+\end{equation}
+所以我们的最优化目标函数 $A$ 就可以表示为 $(N,V,T)$ 的函数了：
+\begin{equation}
+        A(N, V, T)=-k T \ln Q_N(V, T)
+\end{equation}
+其中 $Q_N(V,T)$ 则称为 \textcolor{RoyalBlue}{\textbf{\kaishu 正则配分函数}}：
+\begin{equation}
+    Q_N(V, T)=\sum_r \exp \left(-E_r / k T\right)
+\end{equation}
+求和遍及所有可能的能量状态。$Q$ 对 $V,T$ 的依赖关系是明显的，而 $Q$ 对粒子数 $N$ 的依赖关系就体现在求和的项数中。然后联用新的热力学关系 $d A= -S d T-P d V+\mu d N $ 就能得到各热力学量的统计诠释，这里不再赘述。
+
+现在，有必要对我们所得的结果做一些评述。在推导的过程中，我们实际上以微正则系综的配容数最大化为出发点，并且微正则系综中最复杂的部分：通过一定的数学方法计算配容数 $\Omega$ 的过程则被更普适的变分方法 (\ref*{equ:variational}) 所替代，所以我们可以放心大胆地宣称： \textcolor{RoyalBlue}{\textbf{\kaishu  正则系综与微正则系综等价。}}
+
+我们给出著名的吉布斯熵公式
+\begin{equation}\label{equ:GibbsS}
+    S=-k\left\langle\ln P_r\right\rangle=-k \sum_r P_r \ln P_r
+\end{equation}
+由此我们可以看到，一个系统的熵竟然与系统的具体性质无关，只与系统在所能处于状态上的概率分布 $P_r$ 有关，换句话说： \textcolor{RoyalBlue}{\textbf{\kaishu 熵是概率密度的函数。}}而关于它的正确性，信息论的证明更加简洁，读者可自行参考。显然，它与微正则系综的熵公式也是自洽的。
+\[
+    S=-k \sum_{r=1}^{\Omega}\left\{\frac{1}{\Omega} \ln \left(\frac{1}{\Omega}\right)\right\}=k \ln \Omega
+\]
+
+\subsubsection{能量的涨落}
+
+正则系综将能量 $E$ 视为一个取值为 $(0, \infty)$ 的随机变量，看来有必要研究一下能量的方差，也就是能量涨落，这可以通过对 $U$ 的表达式求导来实现：
+\[
+    \begin{aligned}
+\frac{\partial U}{\partial \beta} & =-\frac{\sum_r E_r^2 \exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}+\frac{\left[\sum_r E_r \exp \left(-\beta E_r\right)\right]^2}{\left[\sum_r \exp \left(-\beta E_r\right)\right]^2} \\
+& =-\left\langle E^2\right\rangle+\langle E\rangle^2,
+\end{aligned}
+\]
+故能量的方差 $\text{Var}(E)$ 就是
+\begin{equation}\label{equ:label}
+    \text{Var}(E) \equiv\left\langle E^2\right\rangle-\langle E\rangle^2=-\left(\frac{\partial U}{\partial \beta}\right)=k T^2\left(\frac{\partial U}{\partial T}\right)=k T^2 C_V
+\end{equation}
+概率论能够确定能量相对均值 $U$ 涨落的方差：
+\[
+    \text{Var}\left(\frac{E}{U} \right) = \frac{1}{U^2} \text{Var}(E) = \frac{k T^2 C_V}{U^2} 
+\]
+可见，随者粒子数 $N$ 的增长，它的量级是 $O(N^{1/2})$ ，所以我们期望：在 $N \rightarrow \infty$ 时，概率密度的展宽将逐渐减小。为了确认这一点，我们下面来直接研究 $E$ 的概率密度函数。
+
 \subsection{微观态与相空间}
 
-\textcolor{RoyalBlue}{\textbf{\kaishu }}
+\subsection{位力定理}
+
+
+
+\subsection{具体系统}
+
+\subsubsection{经典理想气体}
+
+\subsubsection{相对论理想气体}
+
+\subsubsection{谐振子系统}
+
+\subsubsection{顺磁性的统计理论}
+
+\subsection{总结}
+
+\subsection{}
+
 
 
 
