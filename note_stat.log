@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.20)  30 MAR 2023 10:11
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.1.20)  1 APR 2023 22:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,20 +1173,20 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 3.
 
-)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/sl' will be
+(Font)              scaled to size 10.53937pt on input line 24.
+LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10.53937> not available
+(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 24.
+[1])
 \tf@toc=\write7
 \openout7 = `note_stat.toc'.
 
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/sl' will be
-(Font)              scaled to size 10.53937pt on input line 215.
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 215.
- [1]
+ [2]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 217.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 217.
- [2] [3] [4]
+ [3] [4] [5]
 LaTeX Font Info:    Calculating math sizes for size <11> on input line 286.
 
 
@@ -1199,12 +1199,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 LaTeX Font Warning: Font shape `TU/ntxtlf/b/n' undefined
 (Font)              using `TU/ntxtlf/m/n' instead on input line 292.
 
-[5] [6]
+[6] [7]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 354.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 354.
- [7] [8]
+ [8] [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 440.
@@ -1218,12 +1218,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 440.
 
 
-LaTeX Warning: Reference `fig:taimidu' on page 9 undefined on input line 446.
+LaTeX Warning: Reference `fig:taimidu' on page 10 undefined on input line 446.
 
-[9] [10] [11] [12] [13] [14] [15] [16] (./note_stat.bbl
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] (./note_stat.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 5.
-) [17] (./note_stat.aux)
+) [20] (./note_stat.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1234,19 +1234,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `note_stat.out' has not changed.
-(rerunfilecheck)             Checksum: 3B4784723DE603B0482AC6E417170645;2126.
+(rerunfilecheck)             Checksum: 33B6185FDFEC5A3EBED782198786A877;3118.
  ) 
 Here is how much of TeX's memory you used:
- 33686 strings out of 476919
- 747543 string characters out of 5821840
- 1199579 words of memory out of 5000000
- 53016 multiletter control sequences out of 15000+600000
+ 33689 strings out of 476919
+ 747591 string characters out of 5821840
+ 1200663 words of memory out of 5000000
+ 53019 multiletter control sequences out of 15000+600000
  465145 words of font info for 158 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,18n,104p,514b,1280s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on note_stat.pdf (18 pages).
+Output written on note_stat.pdf (21 pages).
