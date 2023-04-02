@@ -14,16 +14,14 @@
 \contentsline {subsection}{\numberline {3.2}统计量的物理含义}{15}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}正则系综的研究方法}{15}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}能量的涨落}{17}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}配分函数的性质}{17}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}微观态与相空间}{17}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}无关联系统的配分函数}{19}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}位力定理}{19}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}具体系统}{19}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}经典理想气体}{19}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}相对论理想气体}{19}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}谐振子系统}{19}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}顺磁性的统计理论}{19}{subsubsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.6}总结}{19}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}}{19}{subsection.3.7}%
-\contentsline {section}{\numberline {4}附录}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}无穷小正则变换的行列式的绝对值等于 1}{19}{subsection.4.1}%
+\contentsline {subsection}{\numberline {3.3}配分函数的性质}{18}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}微观态与相空间}{18}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}连续形式的配分函数}{19}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}无关联系统}{20}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}经典系统}{21}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}位力定理}{22}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}总结}{22}{subsection.3.6}%
+\contentsline {section}{\numberline {4}巨正则系综}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}广义系综}{22}{subsection.4.1}%
+\contentsline {section}{\numberline {5}附录}{22}{section.5}%
+\contentsline {subsection}{\numberline {5.1}无穷小正则变换的行列式的绝对值等于 1}{22}{subsection.5.1}%

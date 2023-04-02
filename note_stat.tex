@@ -261,14 +261,14 @@ pdfstartview = Fit
 \end{equation}
 这里的定义是离散的，但基于许多考虑，我们更喜欢一个连续、归一化的概率密度 $\rho(q,p,t)$，满足
 \begin{equation}
-    \int_\Omega \rho(q,p,t)\,\mathrm{d}\omega = 1 \\
+    \int_\Omega \rho(q,p,t)\,d\omega = 1 \\
 \end{equation}
 使得物理量的系综平均可以表示为
 \begin{equation}
-    \langle f \rangle =  \int_\Omega \rho(q,p,t)f(q,p,t)\,\mathrm{d}\omega
+    \langle f \rangle =  \int_\Omega \rho(q,p,t)f(q,p,t)\,d\omega
 \end{equation}
 
-我们也可以这样理解相点密度 $\rho$：在系综内任意划定一个区域 $\mathrm{d} \omega$，在某一相点在系综内进行遍历的过程中，在这个区域内找到这个相点的概率为 $\rho \mathrm{d} \omega$，或者说在遍历过程中，系统的代表点在此处停留的时间与总时间的比 $\Delta t / T$  收敛于 $\rho \mathrm{d} \omega$ 。
+我们也可以这样理解相点密度 $\rho$：在系综内任意划定一个区域 $d \omega$，在某一相点在系综内进行遍历的过程中，在这个区域内找到这个相点的概率为 $\rho d \omega$，或者说在遍历过程中，系统的代表点在此处停留的时间与总时间的比 $\Delta t / T$  收敛于 $\rho d \omega$ 。
 
 代表点的演化在相空间中对应于一个正则变换在时间上的连续伸展\cite{liang}，而正则变换的Jacobi 行列式的绝对值恒等于 $1$（见附录），所以我们期望：系综的时间演化服从流体的连续性方程
 \begin{equation}
@@ -670,7 +670,29 @@ pdfstartview = Fit
 \[
     \text{Var}\left(\frac{E}{U} \right) = \frac{1}{U^2} \text{Var}(E) = \frac{k T^2 C_V}{U^2} 
 \]
-可见，随者粒子数 $N$ 的增长，它的量级是 $O(N^{1/2})$ ，所以我们期望：在 $N \rightarrow \infty$ 时，概率密度的展宽将逐渐减小。为了确认这一点，我们下面来直接研究 $E$ 的概率密度函数。
+可见，随者粒子数 $N$ 的增长，它的量级是 $O(N^{1/2})$ ，所以我们期望：在 $N \rightarrow \infty$ 时，概率密度的展宽将逐渐减小。为了确认这一点，我们下面来直接研究 $E$ 的概率密度函数 $P(E) = \Omega(E)e^{-\beta E}/Q$ ，其中 $\Omega(E)$ 的含义是对于确定的能量，也就是每一个微正则系综的状态数。
+
+对概率取对数有
+\[
+    \frac{\partial \ln P(E)}{\partial E} = \frac{\partial \ln \Omega (E)}{\partial E} - \beta
+\]
+在最大值处，有偏导数为 $0$ ，所以式中第一项在极值点处取值即为
+\[
+    \left(\frac{\partial \ln \Omega (E)}{\partial E}\right)_{E = U} = \beta
+\]
+所以
+\[
+    \frac{\partial^2 \ln P(E)}{\partial E^2} = \frac{\partial \beta}{\partial E} = \frac{1}{\frac{\partial E}{\partial \beta}} = -\frac{1}{\text{Var}E}  = -\frac{1}{\sigma^2_E}
+\]
+那么现在对概率密度的对数在顶点 $E = U$ 处做泰勒展开：
+\[
+    \ln P(E) = \ln P(U) -\frac{(E - U)^2}{2\sigma^2_E}
+\]
+那么概率密度就可以写为 Gauss 分布的形式
+\begin{equation}
+    P(E) = P(U)\exp\left[-\frac{(E - U)^2}{2\sigma^2_E}\right]
+\end{equation}
+显然，这个密度函数在热力学极限下收敛于 $\delta$ 函数。这也表明： \textcolor{RoyalBlue}{\textbf{\kaishu 正则系综 $(NVT)$ 在热力学极限下依概率收敛于微正则系综 $(NVE)$ 。}}
 
 \subsection{配分函数的性质}
 
@@ -707,7 +729,7 @@ pdfstartview = Fit
 
 事实上，这就是 Bohr 氢原子模型中的角动量量子化条件，它发轫自经典力学的作用变量-角变量理论——周期运动的系统总是可以通过一定的正则变换，从而使得新哈密顿函数依赖于作用变量 $J$ 与角变量 $\Theta$ ：$H = H(J,\Theta)$ ，其中 $J$ 是守恒量，它的定义为
 \[
-    J = \frac{1}{2\pi} \oint p\mathrm{d}q
+    J = \frac{1}{2\pi} \oint pdq
 \]
 环路积分的含义是针对一个周期。此时可以证明： $\Theta$ 则总是随着时间线性变化，并且在一个周期内的变化量为 $2\pi$ ：
 \[
@@ -717,39 +739,99 @@ pdfstartview = Fit
 
 现在，我们发现自己处于这样一种境地： \textcolor{RoyalBlue}{\textbf{\kaishu 既然相空间中确定的体积对应于一个微观态，那么对微观态的求和则可以转化为对正则变量 $(q,p)$ 的积分，而且这个转换系数是常数！}}这无疑会为计算正则配分函数提供一种新的视角和随之而来的新方法。作为一个有意义的暗示，如果我们能对系统哈密顿量进行变量分离，那么对相空间的积分也会是变量分离的。
 
+哈密顿函数的变量分离，说明被分离的系统互不干扰，也即是说： \textcolor{RoyalBlue}{\textbf{\kaishu 大系统可以分解为若干无关联系统的加和。}} 
 
-\subsubsection{无关联系统的配分函数}
+\subsubsection{连续形式的配分函数}
+\textcolor{RoyalBlue}{\textbf{\kaishu 为了让这种求和-积分的转变更加丝滑，先来考虑配分函数的连续形式。}}
+
+回想在研究能量涨落时，我们不假思索地将概率密度写为了 $P(E) = \Omega(E)e^{-\beta E}/Q$ ， $\Omega(E)$ 像是能量的简并因子。我们就来完整地对它进行讨论。
+
+多数情况下，一个物理系统的能级是简并的，记能级 $E_i$ 的简并度为 $g_i$ ，则配分函数可写为
+\begin{equation}
+    Q_N(V, T)=\sum_i g_i \exp \left(-\beta E_i\right)
+\end{equation}
+由于每个简并能级中的微观态都是等概率的，所以这只是将数钱的方式从“按顺序数”换到了“按面值数”而已。系统处于具有能量 $E_i$ 的任何状态的概率 $P_i$ 的相应表达式就是
+\begin{equation}
+    P_i=\frac{g_i \exp \left(-\beta E_i\right)}{\sum_i g_i \exp \left(-\beta E_i\right)}
+\end{equation}
+系统的能量在热力学极限下趋于连续，所以将概率质量函数换为概率密度函数，再做一番归一化，我们就得到
+\begin{equation}
+    P(E) d E=\frac{\exp (-\beta E) g(E) d E}{\int_0^{\infty} \exp (-\beta E) g(E) d E} .
+\end{equation}
+在这种情形下，配分函数也从求和转变为了积分
+\begin{equation}
+    Q_N(V, T)=\int_0^{\infty} e^{-\beta E} g(E) d E
+\end{equation}
+由于 $\beta>0$ ，所以我们总是可以认为配分函数 $Q$ 是能态密度 $g$ 的 \textcolor{RoyalBlue}{\textbf{\kaishu 拉普拉斯变换}} ，其逆变换公式为
+\begin{equation}
+    g(E)=\frac{1}{2 \pi i} \int_{\beta^{\prime}-i \infty}^{\beta^{\prime}+i \infty} e^{\beta E} Q(\beta) d \beta \quad\left(\beta^{\prime}>0\right)
+\end{equation}
+积分路径沿着平行于虚轴的右边进行，即沿着直线 $\text{Re}\beta = \beta' >0$ 。当然，只要积分收敛，路径可以连续变形。
+
+也许现在看来，这样做的价值仅是通过拉普拉斯变换的唯一性说明了态密度和配分函数的等价性。但的确有些场合，对于给定系统配分函数的计算，以及随后进行其态密度的计算，确实变得十分简单，而直接从第一性原理出发来进行态密度的计算却是相当复杂的，例如后面将会讨论的相对论气体。
+
+为了这一方法的使用更加顺畅（不至于积不出来），这里有一个相关的积分公式：
+\[
+    \frac{1}{2 \pi i} \int_{s^{\prime}-i \infty}^{s^{\prime}+i \infty} \frac{e^{s x}}{s^{n+1}} d s=\left\{\begin{array}{lll}
+        \frac{x^n}{n !} & \text { for } \quad x \geq 0 \\
+        0 & \text { for } \quad x \leq 0
+        \end{array}\right.
+\]
+\subsubsection{无关联系统}
+\textcolor{RoyalBlue}{\textbf{\kaishu 现在，我们将从配分函数的性质出发，将统计力学推上巅峰。}}
+
+前面讲到，我们希望将相空间的表述形式也囊括进系综理论的范围之内——因为系综是相空间中的一定区域。而物理量 $f(q,p,t)$ 在这一区域上的平均值则是
+\begin{equation}
+    \langle f\rangle=\frac{\int f(q, p) \rho(q, p) d^{3 N} q d^{3 N} p}{\int \rho(q, p) d^{3 N} q d^{3 N} p}
+\end{equation}
+其中函数 $\rho(q,p)$ 则是相空间一点附近的代表点密度，是在相点 $(q,p)$ 附近找到一个代表点的概率的一种量度。而我们早已说明：在正则系综里，
+\begin{equation}
+    \rho(q, p) \propto \exp \{-\beta H(q, p)\}
+\end{equation}
+所以 $\langle f \rangle$ 可以取为
+\begin{equation}
+    \langle f\rangle=\frac{\int f(q, p) \exp (-\beta H) d \omega}{\int \exp (-\beta H) d \omega}
+\end{equation}
+该表达式的分母与配分函数直接相关。根据我们已经得到的微观态与相体积的转换关系：在相空间中的体积元 $d\omega$ 对应于系统的
+\[
+    \frac{d\omega}{h^{3N}} 
+\]
+这么多的量子态，因而配分函数的精确表达式就是
+\begin{equation}
+    Q_N(V, T)=\frac{1}{ h^{3 N}} \int e^{-\beta H(q, p)} d \omega
+\end{equation}
+有时视情况需要再除以一个不可分辨因子 $N!$ ，但这并不会对我们的思路造成什么影响。
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 这是变量代换的一小步，但却是统计力学的一大步。}}它的一个显著的优点前面已经提到过了，即如果系统可以分解为若干无关联子系统，则哈密顿函数变量分离，配分函数的积分计算也变量分离。 \textcolor{RoyalBlue}{\textbf{\kaishu  而积分计算的分离导致系统总配分函数是各个子配分函数的乘积：}}
+\begin{equation}
+    Q_N(V, T)=\left[Q_1(V, T)\right]^N \quad\text{or}\quad Q_N(V, T)=\frac{1}{N !}\left[Q_1(V, T)\right]^N
+\end{equation}
+这也叫做 \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数的因子化}}。显然，即使分子具有内部自由度，这个情况也不会发生任何改变。
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+    \quad\quad 首先，这和概率论是一致的。因为配分函数的因子化其实相当于随机变量的独立性：$p(X = x, Y = y) = p(X = x)p(Y = y)$ ，所以条件期望满足 $E(X) = E[YE(X|Y = y)] = E(X)E(Y)$ 。
+
+    \quad\quad 其次，这和热力学是一致的。由于热力学量均是对配分函数的对数求偏导，而导数算符的线性性保证了无关联系统热力学量的加和性。
+\end{justification}
+
+\subsection{经典系统}
+
+下面以经典理想气体与经典谐振子系统为例，来说明怎样通过无关联性推导系统的配分函数。
 
 \subsection{位力定理}
 
-
-
-\subsection{具体系统}
-
-\subsubsection{经典理想气体}
-
-\subsubsection{相对论理想气体}
-
-\subsubsection{谐振子系统}
-
-\subsubsection{顺磁性的统计理论}
-
 \subsection{总结}
 
-\subsection{}
 
 
 
+\section{巨正则系综}
 
 
 
+\subsection{广义系综}
 
-
-
-
-
-
-    
     
 \section{附录}
 \subsection{无穷小正则变换的行列式的绝对值等于 1}
