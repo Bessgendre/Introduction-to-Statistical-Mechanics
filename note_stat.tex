@@ -354,9 +354,9 @@ pdfstartview = Fit
     \end{split}
 \end{equation}
 
-现在我们再回到热力学。热力学起初是人类根据完全的宏观经验总结出的一些规律（而没有涉及任何微观的分子原子或者能级之类的概念）。经过经年的实践，人类通过感官的认识，将配容数的三个重要偏导数所代表的内涵分别都取了名字： \textcolor{RoyalBlue}{\textbf{\kaishu 温度、压强以及化学势}}——回忆热力学第一定律与第二定律的联合方程 $dE = TdS - PdV+ \mu dN$ 以及各种热力学平衡条件。这些是人类最初认识“热及其动力学”（Thermodynamics）的出发点。所以虽然它采用了很多数学记号，看起来具有坚实的数学基础，但它终究是一个完全唯像的理论，这些偏导数的正确性只能通过实验检验，而不是逻辑。
+再回到热力学。热力学起初是人类根据完全的宏观经验总结出的一些规律（而没有涉及任何微观的分子原子或者能级之类的概念）。经过经年的实践，人类通过感官的认识，将配容数的三个重要偏导数所代表的内涵分别都取了名字： \textcolor{RoyalBlue}{\textbf{\kaishu 温度、压强以及化学势}}——回忆热力学第一定律与第二定律的联合方程 $dE = TdS - PdV+ \mu dN$ 以及各种热力学平衡条件。这些是人类最初认识“热及其动力学”（Thermodynamics）的出发点。所以虽然它采用了很多数学记号，看起来具有坚实的数学基础，但它终究是一个完全唯像的理论，这些偏导数的正确性只能通过实验检验，而不是逻辑。
 
-但现在的情况有了一些变化。我们认识到熵这个量似乎和其他状态参量不同，因为自然界总是要熵增的方向发展，它的地位应当和其他状态参量有所差别。将熵还原为配容数之后，我们相信，或者说信仰：自然界总是想运动至配容数更大的地方。从这里出发，\textcolor{RoyalBlue}{\textbf{\kaishu 我们希望将统计学引入我们的理论体系中，并为热力学提供一个合理的解释。}} 
+但情况有了一些变化。我们认识到熵这个量似乎和其他状态参量不同，因为自然界总是要熵增的方向发展，它的地位应当和其他状态参量有所差别。将熵还原为配容数之后，我们相信，或者说信仰：自然界总是想运动至配容数更大的地方。从这里出发，\textcolor{RoyalBlue}{\textbf{\kaishu 我们希望将统计学引入我们的理论体系中，并为热力学提供一个合理的解释。}} 
 
 为了凸显配容数以及熵的第一性，我们将 $dS$ 写到等式的左边：
 \begin{equation}
@@ -418,7 +418,7 @@ pdfstartview = Fit
     E = \frac{3}{2}N k_B T
 \end{align*}
 
-\subsubsection{一些直觉}
+\subsubsection{一些直觉}\label{intuition}
 
 经典理想气体是一个 \textcolor{RoyalBlue}{\textbf{\kaishu 由无相互作用粒子组成、且不考虑粒子内部结构的经典系统}} 。之所以考虑这样一个系统，是因为它可以对 $\Omega(N,V,E)$ 提供一个明确的计算方法（虽然这种方法是渐进性质的）。 
 
@@ -670,7 +670,7 @@ pdfstartview = Fit
 \[
     \text{Var}\left(\frac{E}{U} \right) = \frac{1}{U^2} \text{Var}(E) = \frac{k T^2 C_V}{U^2} 
 \]
-可见，随者粒子数 $N$ 的增长，它的量级是 $O(N^{1/2})$ ，所以我们期望：在 $N \rightarrow \infty$ 时，概率密度的展宽将逐渐减小。为了确认这一点，我们下面来直接研究 $E$ 的概率密度函数 $P(E) = \Omega(E)e^{-\beta E}/Q$ ，其中 $\Omega(E)$ 的含义是对于确定的能量，也就是每一个微正则系综的状态数。
+可见，随者粒子数 $N$ 的增长，它的量级是 $O(N^{-1})$ ，所以我们期望：在 $N \rightarrow \infty$ 时，概率密度的展宽将逐渐减小。为了确认这一点，我们下面来直接研究 $E$ 的概率密度函数 $P(E) = \Omega(E)e^{-\beta E}/Q$ ，其中 $\Omega(E)$ 的含义是对于确定的能量，也就是每一个微正则系综的状态数。
 
 对概率取对数有
 \[
@@ -682,7 +682,7 @@ pdfstartview = Fit
 \]
 所以
 \[
-    \frac{\partial^2 \ln P(E)}{\partial E^2} = \frac{\partial \beta}{\partial E} = \frac{1}{\frac{\partial E}{\partial \beta}} = -\frac{1}{\text{Var}E}  = -\frac{1}{\sigma^2_E}
+    \frac{\partial^2 \ln P(E)}{\partial E^2} = \frac{\partial \beta}{\partial E} = 1\bigg/\frac{\partial E}{\partial \beta} = -\frac{1}{\text{Var}E}  = -\frac{1}{\sigma^2_E}
 \]
 那么现在对概率密度的对数在顶点 $E = U$ 处做泰勒展开：
 \[
@@ -815,22 +815,57 @@ pdfstartview = Fit
     \quad\quad 其次，这和热力学是一致的。由于热力学量均是对配分函数的对数求偏导，而导数算符的线性性保证了无关联系统热力学量的加和性。
 \end{justification}
 
-\subsection{经典系统}
+作为一个简单例子，我们先来讨论理想气体状态方程：\textcolor{RoyalBlue}{\textbf{\kaishu $PV = NkT$ 是不可区分子系统无关联性的直接结果。}}
 
-下面以经典理想气体与经典谐振子系统为例，来说明怎样通过无关联性推导系统的配分函数。
+首先，这样一个系统的配分函数可以写为
+\[
+    Q = \frac{1}{N!} Q_1^N
+\]
+引入斯特林近似，易得亥姆霍兹自由能可以写作如下形式
+\[
+    A = -kT\ln Q = -kT N \ln Q_1 + kT(N\ln N - N)
+\]
+联用热力学公式， $P$ 的表达式为
+\[
+    P = - \frac{\partial A}{\partial V} = NkT \frac{\partial \ln Q_1}{\partial V}
+\]
+然而，回顾(\ref*{intuition})一节，在那里我们通过独立性给出了无相互作用粒子的配容数对体积的依赖关系。其实配分函数对体积的依赖关系也是一样的，只要单粒子哈密顿量只依赖于正则变量的一半即可：
+\[
+    Q_1 = \frac{1}{1!\times h^3}\int dq_1dq_2dq_3\int e^{H(p_1,p_2,p_3)}\,dp_1dp_2dp_3  = \frac{V}{h^3} \int e^{H(p_1,p_2,p_3)}\,dp_1dp_2dp_3
+\]
+所以 $Q_1 \propto V$ ，则
+\[
+    P = NkT \frac{\partial \ln Q_1}{\partial V} = NkT \times \frac{1}{V} 
+\]
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+    \quad\quad 我们反复地以理想气体为例，通过不同的方法得到了这一状态方程。为了彻底地理解这一等式，不妨放弃压强、体积、温度等量的具体或是力学的、或是感性的实际意义，而上升为最优化问题的决策变量和偏导数。这时，无关联性要求
+    \[
+        -\left(\frac{\partial A}{\partial V}\right)_{N,T} V = Nk \bigg/ \left(\frac{\partial S}{\partial E} \right)_{N,V}
+    \]
+\end{justification}
 
-\subsection{位力定理}
+同样的，我们可以使用这种方法来考虑经典理想气体与经典谐振子，根据子系统之间的无关联性，只需要计算单粒子配分函数即可。至于相对论理想气体与量子谐振子系统的配分函数，就留给读者自行完成。
 
 \subsection{总结}
 
+正则系综作为微正则系综的等价方法，极大简化了对物理系统的研究与计算。它以简并度 $g(E)$ 整合了具有相同能量的各个简并微观态，并通过拉普拉斯变换后的配分函数 $Q_N(V,T)$ 为核心，与亥姆霍兹自由能建立联系。不仅如此，我们看到这样的配分函数可以因子化，只要系统的哈密顿量变量分离，而这意味着整个系统是无关联系统的简单加和。
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 总之，正则系综开辟了通向统计力学顶峰的另一条道路。}}
+
+\begin{understanding}{\kaishu 对正则系综的总结}
+\kaishu \fontsize{11pt}{16pt}
+使用正则系综处理问题可以遵循这样的顺序：
+\begin{enumerate}
+    \item 正则系综的核心量是配分函数 $Q$
+    \item 直接求和，或者转换为相空间的积分，得到 $Q_N(V,T)$
+    \item $S = -k_B \sum P_i \ln P_i$
+    \item 联用热力学公式 $dA = -SdT - PdV + \mu dN$，偏导数对应相等
+\end{enumerate}
+
+\end{understanding}
 
 
-
-\section{巨正则系综}
-
-
-
-\subsection{广义系综}
 
     
 \section{附录}
