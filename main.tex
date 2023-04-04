@@ -1,0 +1,34 @@
+\documentclass[hyperref,UTF-8]{ctexbook}
+
+\input{setup/notesetup.tex}
+
+\begin{document}
+\setparDis
+\nocite{*}
+
+\input{cover/cover.tex}
+
+\tableofcontents
+
+
+\pagebreak
+
+\frontmatter
+\input{chapters/foreword.tex}
+% \listoffigures
+% \listoftables
+
+\mainmatter
+\input{chapters/basic_principles.tex}
+\input{chapters/canonical_ensembles.tex}
+\input{chapters/grand_canonical_ensembles.tex}
+
+\appendix
+\input{chapters/complementary.tex}
+
+\bibliography{bib/ustc}  % 参考文献使用 BibTeX 编译
+% \printbibliography       % 参考文献使用 BibLaTeX 编译
+
+
+
+\end{document}

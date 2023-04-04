@@ -1,0 +1,34 @@
+   
+\chapter{附录}
+\section{无穷小正则变换行列式的绝对值等于 1}
+将系统的状态参量 $(q_i,p_i), i = 1,2,\dots n$ 统一表达为 $\xi_\alpha, \alpha = 1,2,\dots 2n$ ，其中前一半是坐标 $q$ ，后一半是动量 $p$ 。引入求和约定，则经典 Poisson 括号可以写为
+\[
+    [f, g] = \frac{\partial f}{\partial \xi_\alpha}\Omega_{\alpha\beta}\frac{\partial g}{\partial \xi_\beta}
+\]
+其中
+\[
+    \Omega = \begin{bmatrix}
+        & -I\\
+        I&
+    \end{bmatrix}_{2n\times 2n}
+\]
+设正则变换将 $\left \{ \xi \right \}$ 变换为 $\left \{ \xi’ \right \}$ ，雅可比矩阵 $M$ 应为
+\[
+    M = \begin{bmatrix}
+        \frac{\partial \xi_1'}{\partial \xi_1} & \frac{\partial \xi_1'}{\partial \xi_2} & \cdots  & \frac{\partial \xi_1'}{\partial \xi_{2n}} \\
+        \frac{\partial \xi_2'}{\partial \xi_1} & \frac{\partial \xi_2'}{\partial \xi_2} & \cdots  & \frac{\partial \xi_2'}{\partial \xi_{2n}} \\
+        \vdots & \vdots &  & \vdots\\
+        \frac{\partial \xi_{2n}'}{\partial \xi_1} & \frac{\partial \xi_{2n}'}{\partial \xi_2} & \cdots  & \frac{\partial \xi_{2n}'}{\partial \xi_{2n}} \\
+    \end{bmatrix}_{2n\times 2n}
+\]
+由线性代数知识可知，$\text{det}(M\Omega M^T) = \text{det}(M)^2 \text{det}(\Omega) = - \text{det}(M)^2$ ，同时它又可以写为
+\begin{align*}
+    (M\Omega M^T)_{ij} &= M_{i\alpha}\Omega_{\alpha\beta}M^T_{\beta j}
+    = M_{i\alpha}\Omega_{\alpha\beta}M_{j\beta}\\
+    &= \frac{\partial \xi'_i}{\partial \xi_\alpha}\Omega_{\alpha\beta}\frac{\partial \xi'_j}{\partial \xi_\beta}\\
+    &= [\xi'_i, \xi'_j]_\xi\\
+    &= \Omega_{ij}
+\end{align*}
+最后一个等式用到了正则变换的基本 Poisson 括号不变性。故 $\text{det}(M)^2 = 1$ ，证明完毕。
+
+根据系统演化的连续性，我们还可以说明：对于系统经历的每一个无穷小变换的Jacobi矩阵，其行列式保持同号。

@@ -1,0 +1,364 @@
+
+\chapter{正则系综}\label{cha:正则系综}
+
+前面我们从对热力学的反思中建立了系综理论的基本原理：以 $\Omega$ 为最优化目标函数，广度性质 $(N,V,E)$ 为决策变量，通过它们之间的依赖关系我们可以得到系统的所有热力学性质。现在，我们要对微正则系综理论进行反思，并找出一个可以弥补它缺点的解决方案。
+
+使用 $(N,V,E)$ 作为描述系统的最优化过程是一件非常自然的事，因为它们都是广度性质，而使用一些和系统大小成正比的量作为系统的状态参量无疑是非常直观的。然而，这样的直观反而使得我们的理论变得形而上，以至于不切实际：例如，我们很少测量一个物理系统的总能量，并且要想固定它也是很不容易的。
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 问题的根源在于：对微正则系综的三个广度决策变量的测量，不具有实际的可行性。}}  
+
+所以，我们希望找到一个容易测量的，并且和能量具有相同内涵的量来等价地替代 $E$ 作为决策变量的地位——此时我们回想起了理论力学中的勒让德变换。所以我们的目标是：找到一个作用于决策变量 $E$ 的勒让德变换，同时目标函数 $\Omega$ 变为一个新的目标函数 $A$ ：
+\[
+    A = E\frac{\partial \Omega}{\partial E} - \Omega
+\]
+此时我们再次回想起热力学公式
+\[
+    dS = \frac{1}{T} dE + \frac{P}{T} dV - \frac{\mu}{T} dN
+\]
+显然，\textcolor{RoyalBlue}{\textbf{\kaishu 温度 $T$ 就是我们要找的变量}}，并且固定一个系统的温度也是可以做到的，因为只需要把系统与一个足够大的大热库耦合即可。随后，再对我们想法的一些调整让它能够和热力学建立联系，我们将会看到：变换完全等价地将最优化问题 (\ref*{equ:optimizeI}) 转换成另一个最优化问题：
+\begin{equation}\label{equ:optimizeII}
+    \begin{split}
+        \min A&(N,V,T)\\
+        \text{s.t.}\sum n_i = &\mathcal{N},\quad T = T_0
+    \end{split}
+\end{equation}
+
+其中 $A$ 就是亥姆霍兹自由能，满足 $A = E - TS$ ，以之为核心的即是 \textcolor{RoyalBlue}{\textbf{\kaishu 正则系综}}。
+
+\section{正则分布最概然方法}\label{sec:正则分布的最概然方法}
+
+下面我们来将前面的反思落到实处，此时有必要将系综理论的基本原理再复述一遍：
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 在单一瞬间同时考虑大量系统，他们全部是给定系统的某种“思维复本”——其特性由与原系统一样的宏观态来表征，但极其自然地处在所有各种可能的微观态中}} \cite{Pathria}。
+
+也就是说，我们考虑的不是“这个系统”，而是无数个“这个系统”所组成的更宏大的集合，但集合的元素具有一些关系，并且可能还共同分配了某个想象中的量，并且这个量的分配方式还决定了每个种类的子集所占的比例。
+
+我们考虑的就是这样一件事：把系统看成正则系综的一个成员，然后，由组成系综的 $\mathcal{N}$ 个相同系统去分配该系综总能量 $\mathcal{E}$ ，进而研究这种分配过程的统计学——也就是计算在任意时刻，发现系统处于由能量 $E_r$ 所表征的状态之一的概率 $P_r$ 究竟有多大。
+
+考虑由分享总能量 $\mathcal{E}$ 的 $\mathcal{N}$ 个全同系统组成的一个系综，令 $E_r$ 表示这系统的能量本征值。倘若 $n_r$ 表示在任意时刻 $t$ 具有能量 $E_r$ 的系统的数目，则这些数必须满足下面这些明显的条件：
+\begin{align}
+    \sum_r n_r&=\mathcal{N} \\
+    \sum_r n_r E_r&=\mathcal{E}=\mathcal{N} U, \quad\text{where}\; U \equiv \frac{\mathcal{E}}{\mathcal{N}}  
+\end{align}
+显然，将 $\mathcal{N}$ 个系统分成 $\{n_0,n_1,\dots\}$ 份，分配方式服从多项分布：
+\begin{equation}
+    W\left\{n_r\right\}=\frac{\mathcal{N} !}{n_{0} ! n_{1} ! n_{2} ! \ldots}
+\end{equation}
+取对数，并引入斯特林近似则有
+\begin{equation}
+    \ln W=\mathcal{N} \ln \mathcal{N}-\sum_r n_r \ln n_r
+\end{equation}
+依照微正则系综的观点，我们要求解的是以下的约束最优化问题：
+\begin{equation}\label{equ:optimizeIII}
+    \begin{split}
+        \max \ln W,&\\
+        \text{s.t.}\sum n_i = \mathcal{N},\quad\sum_r &n_r E_r=\mathcal{E}
+    \end{split}
+\end{equation}
+我们将它转化为约束变分问题。既然要求 $\ln W$ 在 $\{n_r\}$ 这一组条件下取得最大值，那么其变分应当取为 $0$：
+\[
+    \delta(\ln W)=-\sum_r\left(\ln n_r+1\right) \delta n_r = 0
+\]
+并且，这些变分满足条件
+\[
+    \left.\begin{array}{l}
+        \sum_r \delta n_r=0 \\
+        \sum_r^r E_r \delta n_r=0
+        \end{array}\right\}
+\]
+拉格朗日乘子法使得我们可以将约束变分问题转化为无约束变分问题：
+\begin{equation}\label{equ:variational}
+    \sum_r\left\{-\left(\ln n_r+1\right)-\alpha-\beta E_r\right\} \delta n_r=0
+\end{equation}
+所以，当且仅当对每一个 $\delta n_r$ 来说系数都取 $0$ ，才有整体求和为 $0$。所以我们得到
+\begin{equation}
+        \begin{aligned}
+            \ln n_r&=-(\alpha+1)-\beta E_r,\\
+            n_r&=C \exp \left(-\beta E_r\right),
+            \end{aligned}
+\end{equation}
+归一化就有
+\begin{equation}\label{equ:canonicalprobability}
+    P_r = \frac{n_r}{\mathcal{N}}=\frac{\exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}
+\end{equation}
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+    \quad\quad 微正则系综专注于具有同一本征能量的简并微观态，并认为在这些微观态中，没有哪一个是主导，所以引入等概率假设；正则系综则关注具有不同本征能量的各简并集合之间的联系——不同简并集合的大小不同，这些集合之间的比例也有所差异。
+
+    \quad\quad 所以等概率假设与 $e^{\beta E_\nu}$ 并不矛盾，因为一个描述的是简并集合内部的等概率性，一个描述的是这些简并集合之间的比例差异。并且，当我们说出“比例差异”的时候，也就自然地将问题理解为了一个几何概型：具有不同能量的各微观态仍然是等概率的，只是个数不一样。
+\end{justification}
+
+\section{统计量的物理含义}\label{sec:统计量的物理含义}
+
+\subsection{正则系综的研究方法}
+现在我们来赋予各个统计量以一定的物理含义，我们从能量开始。根据正则分布，定义系统的能量 $U$ 是随机变量 $E$ 的系综平均：
+\begin{equation}
+    U=\frac{\sum_r E_r \exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}=-\frac{\partial}{\partial \beta} \ln \left\{\sum_r \exp \left(-\beta E_r\right)\right\}
+\end{equation}
+并回忆那个以最小化亥姆霍兹自由能的热力学公式
+\[
+    \begin{aligned}
+& d A=d U-T d S-S d T=-S d T-P d V+\mu d N \\
+& S=-\left(\frac{\partial A}{\partial T}\right)_{N, V}, \quad P=-\left(\frac{\partial A}{\partial V}\right)_{N, T}, \quad \mu=\left(\frac{\partial A}{\partial N}\right)_{V, T}, \\
+&
+\end{aligned}
+\]
+以及得到它的那个勒让德变换
+\[
+    U=A+T S=A-T\left(\frac{\partial A}{\partial T}\right)_{N, V}=-T^2\left[\frac{\partial}{\partial T}\left(\frac{A}{T}\right)\right]_{N, V}=\left[\frac{\partial(A / T)}{\partial(1 / T)}\right]_{N, V}
+\]
+经过对比，我们可以将统计量与热力学量以这样的方式对应起来：
+\begin{equation}
+    \beta=\frac{1}{k T}, \quad \ln \left\{\sum_r \exp \left(-\beta E_r\right)\right\}=-\frac{A}{k T}
+\end{equation}
+所以我们的最优化目标函数 $A$ 就可以表示为 $(N,V,T)$ 的函数了：
+\begin{equation}
+        A(N, V, T)=-k T \ln Q_N(V, T)
+\end{equation}
+其中 $Q_N(V,T)$ 则称为 \textcolor{RoyalBlue}{\textbf{\kaishu 正则配分函数}}：
+\begin{equation}
+    Q_N(V, T)=\sum_r \exp \left(-E_r / k T\right)
+\end{equation}
+求和遍及所有可能的能量状态。$Q$ 对 $V,T$ 的依赖关系是明显的，而 $Q$ 对粒子数 $N$ 的依赖关系就体现在求和的项数中。然后联用新的热力学关系 $d A= -S d T-P d V+\mu d N $ 就能得到各热力学量的统计诠释，这里不再赘述。
+
+现在，有必要对我们所得的结果做一些评述。在推导的过程中，我们实际上以微正则系综的配容数最大化为出发点，并且微正则系综中最复杂的部分：通过一定的数学方法计算配容数 $\Omega$ 的过程则被更普适的变分方法 (\ref*{equ:variational}) 所替代，所以我们可以放心大胆地宣称： \textcolor{RoyalBlue}{\textbf{\kaishu  正则系综与微正则系综等价。}}
+
+我们给出著名的吉布斯熵公式
+\begin{equation}\label{equ:GibbsS}
+    S=-k\left\langle\ln P_r\right\rangle=-k \sum_r P_r \ln P_r
+\end{equation}
+由此我们可以看到，一个系统的熵竟然与系统的具体性质无关，只与系统在所能处于状态上的概率分布 $P_r$ 有关，换句话说： \textcolor{RoyalBlue}{\textbf{\kaishu 熵是概率密度的函数。}}而关于它的正确性，信息论的证明更加简洁，读者可自行参考。显然，它与微正则系综的熵公式也是自洽的。
+\[
+    S=-k \sum_{r=1}^{\Omega}\left\{\frac{1}{\Omega} \ln \left(\frac{1}{\Omega}\right)\right\}=k \ln \Omega
+\]
+
+\subsection{能量的涨落}
+
+正则系综将能量 $E$ 视为一个取值为 $(0, \infty)$ 的随机变量，看来有必要研究一下能量的方差，也就是能量涨落，这可以通过对 $U$ 的表达式求导来实现：
+\[
+    \begin{aligned}
+\frac{\partial U}{\partial \beta} & =-\frac{\sum_r E_r^2 \exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}+\frac{\left[\sum_r E_r \exp \left(-\beta E_r\right)\right]^2}{\left[\sum_r \exp \left(-\beta E_r\right)\right]^2} \\
+& =-\left\langle E^2\right\rangle+\langle E\rangle^2,
+\end{aligned}
+\]
+故能量的方差 $\text{Var}(E)$ 就是
+\begin{equation}\label{equ:label}
+    \text{Var}(E) \equiv\left\langle E^2\right\rangle-\langle E\rangle^2=-\left(\frac{\partial U}{\partial \beta}\right)=k T^2\left(\frac{\partial U}{\partial T}\right)=k T^2 C_V
+\end{equation}
+概率论能够确定能量相对均值 $U$ 涨落的方差：
+\[
+    \text{Var}\left(\frac{E}{U} \right) = \frac{1}{U^2} \text{Var}(E) = \frac{k T^2 C_V}{U^2} 
+\]
+可见，随者粒子数 $N$ 的增长，它的量级是 $O(N^{-1})$ ，所以我们期望：在 $N \rightarrow \infty$ 时，概率密度的展宽将逐渐减小。为了确认这一点，我们下面来直接研究 $E$ 的概率密度函数 $P(E) = \Omega(E)e^{-\beta E}/Q$ ，其中 $\Omega(E)$ 的含义是对于确定的能量，也就是每一个微正则系综的状态数。
+
+对概率取对数有
+\[
+    \frac{\partial \ln P(E)}{\partial E} = \frac{\partial \ln \Omega (E)}{\partial E} - \beta
+\]
+在最大值处，有偏导数为 $0$ ，所以式中第一项在极值点处取值即为
+\[
+    \left(\frac{\partial \ln \Omega (E)}{\partial E}\right)_{E = U} = \beta
+\]
+所以
+\[
+    \frac{\partial^2 \ln P(E)}{\partial E^2} = \frac{\partial \beta}{\partial E} = 1\bigg/\frac{\partial E}{\partial \beta} = -\frac{1}{\text{Var}E}  = -\frac{1}{\sigma^2_E}
+\]
+那么现在对概率密度的对数在顶点 $E = U$ 处做泰勒展开：
+\[
+    \ln P(E) = \ln P(U) -\frac{(E - U)^2}{2\sigma^2_E}
+\]
+那么概率密度就可以写为 Gauss 分布的形式
+\begin{equation}
+    P(E) = P(U)\exp\left[-\frac{(E - U)^2}{2\sigma^2_E}\right]
+\end{equation}
+显然，这个密度函数在热力学极限下收敛于 $\delta$ 函数。这也表明： \textcolor{RoyalBlue}{\textbf{\kaishu 正则系综 $(NVT)$ 在热力学极限下依概率收敛于微正则系综 $(NVE)$ 。}}
+
+\section{配分函数的性质}\label{sec:配分函数的性质}
+
+自从正则系综被引入后，事情似乎变得简单了起来。现在，我们再次来到了起初使用微正则系综时所到达过的统计力学高峰的半山腰，可以停下休息，并回顾之前的上山路径了。在爬山的过程中，我们证明了微正则系综与正则系综实际上是对同一物理系统的两种等价表述。
+
+然而到目前为止，我们并没有提到系综理论与经典力学对一个系统状态的描述方式：相空间有什么紧密的联系——无论是对理想气体的推导还是正则系综的配分函数的计算过程，我们都只是默认了“求和遍及所有的微观态”这件事，而这些微观态是离散的。 \textcolor{RoyalBlue}{\textbf{\kaishu 那么这样的一个离散集合，与相空间中的点有什么联系呢？}}
+
+\subsection{微观态与相空间}
+
+很自然的，我们期望这样一件事情的发生： \textcolor{RoyalBlue}{\textbf{\kaishu 相空间中一定区域的体积对应于一个微观态，我们要找到“等效于一个微观态”的基本体积$\omega_0$。}}而事实也确实如此，只需要考虑这样一件事：系统代表点所占据的相空间体积为
+\begin{equation}
+    \omega=\int^{\prime} \ldots \int^{\prime}\left(d^{3 N} q d^{3 N} p\right)
+\end{equation}
+而积分区域是在能量 $E$ 的附近，所以
+\[
+    \iiint\limits_{(E-\Delta) \leq \sum_{i=1}^{3 N}\left(p_i^2 / 2 m\right) \leq E \quad 2 m} d^{3 N} p=\quad \iiint\limits_{(E-\Delta) \leq \sum_{i=1}^{3 N} y_i^2 \leq 2 m E
+    } d^{3 N} y
+\]
+换到球坐标系，容易看出这是 $3N$ 维球壳的体积，其结果为
+\[
+    \Delta\left(\frac{m}{2 E}\right)^{1 / 2}\left\{\frac{2 \pi^{3 N / 2}}{[(3 N / 2)-1] !}(2 m E)^{(3 N-1) / 2}\right\}
+\]
+由此得出
+\[
+    \omega \simeq \frac{\Delta}{E} V^N \frac{(2 \pi m E)^{3 N / 2}}{[(3 N / 2)-1] !}
+\]
+所以渐进的有
+\begin{equation}
+    (\omega / \Gamma)_{\text {asymp }} \equiv \omega_0=h^{3 N}
+\end{equation}
+更一般地说， \textcolor{RoyalBlue}{\textbf{\kaishu 倘若系统有 $\mathcal{N}$ 个自由度，则所期望的转换系数为 $\omega_0 = h^{\mathcal{N}}$ 。}}
+
+对于量子系统，由于不确定性原理，我们再也无法使用经典的相空间来描述系统的状态了——这看起来与我们“使用相空间中的一定区域来代表一个量子态”的想法不谋而合： \textcolor{RoyalBlue}{\textbf{\kaishu  在相空间任一点 $(q,p)$ 的周围，存在着一定的体积，在这个体积内不可能准确地确定代表点的位置。换句话说，这些相体积可以和系统的量子态一一对应。}}而 Bohr 从这里出发，建立了旧量子论的一个重要假设：角动量量子化。
+
+通过简单的计算，对于一维量子系统我们可以同样说明，与一个量子态对应的“相空间体积”是 $\omega_0 = 2\pi \hbar = h$ 。
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+\quad\quad 事实上， Bohr 氢原子模型中的角动量量子化实际上是作用变量量子化，它发轫自经典力学的作用变量-角变量理论——周期运动的系统总是可以通过一定的正则变换，从而使得新哈密顿函数依赖于作用变量 $J$ 与角变量 $\Theta$ ：$H = H(J,\Theta)$ ，其中 $J$ 是守恒量，它的定义为
+\[
+    J = \frac{1}{2\pi} \oint pdq
+\]
+环路积分的含义是针对一个周期。此时可以证明： $\Theta$ 则总是随着时间线性变化，并且在一个周期内的变化量为 $2\pi$ ：
+\[
+    \Theta = \Theta_0 + 2\pi \times \frac{t}{\tau} 
+\]
+而 Bohr 提出，周期运动的电子只能取一些分立的值作为作用变量。所以，这里“角动量的量子化”实际上是作用变量的量子化，只是为了让学界容易接受而使用角动量做了等价表述。
+\end{justification}
+
+
+
+现在，我们发现自己处于这样一种境地： \textcolor{RoyalBlue}{\textbf{\kaishu 既然相空间中确定的体积对应于一个微观态，那么对微观态的求和则可以转化为对正则变量 $(q,p)$ 的积分，而且这个转换系数是常数！}}这无疑会为计算正则配分函数提供一种新的视角和随之而来的新方法。作为一个有意义的暗示，如果我们能对系统哈密顿量进行变量分离，那么对相空间的积分也会是变量分离的。
+
+哈密顿函数的变量分离，说明被分离的系统互不干扰，也即是说： \textcolor{RoyalBlue}{\textbf{\kaishu 大系统可以分解为若干无关联系统的加和。}} 
+
+\subsection{连续形式的配分函数}
+\textcolor{RoyalBlue}{\textbf{\kaishu 为了让这种求和-积分的转变更加丝滑，先来考虑配分函数的连续形式。}}
+
+回想在研究能量涨落时，我们不假思索地将概率密度写为了 $P(E) = \Omega(E)e^{-\beta E}/Q$ ， $\Omega(E)$ 像是能量的简并因子。我们就来完整地对它进行讨论。
+
+多数情况下，一个物理系统的能级是简并的，记能级 $E_i$ 的简并度为 $g_i$ ，则配分函数可写为
+\begin{equation}
+    Q_N(V, T)=\sum_i g_i \exp \left(-\beta E_i\right)
+\end{equation}
+由于每个简并能级中的微观态都是等概率的，所以这只是将数钱的方式从“按顺序数”换到了“按面值数”而已。系统处于具有能量 $E_i$ 的任何状态的概率 $P_i$ 的相应表达式就是
+\begin{equation}
+    P_i=\frac{g_i \exp \left(-\beta E_i\right)}{\sum_i g_i \exp \left(-\beta E_i\right)}
+\end{equation}
+系统的能量在热力学极限下趋于连续，所以将概率质量函数换为概率密度函数，再做一番归一化，我们就得到
+\begin{equation}
+    P(E) d E=\frac{\exp (-\beta E) g(E) d E}{\int_0^{\infty} \exp (-\beta E) g(E) d E} .
+\end{equation}
+在这种情形下，配分函数也从求和转变为了积分
+\begin{equation}
+    Q_N(V, T)=\int_0^{\infty} e^{-\beta E} g(E) d E
+\end{equation}
+由于 $\beta>0$ ，所以我们总是可以认为配分函数 $Q$ 是能态密度 $g$ 的 \textcolor{RoyalBlue}{\textbf{\kaishu 拉普拉斯变换}} ，其逆变换公式为
+\begin{equation}
+    g(E)=\frac{1}{2 \pi i} \int_{\beta^{\prime}-i \infty}^{\beta^{\prime}+i \infty} e^{\beta E} Q(\beta) d \beta \quad\left(\beta^{\prime}>0\right)
+\end{equation}
+积分路径沿着平行于虚轴的右边进行，即沿着直线 $\text{Re}\beta = \beta' >0$ 。当然，只要积分收敛，路径可以连续变形。
+
+也许现在看来，这样做的价值仅是通过拉普拉斯变换的唯一性说明了态密度和配分函数的等价性。但的确有些场合，对于给定系统配分函数的计算，以及随后进行其态密度的计算，确实变得十分简单，而直接从第一性原理出发来进行态密度的计算却是相当复杂的，例如相对论气体。
+
+为了这一方法的使用更加顺畅（不至于积不出来），这里有一个相关的积分公式：
+\[
+    \frac{1}{2 \pi i} \int_{s^{\prime}-i \infty}^{s^{\prime}+i \infty} \frac{e^{s x}}{s^{n+1}} d s=\left\{\begin{array}{lll}
+        \frac{x^n}{n !} & \text { for } \quad x \geq 0 \\
+        0 & \text { for } \quad x \leq 0
+        \end{array}\right.
+\]
+
+\subsection{无关联系统}
+\textcolor{RoyalBlue}{\textbf{\kaishu 现在，我们将从配分函数的性质出发，将统计力学推上巅峰。}}
+
+前面讲到，我们希望将相空间的表述形式也囊括进系综理论的范围之内——因为系综是相空间中的一定区域。而物理量 $f(q,p,t)$ 在这一区域上的平均值则是
+\begin{equation}
+    \langle f\rangle=\frac{\int f(q, p) \rho(q, p) d^{3 N} q d^{3 N} p}{\int \rho(q, p) d^{3 N} q d^{3 N} p}
+\end{equation}
+其中函数 $\rho(q,p)$ 则是相空间一点附近的代表点密度，是在相点 $(q,p)$ 附近找到一个代表点的概率的一种量度。而我们早已说明：在正则系综里，
+\begin{equation}
+    \rho(q, p) \propto \exp \{-\beta H(q, p)\}
+\end{equation}
+所以 $\langle f \rangle$ 可以取为
+\begin{equation}
+    \langle f\rangle=\frac{\int f(q, p) \exp (-\beta H) d \omega}{\int \exp (-\beta H) d \omega}
+\end{equation}
+该表达式的分母与配分函数直接相关。根据我们已经得到的微观态与相体积的转换关系：在相空间中的体积元 $d\omega$ 对应于系统的
+\[
+    \frac{d\omega}{h^{3N}} 
+\]
+这么多的量子态，因而配分函数的精确表达式就是
+\begin{equation}\label{equ:phaseintegrate}
+    Q_N(V, T)=\frac{1}{ h^{3 N}} \int e^{-\beta H(q, p)} d \omega\quad\text{or}\quad Q_N(V, T)=\frac{1}{N! h^{3 N}} \int e^{-\beta H(q, p)} d \omega
+\end{equation}
+有时视情况需要再除以一个不可分辨因子 $N!$ ，但这并不会对我们的思路造成什么影响。
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 这是变量代换的一小步，但却是统计力学的一大步。}}它的一个显著的优点前面已经提到过了，即如果系统可以分解为若干无关联子系统，则哈密顿函数变量分离，配分函数的积分计算也变量分离。 \textcolor{RoyalBlue}{\textbf{\kaishu  而积分计算的分离导致系统总配分函数是各个子配分函数的乘积：}}
+\begin{equation}\label{equ:yinzihua}
+    Q_N(V, T)=\left[Q_1(V, T)\right]^N \quad\text{or}\quad Q_N(V, T)=\frac{1}{N !}\left[Q_1(V, T)\right]^N
+\end{equation}
+这也叫做 \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数的因子化}}。显然，即使分子具有内部自由度，这个情况也不会发生任何改变。
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+    \quad\quad 首先，这和概率论是一致的。因为配分函数的因子化其实相当于随机变量的独立性：$p(X = x, Y = y) = p(X = x)p(Y = y)$ ，所以条件期望满足 $E(X) = E[YE(X|Y = y)] = E(X)E(Y)$ 。
+
+    \quad\quad 其次，这和热力学是一致的。由于热力学量均是对配分函数的对数求偏导，而导数算符的线性性保证了无关联系统热力学量的加和性。
+\end{justification}
+
+这时有必要对本节的历程做一个简单的评述。我们从一个简单的想法（系综求和转换为相空间的积分）出发，推导出了宏观配分函数的等价形式 (\ref*{equ:phaseintegrate}) 式，它还可以被无关联性分解为 (\ref*{equ:yinzihua}) 的形式，即单个粒子的微观性质。所以，我们可以自豪的宣布： \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数，连同以之为巅峰的统计力学，是宏观与微观相互联系的桥梁。}}
+
+\section{实例}
+
+前面的讨论已经使我们站上了统计力学的巅峰。现在可以下山了。在下山的过程中，有必要给物理学一点小小的统计震撼。
+
+\subsection{再论理想气体状态方程}
+
+作为一个简单例子，我们先来讨论理想气体状态方程：\textcolor{RoyalBlue}{\textbf{\kaishu $PV = NkT$ 是不可区分子系统无关联性的直接结果。}}
+
+首先，这样一个系统的配分函数可以写为
+\[
+    Q = \frac{1}{N!} Q_1^N
+\]
+引入斯特林近似，易得亥姆霍兹自由能可以写作如下形式
+\[
+    A = -kT\ln Q = -kT N \ln Q_1 + kT(N\ln N - N)
+\]
+联用热力学公式， $P$ 的表达式为
+\[
+    P = - \frac{\partial A}{\partial V} = NkT \frac{\partial \ln Q_1}{\partial V}
+\]
+然而，回顾(\ref*{intuition})一节，在那里我们通过独立性给出了无相互作用粒子的配容数对体积的依赖关系。其实配分函数对体积的依赖关系也是一样的，只要单粒子哈密顿量只依赖于正则动量 $\bm{p}$ 即可：
+\[
+    Q_1 = \frac{1}{1!\times h^3}\int dq_1dq_2dq_3\int e^{H(p_1,p_2,p_3)}\,dp_1dp_2dp_3  = \frac{V}{h^3} \int e^{H(p_1,p_2,p_3)}\,dp_1dp_2dp_3
+\]
+所以 $Q_1 \propto V$ ，则
+\[
+    P = NkT \frac{\partial \ln Q_1}{\partial V} = NkT \times \frac{1}{V} 
+\]
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+    \quad\quad 我们反复地以理想气体为例，通过不同的方法得到了这一状态方程。为了彻底地理解这一等式，不妨放弃压强、体积、温度等量的具体或是力学的、或是感性的实际意义，而上升为最优化问题的决策变量和偏导数。这时，无关联性要求
+    \[
+        -\left(\frac{\partial A}{\partial V}\right)_{N,T} V = Nk \bigg/ \left(\frac{\partial S}{\partial E} \right)_{N,V}
+    \]
+\end{justification}
+
+\subsection{经典谐振子}
+
+\subsection{相对论理想气体}
+
+\section{总结}\label{sec:正则系综总结}
+
+正则系综作为微正则系综的等价方法，极大简化了对物理系统的研究与计算。它以简并度 $g(E)$ 整合了具有相同能量的各个简并微观态，并通过拉普拉斯变换后的配分函数 $Q_N(V,T)$ 为核心，与亥姆霍兹自由能建立联系。不仅如此，我们看到这样的配分函数可以因子化，只要系统的哈密顿量变量分离。
+
+\textcolor{RoyalBlue}{\textbf{\kaishu 总之，正则系综开辟了通向统计力学顶峰的另一条道路。}}
+
+\begin{understanding}{\kaishu 对正则系综的总结}
+\kaishu \fontsize{11pt}{16pt}
+使用正则系综处理问题可以遵循这样的顺序：
+\begin{enumerate}
+    \item 正则系综的核心量是配分函数 $Q$
+    \item 直接求和，或者转换为相空间的积分，得到 $Q_N(V,T)$
+    \item $S = -k_B \sum P_i \ln P_i$
+    \item 联用热力学公式 $dA = -SdT - PdV + \mu dN$，偏导数对应相等
+\end{enumerate}
+
+\end{understanding}

@@ -1,0 +1,114 @@
+\usepackage[strict]{changepage}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{fancyhdr}
+
+% ------------------------ 数学公式必备 ------------------------
+\usepackage{amsmath}
+\usepackage{newtxtext}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{bm}
+
+% ------------------------ 页边距排版 ------------------------
+\usepackage{geometry}
+\geometry{a4paper,left = 2.5cm, right = 2.5cm, top = 2.5cm, bottom = 2.5cm}
+
+
+% ------------------------ 自定义颜色 ------------------------
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+\definecolor{examplecolor}{rgb}{0.77,0.72,0.65} % 莫兰迪棕色
+\definecolor{blueshade}{rgb}{0.95,0.95,1} % 蓝色文本框，竖线颜色设为 RoyalBlue
+\definecolor{greenshade}{rgb}{0.90,0.99,0.91} % 绿色文本框，竖线颜色设为 Green
+\definecolor{redshade}{rgb}{1.00,0.90,0.90}% 红色文本框，竖线颜色设为 LightCoral
+\definecolor{brownshade}{rgb}{0.99,0.97,0.93} % 棕色文本框，竖线颜色设为 BurlyWood
+
+
+% ------------------------ 文本框 ------------------------
+\usepackage{framed}
+
+
+% 橙色文本框 
+\newtcolorbox{justification}[2][]
+{enhanced,breakable,
+left=12pt,right=12pt,% 左右边距
+% fonttitle=\bfseries, % 可以设置标题是否粗体
+coltitle=white, % 标题字体颜色
+colbacktitle=BurntOrange, % 标题背景颜色
+attach boxed title to top left={yshifttext=-1mm},
+boxed title style={skin=enhancedfirst jigsaw,arc=1mm,bottom=0mm,boxrule=0mm},
+boxrule=1pt, % 边框线宽
+%
+colback=white, % 文本框背景颜色
+colframe=BurntOrange, % 框线颜色
+%
+sharp corners=northwest,
+% drop fuzzy shadow, % 可以选择是否设置阴影效果
+title=\vspace{3mm}#2,
+arc=1mm,
+#1}%
+
+
+% 蓝色文本框
+\newtcolorbox{understanding}[2][]
+{enhanced,breakable,
+left=12pt,right=12pt,% 左右边距
+% fonttitle=\bfseries, % 可以设置标题是否粗体
+coltitle=white, % 标题字体颜色
+colbacktitle=RoyalBlue, % 标题背景颜色
+attach boxed title to top left={yshifttext=-1mm},
+boxed title style={skin=enhancedfirst jigsaw,arc=1mm,bottom=0mm,boxrule=0mm},
+boxrule=1pt, % 边框线宽
+%
+colback=white, % 文本框背景颜色
+colframe=RoyalBlue, % 框线颜色
+%
+sharp corners=northwest,
+% drop fuzzy shadow, % 可以选择是否设置阴影效果
+title=\vspace{3mm}#2,
+arc=1mm,
+#1}%
+
+
+% ------------------- 参考文献使用 BibTeX + natbib 宏包 -------------------
+% 顺序编码制
+% \usepackage[sort]{natbib}
+% \bibliographystyle{ustcthesis-numerical}
+\usepackage{cite}
+\bibliographystyle{plain}
+
+
+% ------------------------ 超链接 ------------------------
+\usepackage[colorlinks,linkcolor = Black]{hyperref}
+\hypersetup{
+colorlinks = true,
+linkcolor = Black,
+filecolor = Black,
+bookmarks = true,
+urlcolor = RoyalBlue,
+citecolor = cyan,
+bookmarksopen = false,
+pdfpagemode = FullScreen,
+pdfstartview = Fit
+}
+
+% ------------------------ 自定义命令 ------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\text{E}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\0}{\boldsymbol{0}}
+\newcommand{\setparDis}{\setlength{\parskip} {0.3cm} }
+
+% ------------------------ 其他设置 ------------------------
+\CTEXsetup[format={\bfseries}]{section}
+\CTEXsetup[format={\bfseries}]{subsection}
+
+\linespread{1.55}
