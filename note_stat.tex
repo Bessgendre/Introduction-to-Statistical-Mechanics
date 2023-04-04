@@ -178,7 +178,7 @@ pdfstartview = Fit
     %    Title
     %------------------------------------------------------------
 
-    {\Huge Notes for Statistical Mechanics}
+    {\Huge Statistical Mechanics}
 
     \vspace{0.025\textheight}   % Whitespace between the title and short horizontal rule
 
@@ -217,7 +217,7 @@ pdfstartview = Fit
 \pagebreak
 \fontsize{12pt}{16pt}
 
-\chapter{前言}
+\chapter{前言}\label{cha:前言}
 
 统计力学将热力学问题归结于 \textcolor{RoyalBlue}{\textbf{\kaishu 概率与统计推断}}，以等概率假设与遍历性假设为基础，建立起一整套关于微观-宏观相互联系的桥梁。通过一定的统计推断，我们可以从众多自由度中提取出一些重要信息，而忽视一些细节，或者无关紧要的部分\cite{suyu}。
 
@@ -243,7 +243,7 @@ pdfstartview = Fit
 \pagebreak 
 
 
-\chapter{系综理论的基本原理}
+\chapter{系综理论的基本原理}\label{cha:系综理论的基本原理}
 
 经典力学通过相空间中的点 $(q,p)$ 来描述一个系统的某个状态。它们的演化满足正则方程
 \begin{align*}
@@ -256,7 +256,7 @@ pdfstartview = Fit
 
 现在，这一大群具有与宏观态相同宏观性质的微观态随着时间的变化都会在相空间内画出一条条轨迹，同时这个集合的位置和形状也会随着时间不断变化。和在力学中所遵循的思路相似，我们希望找出这一演化的运动积分，而 \textcolor{RoyalBlue}{\textbf{\kaishu 刘维尔定理}} 则能完成这个任务。
 
-\section{刘维尔定理}
+\section{刘维尔定理}\label{sec:刘维尔定理}
 
 虽然每一个宏观态统摄下的微观态都具有相同的宏观性质，但它们在系综所包括的区域内的分布可能不是均匀的，有疏密之分。这驱使我们定义 \textcolor{RoyalBlue}{\textbf{\kaishu 相点密度}} $\rho(q,p,t)$ 如下：
 \begin{equation}
@@ -299,7 +299,7 @@ pdfstartview = Fit
     这个场穿过了系综内所有的相点，所有的相点都沿着这个场进行运动，那么这个场的对象当然就是整个系综了。
     \end{justification}
 
-\section{分布函数}
+\section{分布函数}\label{sec:分布函数}
 
 从刘维尔定理可以知道，既然分布函数 $\rho$ 是一个物理量，它必然是变量 $q,p,t$ 的函数，并且以某一点所代表的子系统在运动时保持不变。所以，它应当可以被写作系统所有独立运动积分的一些组合。
 
@@ -332,7 +332,7 @@ pdfstartview = Fit
 
 
 
-\section{微正则系综}
+\section{微正则系综}\label{sec:微正则系综}
 
 \subsection{对热力学的反思}
 
@@ -413,7 +413,7 @@ pdfstartview = Fit
 
 
 
-\section{经典理想气体}
+\section{经典理想气体}\label{sec:经典理想气体}
 
 作为一个爬山的例子，我们现在来推导经典理想气体所满足的\textcolor{RoyalBlue}{\textbf{\kaishu 能量均分定理}} 和 \textcolor{RoyalBlue}{\textbf{\kaishu 理想气体状态方程}}：
 \begin{align*}
@@ -502,7 +502,7 @@ pdfstartview = Fit
     \quad\quad 不过，对于不可分辨粒子设定的合理性，则需要追溯至吉布斯佯谬中来。若认为组成理想气体的各个粒子是可以标号的，首先便会导致推出的熵公式不满足加和性。其次，在考虑同种粒子在同一压强下的混合时，也会推出此时的混合熵正定的矛盾\cite{Pathria}。基于逻辑上的考虑，认为这些粒子具有全同性会使得我们的理论自洽。
 \end{justification}
 
-\section{总结}
+\section{总结}\label{sec:微正则总结}
 
 微正则系综以其简单的最优化世界观为基础，帮助我们爬上了统计力学的半山腰。它以配容数 $\Omega $ 及其对数 $S = k_B \ln \Omega$ 为第一性的量，给了热力学一个完整的逻辑解释。对于经典理想气体，为了计算以 $(N,V,E)$ 为标记的宏观态所能处于的可能的微观态数目，根据粒子能量所可能取值的特点，我们选择将微观态数目与 $3N$ 维状态空间中的球体进行对应。而热力学极限让我们可以合法地使用微分代替寻找方程的整数解，从而得到 $\ln \Omega$ 的渐进表达式。对于量子谐振子系统，则可以使用排列组合直接得到 $\Omega$ 的显式表达式。
 
@@ -522,9 +522,9 @@ pdfstartview = Fit
 
 \end{understanding}
 
-\chapter{正则系综}
+\chapter{正则系综}\label{cha:正则系综}
 
-前面我们从对热力学的反思中建立了系综理论的基本原理，以 $\Omega$ 为最优化函数， $(N,V,E)$ 为决策变量，通过它们之间的依赖关系我们可以得到系统的所有热力学性质。现在，我们要对微正则系综理论进行反思，并找出一个可以弥补它缺点的解决方案。
+前面我们从对热力学的反思中建立了系综理论的基本原理：以 $\Omega$ 为最优化目标函数，广度性质 $(N,V,E)$ 为决策变量，通过它们之间的依赖关系我们可以得到系统的所有热力学性质。现在，我们要对微正则系综理论进行反思，并找出一个可以弥补它缺点的解决方案。
 
 使用 $(N,V,E)$ 作为描述系统的最优化过程是一件非常自然的事，因为它们都是广度性质，而使用一些和系统大小成正比的量作为系统的状态参量无疑是非常直观的。然而，这样的直观反而使得我们的理论变得形而上，以至于不切实际：例如，我们很少测量一个物理系统的总能量，并且要想固定它也是很不容易的。
 
@@ -548,7 +548,7 @@ pdfstartview = Fit
 
 其中 $A$ 就是亥姆霍兹自由能，满足 $A = E - TS$ ，以之为核心的即是 \textcolor{RoyalBlue}{\textbf{\kaishu 正则系综}}。
 
-\section{正则分布最概然方法}
+\section{正则分布最概然方法}\label{sec:正则分布的最概然方法}
 
 下面我们来将前面的反思落到实处，此时有必要将系综理论的基本原理再复述一遍：
 
@@ -612,7 +612,7 @@ pdfstartview = Fit
     \quad\quad 所以等概率假设与 $e^{\beta E_\nu}$ 并不矛盾，因为一个描述的是简并集合内部的等概率性，一个描述的是这些简并集合之间的比例差异。并且，当我们说出“比例差异”的时候，也就自然地将问题理解为了一个几何概型：具有不同能量的各微观态仍然是等概率的，只是个数不一样。
 \end{justification}
 
-\section{统计量的物理含义}
+\section{统计量的物理含义}\label{sec:统计量的物理含义}
 
 \subsection{正则系综的研究方法}
 现在我们来赋予各个统计量以一定的物理含义，我们从能量开始。根据正则分布，定义系统的能量 $U$ 是随机变量 $E$ 的系综平均：
@@ -697,7 +697,7 @@ pdfstartview = Fit
 \end{equation}
 显然，这个密度函数在热力学极限下收敛于 $\delta$ 函数。这也表明： \textcolor{RoyalBlue}{\textbf{\kaishu 正则系综 $(NVT)$ 在热力学极限下依概率收敛于微正则系综 $(NVE)$ 。}}
 
-\section{配分函数的性质}
+\section{配分函数的性质}\label{sec:配分函数的性质}
 
 自从正则系综被引入后，事情似乎变得简单了起来。现在，我们再次来到了起初使用微正则系综时所到达过的统计力学高峰的半山腰，可以停下休息，并回顾之前的上山路径了。在爬山的过程中，我们证明了微正则系综与正则系综实际上是对同一物理系统的两种等价表述。
 
@@ -787,6 +787,7 @@ pdfstartview = Fit
         0 & \text { for } \quad x \leq 0
         \end{array}\right.
 \]
+
 \subsection{无关联系统}
 \textcolor{RoyalBlue}{\textbf{\kaishu 现在，我们将从配分函数的性质出发，将统计力学推上巅峰。}}
 
@@ -807,13 +808,13 @@ pdfstartview = Fit
     \frac{d\omega}{h^{3N}} 
 \]
 这么多的量子态，因而配分函数的精确表达式就是
-\begin{equation}
-    Q_N(V, T)=\frac{1}{ h^{3 N}} \int e^{-\beta H(q, p)} d \omega
+\begin{equation}\label{equ:phaseintegrate}
+    Q_N(V, T)=\frac{1}{ h^{3 N}} \int e^{-\beta H(q, p)} d \omega\quad\text{or}\quad Q_N(V, T)=\frac{1}{N! h^{3 N}} \int e^{-\beta H(q, p)} d \omega
 \end{equation}
 有时视情况需要再除以一个不可分辨因子 $N!$ ，但这并不会对我们的思路造成什么影响。
 
 \textcolor{RoyalBlue}{\textbf{\kaishu 这是变量代换的一小步，但却是统计力学的一大步。}}它的一个显著的优点前面已经提到过了，即如果系统可以分解为若干无关联子系统，则哈密顿函数变量分离，配分函数的积分计算也变量分离。 \textcolor{RoyalBlue}{\textbf{\kaishu  而积分计算的分离导致系统总配分函数是各个子配分函数的乘积：}}
-\begin{equation}
+\begin{equation}\label{equ:yinzihua}
     Q_N(V, T)=\left[Q_1(V, T)\right]^N \quad\text{or}\quad Q_N(V, T)=\frac{1}{N !}\left[Q_1(V, T)\right]^N
 \end{equation}
 这也叫做 \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数的因子化}}。显然，即使分子具有内部自由度，这个情况也不会发生任何改变。
@@ -824,6 +825,14 @@ pdfstartview = Fit
 
     \quad\quad 其次，这和热力学是一致的。由于热力学量均是对配分函数的对数求偏导，而导数算符的线性性保证了无关联系统热力学量的加和性。
 \end{justification}
+
+这时有必要对本节的历程做一个简单的评述。我们从一个简单的想法（系综求和转换为相空间的积分）出发，推导出了宏观配分函数的等价形式 (\ref*{equ:phaseintegrate}) 式，它还可以被无关联性分解为 (\ref*{equ:yinzihua}) 的形式，即单个粒子的微观性质。所以，我们可以自豪的宣布： \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数，连同以之为巅峰的统计力学，是宏观与微观相互联系的桥梁。}}
+
+\section{实例}
+
+前面的讨论已经使我们站上了统计力学的巅峰。现在可以下山了。在下山的过程中，有必要给物理学一点小小的统计震撼。
+
+\subsection{再论理想气体状态方程}
 
 作为一个简单例子，我们先来讨论理想气体状态方程：\textcolor{RoyalBlue}{\textbf{\kaishu $PV = NkT$ 是不可区分子系统无关联性的直接结果。}}
 
@@ -855,11 +864,13 @@ pdfstartview = Fit
     \]
 \end{justification}
 
-同样的，我们可以使用这种方法来考虑经典理想气体与经典谐振子，根据子系统之间的无关联性，只需要计算单粒子配分函数即可。至于相对论理想气体与量子谐振子系统的配分函数，就留给读者自行完成。
+\subsection{经典谐振子}
 
-\section{总结}
+\subsection{相对论理想气体}
 
-正则系综作为微正则系综的等价方法，极大简化了对物理系统的研究与计算。它以简并度 $g(E)$ 整合了具有相同能量的各个简并微观态，并通过拉普拉斯变换后的配分函数 $Q_N(V,T)$ 为核心，与亥姆霍兹自由能建立联系。不仅如此，我们看到这样的配分函数可以因子化，只要系统的哈密顿量变量分离，而这意味着整个系统是无关联系统的简单加和。
+\section{总结}\label{sec:正则系综总结}
+
+正则系综作为微正则系综的等价方法，极大简化了对物理系统的研究与计算。它以简并度 $g(E)$ 整合了具有相同能量的各个简并微观态，并通过拉普拉斯变换后的配分函数 $Q_N(V,T)$ 为核心，与亥姆霍兹自由能建立联系。不仅如此，我们看到这样的配分函数可以因子化，只要系统的哈密顿量变量分离。
 
 \textcolor{RoyalBlue}{\textbf{\kaishu 总之，正则系综开辟了通向统计力学顶峰的另一条道路。}}
 
@@ -875,7 +886,7 @@ pdfstartview = Fit
 
 \end{understanding}
 
-\chapter{巨正则系综}
+\chapter{巨正则系综}\label{cha:巨正则系综}
 
 在上一章中，我们基于微正则系综 $(N,V,E)$ 的三个广度决策变量的测量没有实际可行性的考虑，首先对能量 $E$ 通过勒让德变换将其等价转换为了熵对能量的导数、也就是强度量温度 $T$ ，并将使用 $(N,V,T)$ 作为决策变量的系综称为正则系综。这种理论处理方案的有效性，从已经讨论过的许多例子就可以看得很清楚。然而，对于一些物理和化学问题，正则系综表述形式的适用性毕竟还是有所限制的——不仅系统的能量难以直接测量得到，粒子数目 $N$ 亦是如此。
 
@@ -890,11 +901,11 @@ pdfstartview = Fit
 
 
 
-\section{总结}
+\section{总结}\label{sec:巨正则总结}
 
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
-    \quad\quad 似乎我们的理论在巨正则系综这里走到了尽头，但是不要忘记：最开始的三个广度性质并不一定要选择 $(N,V,E)$ ，因为广度性质的背后，是系统的独立可加运动积分，而这样的可加运动积分一共有七个：能量、动量的三个分量以及角动量的三个分量。所以在原则上，我们完全可以选择可加运动积分的线性组合作为描述系统的状态参量，也就是最优化问题的决策变量。
+    \quad\quad 似乎我们的理论在巨正则系综这里走到了尽头，但是不要忘记：最开始的三个广度性质并不一定要选择 $(N,V,E)$ ，因为广度性质的背后，是系统的独立可加运动积分，而这样的可加运动积分一共有七个：能量、动量的三个分量以及角动量的三个分量（参见(\ref*{sec:分布函数})节）。所以在原则上，我们完全可以选择可加运动积分的线性组合作为描述系统的状态参量，也就是最优化问题的决策变量。
 
     \quad\quad 力学系统运动积分是由哈密顿函数确定的，但哈密顿力学本身并不局限于物理。它对称共轭的形式使得人们可以将一些本来和力学相距甚远的问题（比如捕食者-猎物系统中种群数量随时间的变化）通过合适的变换统一在哈密顿体系下。
     
@@ -903,7 +914,7 @@ pdfstartview = Fit
 
     
 \chapter{附录}
-\section{无穷小正则变换的行列式的绝对值等于 1}
+\section{无穷小正则变换行列式的绝对值等于 1}
 将系统的状态参量 $(q_i,p_i), i = 1,2,\dots n$ 统一表达为 $\xi_\alpha, \alpha = 1,2,\dots 2n$ ，其中前一半是坐标 $q$ ，后一半是动量 $p$ 。引入求和约定，则经典 Poisson 括号可以写为
 \[
     [f, g] = \frac{\partial f}{\partial \xi_\alpha}\Omega_{\alpha\beta}\frac{\partial g}{\partial \xi_\beta}
@@ -918,10 +929,10 @@ pdfstartview = Fit
 设正则变换将 $\left \{ \xi \right \}$ 变换为 $\left \{ \xi’ \right \}$ ，雅可比矩阵 $M$ 应为
 \[
     M = \begin{bmatrix}
-        \frac{\partial \xi_1'}{\partial \xi_1} & \frac{\partial \xi_1'}{\partial \xi_2} & \dots  & \frac{\partial \xi_1'}{\partial \xi_{2n}} \\
-        \frac{\partial \xi_2'}{\partial \xi_1} & \frac{\partial \xi_2'}{\partial \xi_2} & \dots  & \frac{\partial \xi_2'}{\partial \xi_{2n}} \\
+        \frac{\partial \xi_1'}{\partial \xi_1} & \frac{\partial \xi_1'}{\partial \xi_2} & \cdots  & \frac{\partial \xi_1'}{\partial \xi_{2n}} \\
+        \frac{\partial \xi_2'}{\partial \xi_1} & \frac{\partial \xi_2'}{\partial \xi_2} & \cdots  & \frac{\partial \xi_2'}{\partial \xi_{2n}} \\
         \vdots & \vdots &  & \vdots\\
-        \frac{\partial \xi_{2n}'}{\partial \xi_1} & \frac{\partial \xi_{2n}'}{\partial \xi_2} & \dots  & \frac{\partial \xi_{2n}'}{\partial \xi_{2n}} \\
+        \frac{\partial \xi_{2n}'}{\partial \xi_1} & \frac{\partial \xi_{2n}'}{\partial \xi_2} & \cdots  & \frac{\partial \xi_{2n}'}{\partial \xi_{2n}} \\
     \end{bmatrix}_{2n\times 2n}
 \]
 由线性代数知识可知，$\text{det}(M\Omega M^T) = \text{det}(M)^2 \text{det}(\Omega) = - \text{det}(M)^2$ ，同时它又可以写为
@@ -933,6 +944,8 @@ pdfstartview = Fit
     &= \Omega_{ij}
 \end{align*}
 最后一个等式用到了正则变换的基本 Poisson 括号不变性。故 $\text{det}(M)^2 = 1$ ，证明完毕。
+
+根据系统演化的连续性，我们还可以说明：对于系统经历的每一个无穷小变换的Jacobi矩阵，其行列式保持同号。
     
     
 \bibliographystyle{plain}
