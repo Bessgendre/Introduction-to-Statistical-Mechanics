@@ -258,12 +258,12 @@
 也许现在看来，这样做的价值仅是通过拉普拉斯变换的唯一性说明了态密度和配分函数的等价性。但的确有些场合，对于给定系统配分函数的计算，以及随后进行其态密度的计算，确实变得十分简单，而直接从第一性原理出发来进行态密度的计算却是相当复杂的，例如相对论气体。
 
 为了这一方法的使用更加顺畅（不至于积不出来），这里有一个相关的积分公式：
-\[
+\begin{equation}\label{equ:Laplace}
     \frac{1}{2 \pi i} \int_{s^{\prime}-i \infty}^{s^{\prime}+i \infty} \frac{e^{s x}}{s^{n+1}} d s=\left\{\begin{array}{lll}
         \frac{x^n}{n !} & \text { for } \quad x \geq 0 \\
         0 & \text { for } \quad x \leq 0
         \end{array}\right.
-\]
+\end{equation}
 
 \subsection{无关联系统}
 \textcolor{RoyalBlue}{\textbf{\kaishu 现在，我们将从配分函数的性质出发，将统计力学推上巅峰。}}
@@ -370,13 +370,94 @@
 考虑一个整体静止的闭合系统，现在假设温度可以是负的，那么熵就会随着括号内量的减小而增大。但由于熵是自发增大的，所以为了保持总动量不变，物体将会自发瓦解，相互飞散，以使得每一个括号内的数值都更小。所以，在 $T < 0$ 的情形下，根本不可能有平衡物体存在。
 \end{justification}
 
+\subsection{谐振子系统}
 
+\textcolor{RoyalBlue}{\textbf{\kaishu 先来看经典谐振子。}}哈密顿量如下：
+\begin{equation}
+    H\left(q_i, p_i\right)=\frac{1}{2} m \omega^2 q_i^2+\frac{1}{2 m} p_i^2 \quad(i=1, \ldots, N)
+\end{equation}
+由于粒子是无关联的，所以单粒子配分函数
+\begin{equation}\label{equ:label}
+    \begin{aligned}
+        Q_1(\beta) & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \exp \left\{-\beta\left(\frac{1}{2} m \omega^2 q^2+\frac{1}{2 m} p^2\right)\right\} \frac{d q d p}{h} \\
+        & =\frac{1}{h}\left(\frac{2 \pi}{\beta m \omega^2}\right)^{1 / 2}\left(\frac{2 \pi m}{\beta}\right)^{1 / 2}=\frac{1}{\beta \hbar \omega}=\frac{k T}{\hbar \omega}
+        \end{aligned}
+\end{equation}
+不妨设每个粒子可区分，所以系统总配分函数以及亥姆霍兹自由能为
+\begin{equation}
+    Q_N(\beta)=\left[Q_1(\beta)\right]^N=(\beta \hbar \omega)^{-N}=\left(\frac{k T}{\hbar \omega}\right)^N,\quad A \equiv-k T \ln Q_N=N k T \ln \left(\frac{\hbar \omega}{k T}\right)
+\end{equation}
+易得熵的表达式
+\begin{equation}\label{equ:entropywithcan}
+    S=N k\left[\ln \left(\frac{k T}{\hbar \omega}\right)+1\right]
+\end{equation}
+能态密度 $g(E)$ 是配分函数的逆拉普拉斯变换
+\begin{equation}
+    g(E)=\frac{1}{(\hbar \omega)^N} \frac{1}{2 \pi i} \int_{\beta^{\prime}-i \infty}^{\beta^{\prime}+i \infty} \frac{e^{\beta E}}{\beta^N} d \beta \quad\left(\beta^{\prime}>0\right)
+\end{equation}
+根据公式 (\ref*{equ:Laplace}) ，积分结果为
+\begin{equation}
+    g(E)= \begin{cases}\frac{1}{(\hbar \omega)^N} \frac{E^{N-1}}{(N-1) !} & \text { for } \quad E \geq 0 \\ 0 & \text { for } \quad E \leq 0\end{cases}
+\end{equation}
+通过 $g(E)$ 我们同样可以计算系统的熵
+\begin{equation}
+    S(N, E)=k \ln g(E) \approx N k\left[\ln \left(\frac{E}{N \hbar \omega}\right)+1\right]
+\end{equation}
+不难发现和 (\ref*{equ:entropywithcan}) 式是等价的，只要将平衡能量代换为平衡温度。这同时也表明，微正则系综与正则系综在热力学极限下是等价的。
 
+\textcolor{RoyalBlue}{\textbf{\kaishu 再来看量子谐振子。}}所有可能能级的能量为
+\begin{equation}
+    \varepsilon_n=\left(n+\frac{1}{2}\right) \hbar \omega ; \quad n=0,1,2, \ldots
+\end{equation}
+配分函数
+\begin{equation}
+    Q_1(\beta)=\sum_{n=0}^{\infty} e^{-\beta(n+1 / 2) \hbar \omega}=\frac{\exp \left(-\frac{1}{2} \beta \hbar \omega\right)}{1-\exp (-\beta \hbar \omega)} ,\quad 
+    Q_N(\beta)=\left[Q_1(\beta)\right]^N=e^{-(N / 2) \beta \hbar \omega}\left\{1-e^{-\beta \hbar \omega}\right\}^{-N}
+\end{equation}
+所以亥姆霍兹自由能为
+\begin{equation}
+    A=N k T \ln \left[2 \sinh \left(\frac{1}{2} \beta \hbar \omega\right)\right]=N\left[\frac{1}{2} \hbar \omega+k T \ln \left\{1-e^{-\beta \hbar \omega}\right\}\right]
+\end{equation}
+则系统能量
+\begin{equation}
+    U=\frac{1}{2} N \hbar \omega \operatorname{coth}\left(\frac{1}{2} \beta \hbar \omega\right)=N\left[\frac{1}{2} \hbar \omega+\frac{\hbar \omega}{e^{\beta \hbar \omega}-1}\right]
+\end{equation}
+这表明量子谐振子不服从能量均分定理，每个自由度的对能量的贡献总是大于 $ \frac{1}{2}  kT$ 的，只有在高温极限下这个现象才会逐渐消失。
 
+\subsection{极端相对论气体}
+对于极端相对论气体，动量与能量的关系为 $\epsilon = |\bm{p}| c$ ，其中 c 是光速。利用配分函数的连续形式
+\[
+    Q_1(V, T)=\int g(\epsilon) e^{-\beta \epsilon} d \epsilon
+\]
+同时 $g(\epsilon) d \epsilon$ 又可写为
+\begin{equation}
+    \begin{gathered}
+        g(p) d p=\frac{V}{h^3} 4 \pi p^2 d p=\frac{4 \pi V}{h^3} \frac{\epsilon^2}{c^2} \frac{d \epsilon}{c}=g(\epsilon) d \epsilon \\
+        \therefore g(\epsilon)=\frac{4 \pi V}{(h c)^3} \epsilon^2
+        \end{gathered}
+\end{equation}
+所以配分函数
+\begin{equation}
+    \therefore Q_1(V, T)=\int_0^{\infty} g(\epsilon) d \epsilon=\frac{4 \pi V}{(h c)^3} \int_0^{\infty} \epsilon^2 e^{-\beta \epsilon} d \epsilon=8 \pi V\left(\frac{k T}{h c}\right)^3
+\end{equation}
+总配分函数
+\begin{equation}
+    Q_N(V, T)=\frac{1}{N !}\left\{8 \pi V\left(\frac{k T}{h c}\right)^3\right\}^N
+\end{equation}
+能态密度
+\begin{equation}
+    \begin{aligned}
+        g(E) & =\frac{1}{2 \pi i} \int_{\beta^{\prime}-i \infty}^{\beta^{\prime}+i \infty} e^{\beta E} Q(\beta) d \beta \\
+        & =\frac{(8 \pi V)^N}{N !(h c)^{3 N}} \operatorname{Res}\left[\frac{e^{\beta E}}{\beta^{3 N}}\right]_{\beta=0} \\
+        & =\frac{(8 \pi V)^N E^{3 N-1}}{N !(3 N-1) !(h c)^{3 N}}
+        \end{aligned}
+\end{equation}
 
-\subsection{经典谐振子}
-
-\subsection{相对论理想气体}
+微正则系综也可以解决这个问题。对于极端相对论气体，它所有可能的能量状态为
+\begin{equation}
+    \varepsilon\left(n_x, n_y, n_z\right)=\frac{h c}{2 L}\left(n_x^2+n_y^2+n_z^2\right)^{1 / 2}
+\end{equation}
+不过，计算 $\Omega$ 就有些麻烦了。
 
 \section{总结}\label{sec:正则系综总结}
 
