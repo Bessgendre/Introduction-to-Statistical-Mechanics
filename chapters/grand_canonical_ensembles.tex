@@ -12,7 +12,37 @@
 
 由于确定热力学系统的一个平衡态至少需要一个广度性质，所以最多只能使用两次勒让德变换。如果不选择 $N$ 而是对 $V$ 做变换，就会得到 \textcolor{RoyalBlue}{\textbf{\kaishu 等温等压系综}}。
 
+\section{巨正则分布与配分函数}\label{sec:巨正则分布与配分函数}
+
+根据前面的想法，巨正则分布的推导过程应当与正则系综类似。这里我们不加证明地写出巨正则分布与相应的配分函数。
+
+不过，“想象由 $\mathscr N$ 个全同系统组成的系综，令 $n_{r, s}$ 表示在任意时刻 $t$ 具有粒子数 $N_r$ 和能量值 $E_S$ 的系统的数目”这样的表述和前面没什么区别，不妨换一个角度：从巨正则系综中取出一个成员，则这个成员具有粒子数 $N_r$ 和能量值 $E_S$ 的概率为
+\begin{equation}\label{equ:grand_canonical_probability}
+    P(N = N_r, E = E_s) = \frac{\exp(-\alpha N_r - \beta E_s)}{\displaystyle\sum\limits_r\sum\limits_s\exp(-\alpha N_r - \beta E_s)}
+\end{equation}
+我们注意到巨正则分布 (\ref*{equ:grand_canonical_probability}) 是二维离散分布，那么各基本物理量的系综平均值如下：
+\begin{align}
+    \overline{N} &= \frac{\displaystyle\sum_{r, s}N_r\exp(-\alpha N_r - \beta E_s)}{\displaystyle\sum_{r, s}\exp(-\alpha N_r - \beta E_s)}\equiv -\frac{\partial}{\partial \alpha}\left\{ \ln\sum_{r, s}\exp(-\alpha N_r - \beta E_s) \right\} \\
+    \overline{E} &=  \frac{\displaystyle\sum_{r, s}E_s\exp(-\alpha N_r - \beta E_s)}{\displaystyle\sum_{r, s}\exp(-\alpha N_r - \beta E_s)}\equiv -\frac{\partial}{\partial \beta}\left\{ \ln\sum_{r, s}\exp(-\alpha N_r - \beta E_s) \right\}
+\end{align}
+既然是二维分布，那么就可以引入条件分布和边缘分布了。容易看出 $N$ 与 $E$ 不是独立的：
+\begin{align*}
+    P(N = N_i | E = E_j) &= \frac{\exp(-\alpha N_i - \beta E_j)}{\displaystyle\sum_r\exp(-\alpha N_r - \beta E_j)} \\
+    P(N = N_i) &= \frac{\displaystyle\sum_s\exp(-\alpha N_i - \beta E_s)}{\displaystyle\sum_{r,s}\exp(-\alpha N_r - \beta E_s)}
+\end{align*}
+
+通过巨正则系综，一些更加精细的量也被允许计算平均值，例如某一能级 $\epsilon$ 的平均粒子数 $\langle n_\epsilon \rangle$ ，这也是下一章要讨论的内容。例如某一个能级 $E_i$ 上的平均占据数 $\langle n_i\rangle$ 应当可以写为
+\begin{equation}\label{equ:n_epsilon}
+    \langle n_i\rangle = \frac{\displaystyle\sum_{r}N_r\exp(-\alpha N_r - \beta E_i)}{\displaystyle\sum_{r, s}\exp(-\alpha N_r - \beta E_s)}\equiv -\frac{1}{\beta} \frac{\partial}{\partial E_i}\left\{ \ln\sum_{r, s}\exp(-\alpha N_r - \beta E_s) \right\}
+\end{equation}
+这将会是玻色-爱因斯坦系统以及费米-狄拉克系统中的重要参量。
+
 \section{巨正则系综的研究方法}\label{sec:巨正则系综的研究方法}
+
+
+
+
+
 
 \subsection{统计量的物理含义}\label{sec:统计量的物理含义}
 
