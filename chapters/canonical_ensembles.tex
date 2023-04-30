@@ -79,7 +79,7 @@
 \end{equation}
 归一化就有
 \begin{equation}\label{equ:canonicalprobability}
-    P_r = \frac{n_r}{\mathcal{N}}=\frac{\exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}
+    P_r = \frac{n_r}{\mathcal{N}}=\frac{\exp \left(-\beta E_r\right)}{\displaystyle\sum_r \exp \left(-\beta E_r\right)}
 \end{equation}
 
 \begin{justification}{\kaishu 反思与质疑}
@@ -94,7 +94,7 @@
 \subsection{统计量的物理含义}
 现在我们来赋予各个统计量以一定的物理含义，我们从能量开始。根据正则分布，定义系统的能量 $U$ 是随机变量 $E$ 的系综平均：
 \begin{equation}
-    U=\frac{\sum_r E_r \exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}=-\frac{\partial}{\partial \beta} \ln \left\{\sum_r \exp \left(-\beta E_r\right)\right\}
+    U=\frac{\displaystyle\sum_r E_r \exp \left(-\beta E_r\right)}{\displaystyle\sum_r \exp \left(-\beta E_r\right)}=-\frac{\partial}{\partial \beta} \ln \left\{\sum_r \exp \left(-\beta E_r\right)\right\}
 \end{equation}
 并回忆那个以最小化亥姆霍兹自由能的热力学公式
 \[
@@ -138,7 +138,7 @@
 正则系综将能量 $E$ 视为一个取值为 $(0, \infty)$ 的随机变量，看来有必要研究一下能量的方差，也就是能量涨落，这可以通过对 $U$ 的表达式求导来实现：
 \[
     \begin{aligned}
-\frac{\partial U}{\partial \beta} & =-\frac{\sum_r E_r^2 \exp \left(-\beta E_r\right)}{\sum_r \exp \left(-\beta E_r\right)}+\frac{\left[\sum_r E_r \exp \left(-\beta E_r\right)\right]^2}{\left[\sum_r \exp \left(-\beta E_r\right)\right]^2} \\
+\frac{\partial U}{\partial \beta} & =-\frac{\displaystyle\sum_r E_r^2 \exp \left(-\beta E_r\right)}{\displaystyle\sum_r \exp \left(-\beta E_r\right)}+\frac{\left[\displaystyle\sum_r E_r \exp \left(-\beta E_r\right)\right]^2}{\left[\displaystyle\sum_r \exp \left(-\beta E_r\right)\right]^2} \\
 & =-\left\langle E^2\right\rangle+\langle E\rangle^2,
 \end{aligned}
 \]
@@ -239,11 +239,11 @@
 \end{equation}
 由于每个简并能级中的微观态都是等概率的，所以这只是将数钱的方式从“按顺序数”换到了“按面值数”而已。系统处于具有能量 $E_i$ 的任何状态的概率 $P_i$ 的相应表达式就是
 \begin{equation}
-    P_i=\frac{g_i \exp \left(-\beta E_i\right)}{\sum_i g_i \exp \left(-\beta E_i\right)}
+    P_i=\frac{g_i \exp \left(-\beta E_i\right)}{\displaystyle\sum_i g_i \exp \left(-\beta E_i\right)}
 \end{equation}
 系统的能量在热力学极限下趋于连续，所以将概率质量函数换为概率密度函数，再做一番归一化，我们就得到
 \begin{equation}
-    P(E) d E=\frac{\exp (-\beta E) g(E) d E}{\int_0^{\infty} \exp (-\beta E) g(E) d E} .
+    P(E) d E=\frac{\exp (-\beta E) g(E) d E}{\displaystyle\int_0^{\infty} \exp (-\beta E) g(E) d E} .
 \end{equation}
 在这种情形下，配分函数也从求和转变为了积分
 \begin{equation}
@@ -270,7 +270,7 @@
 
 前面讲到，我们希望将相空间的表述形式也囊括进系综理论的范围之内——因为系综是相空间中的一定区域。而物理量 $f(q,p,t)$ 在这一区域上的平均值则是
 \begin{equation}
-    \langle f\rangle=\frac{\int f(q, p) \rho(q, p) d^{3 N} q d^{3 N} p}{\int \rho(q, p) d^{3 N} q d^{3 N} p}
+    \langle f\rangle=\frac{\displaystyle\int f(q, p) \rho(q, p) d^{3 N} q d^{3 N} p}{\displaystyle\int \rho(q, p) d^{3 N} q d^{3 N} p}
 \end{equation}
 其中函数 $\rho(q,p)$ 则是相空间一点附近的代表点密度，是在相点 $(q,p)$ 附近找到一个代表点的概率的一种量度。而我们早已说明：在正则系综里，
 \begin{equation}
@@ -278,7 +278,7 @@
 \end{equation}
 所以 $\langle f \rangle$ 可以取为
 \begin{equation}
-    \langle f\rangle=\frac{\int f(q, p) \exp (-\beta H) d \omega}{\int \exp (-\beta H) d \omega}
+    \langle f\rangle=\frac{\displaystyle\int f(q, p) \exp (-\beta H) d \omega}{\displaystyle\int \exp (-\beta H) d \omega}
 \end{equation}
 该表达式的分母与配分函数直接相关。根据我们已经得到的微观态与相体积的转换关系：在相空间中的体积元 $d\omega$ 对应于系统的
 \[
@@ -377,7 +377,7 @@
     H\left(q_i, p_i\right)=\frac{1}{2} m \omega^2 q_i^2+\frac{1}{2 m} p_i^2 \quad(i=1, \ldots, N)
 \end{equation}
 由于粒子是无关联的，所以单粒子配分函数
-\begin{equation}\label{equ:label}
+\begin{equation}
     \begin{aligned}
         Q_1(\beta) & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \exp \left\{-\beta\left(\frac{1}{2} m \omega^2 q^2+\frac{1}{2 m} p^2\right)\right\} \frac{d q d p}{h} \\
         & =\frac{1}{h}\left(\frac{2 \pi}{\beta m \omega^2}\right)^{1 / 2}\left(\frac{2 \pi m}{\beta}\right)^{1 / 2}=\frac{1}{\beta \hbar \omega}=\frac{k T}{\hbar \omega}
