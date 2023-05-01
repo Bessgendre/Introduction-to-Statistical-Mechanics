@@ -1,7 +1,104 @@
-\chapter{简单气体理论}
+\chapter{简单气体理论}\label{cha:简单气体}
 
 前面三章我们分别对三种系综分别进行了一定的讨论。它们在“包含系统全部的运动信息”的意义上都是等价的，区别仅在将不易测量的广度决策变量通过勒让德变换转化为了容易测量的强度决策变量，而这一变换过程对于热力学系统而言，停留在了巨正则系综上。这标志着我们研究的基本原理与基本框架已经成型，现在我们来将它运用于一个最简单的系统，正如它的名称所标明的那样：简单气体。
 
 首先，研究这样的理想模型对于理解自然界中的实际气体是有帮助的：对简单气体模型进行一些必要的修正（例如范德瓦尔斯经验公式），我们可以让它更接近实际气体的行为。其次，我们将对“气体”概念做必要的推广，它的含义并不局限于“无形状有体积的可压缩和膨胀的流体”，用来描述可以用感官感受到的分子气体（箱子里的氦气、水蒸气以及相平衡）。这样的“气体”可以看不见摸不着（光子气体），甚至能够不是实体，仅存在于想象中（声子气体）。
 
 显然，被称为“气体”的系统应当满足“气体”概念的核心性质—— \textcolor{RoyalBlue}{\textbf{\kaishu 稀薄、无相互作用。}}
+
+不过，在正式讨论气体理论之前，我们首先需要解决一个遗留问题： \textcolor{RoyalBlue}{\textbf{\kaishu 微观粒子的全同性与相容性。}}这将会引出三种统计方法：麦克斯韦-玻尔兹曼统计（称为经典统计）、玻色-爱因斯坦统计以及费米-狄拉克统计（称为量子统计）。
+
+\section{量子统计}\label{sec:量子统计}
+
+在 (\ref*{sec:配分函数的性质}) 一节我们特别说明了全同性如何影响配分函数的形式（究竟需不需要除以不可分辨因子 $N!$ ），现在我们继续这个话题，即研究全同性对微观态计数的影响。
+
+\section{量子力学系综中的理想气体}\label{sec:量子力学系综中的理想气体}
+
+\subsection{配分函数}
+由于两种量子统计的引入，其对能级占有数的限制将会为正则配分函数 $Q_N$ 的计算带来麻烦， \textcolor{RoyalBlue}{\textbf{\kaishu 所以除了经典系统适合使用正则系综描述以外，玻色系统与费米系统更推荐使用巨正则系综来研究。}} 下面的推导将会明确地说明正则配分函数遇到的困难以及怎样转向巨正则配分函数 $\Theta$ 。
+
+设系统包含 $N$ 个全同粒子（也就是说每个粒子所能够触及的能级都相同，为 $\{\epsilon\} = \{\epsilon_0,\epsilon_1\cdots\}$ ）设系统总能量值 $E$ 可以由单粒子的能量 $\epsilon$ 来表示，例如
+\[
+    E = \sum_\epsilon n_\epsilon \epsilon
+\]
+这里对不同能级求和不会导致歧义，所以省去自然数下标。这些 $n_\epsilon$ 满足
+\[
+    \sum_\epsilon n_\epsilon = N
+\]
+所以正则配分函数可以写为
+\begin{equation}\label{equ:canonical_quantum}
+    Q_N(V, T)=\sum_{\left\{n_{\varepsilon}\right\}} g\left\{n_{\varepsilon}\right\} e^{-\beta \sum_{\varepsilon} n_{\varepsilon} \varepsilon}
+\end{equation}
+其中 $g\left\{n_{\varepsilon}\right\}$ 是系统一个具有 $E$ 能量的微观态的个数。
+
+\begin{justification}{\kaishu 反思与质疑}
+    \kaishu \fontsize{11pt}{16pt}
+        由于全同性，前面两个约束条件只能将 $\{n_{\varepsilon}\}$ 确定到每个分量的大小 $\{n_1,n_2\cdots\}$ ，但系统仍然可以让不同的粒子去占据，也就是说这里的“组态”一词 $\{n_{\varepsilon}\}$ 是一个宏观小、微观大的状态。而“对 $\{n_{\varepsilon}\}$ 的求和”实际上和“对所有 $E$ 求和”等价。
+\end{justification}
+
+不过，这里的 $g\left\{n_{\varepsilon}\right\}$ 有点复杂：
+\begin{align}
+    g_{\text {B.E. }}\left\{n_{\varepsilon}\right\}&=1,\\
+    g_{\text {F.D. }}\left\{n_{\varepsilon}\right\}&= \begin{cases}1 & \text { if all } n_{\varepsilon}=0 \text { or } 1 \\ 0 & \text { otherwise }\end{cases}
+\end{align}
+将它们带入正则配分函数 (\ref*{equ:canonical_quantum})式，发现对求和号的限制条件太多了，它的显式计算相当麻烦；而另一方面，巨正则配分函数却变得容易处理，我们有
+\begin{equation}\label{equ:grandcar}
+    \begin{aligned}
+    \Theta(z, V, T) & =\sum_{N=0}^{\infty}\left[z^N \sum_{\left\{n_{\varepsilon}\right\}} e^{-\beta \sum_{\varepsilon} n_{\varepsilon} \varepsilon}\right] \\
+    &= \sum_{N=0}^{\infty}\left[\prod_\varepsilon z^{n_\varepsilon} \sum_{\left\{n_{\varepsilon}\right\}} \prod_\varepsilon e^{-\beta \varepsilon n_{\varepsilon} }\right]\\
+    & =\sum_{N=0}^{\infty}\sum_{\left\{n_{\varepsilon}\right\}}\prod_{\varepsilon}\left(z e^{-\beta \varepsilon}\right)^{n_{\varepsilon}} .
+    \end{aligned}
+\end{equation}
+\textcolor{RoyalBlue}{\textbf{\kaishu 这样一来，双重求和 $\displaystyle\sum_{N=0}^{\infty}\sum_{\left\{n_{\varepsilon}\right\}}$ 实际上等效于彼此无关地按照 $n_\varepsilon$ 的所有可能值求和。}} 这也可以理解为将求和约束完全释放：
+\begin{equation}
+    \begin{aligned}
+    \Theta(z, V, T) & =\sum_{n_0, n_1, \ldots}\left[\left(z e^{-\beta \varepsilon_0}\right)^{n_0}\left(z e^{-\beta \varepsilon_1}\right)^{n_1} \ldots\right] \\
+    & =\left[\sum_{n_0}\left(z e^{-\beta \varepsilon_0}\right)^{n_0}\right]\left[\sum_{n_1}\left(z e^{-\beta \varepsilon_1}\right)^{n_1}\right] \ldots
+    \end{aligned}
+\end{equation}
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+这样的处理实际上也是概率的分离，它将总体事件的概率还原为了每个基本事件的概率。那么全同性所导致的繁琐计数也就被轻而易举地消除了——这与在 (\ref*{cha:正则系综})章节中的因子化方法在概率论的意义上是一致的。
+\end{justification}
+
+现在，非常显然：
+\begin{equation}
+    \Theta(z, V, T)= \begin{cases}\displaystyle \prod_{\varepsilon} \frac{1}{\left(1-z e^{-\beta \varepsilon}\right)} & \text { in the Bose-Einstein case, with } \mathrm{ze}^{-\beta \varepsilon}<1, \\ \displaystyle\prod_{\varepsilon}\left(1+z e^{-\beta \varepsilon}\right) & \text { in the Fermi-Dirac case. }\end{cases}
+\end{equation}
+如果将经典情况也包含进来，这三种统计可以用一个式子表示：
+\begin{equation}
+    \ln\Theta \equiv \frac{P V}{k T}=\frac{1}{a} \sum_{\varepsilon} \ln \left(1+a z e^{-\beta \varepsilon}\right)
+\end{equation}
+其中 $a = -1,1,0$ 分别对应玻色系统、费米系统以及经典系统。对于经典系统，在 $a\rightarrow 0$ 情形下很容易得到
+\[
+    \ln\Theta = z \sum e^{-\beta\varepsilon} = zQ_1
+\]
+这的确和经典情形是一致的。而系统的粒子数均值和能量均值则为
+\begin{equation}
+    \begin{aligned}
+    &\bar{N} \equiv z\left(\frac{\partial q}{\partial z}\right)_{V, T}=\sum_{\varepsilon} \frac{1}{z^{-1} e^{\beta \varepsilon}+a}\\
+    &\bar{E} \equiv-\left(\frac{\partial q}{\partial \beta}\right)_{z, V}=\sum_{\varepsilon} \frac{\varepsilon}{z^{-1} e^{\beta \varepsilon}+a}
+    \end{aligned}
+\end{equation}
+根据期望的线性性，很容易从中提取出某一能级的平均占有数 $\langle n_\varepsilon\rangle$ 应当采取下面的形式：
+\begin{equation}\label{equ:zhanjushu}
+    \langle n_\varepsilon\rangle = \frac{1}{z^{-1} e^{\beta \varepsilon}+a}
+\end{equation}
+而基于对巨正则配分函数的观察，也会导致相同的结果。
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+\quad\quad 将式 (\ref*{equ:grandcar}) 中的双重求和合并一下，并从求积中提出 z ：
+\[
+    \ln\Theta =\sum z^N\prod_{\varepsilon}e^{-\beta \varepsilon n_{\varepsilon}}
+\]
+，可以看到它求和的每一项实际上仍然是 $e^{(\cdots)}$ ，和最原始的巨正则系综配分函数是一致的。那么要想求某个量的系综平均，只需要对括号内和这个量相乘的其他量求导即可，即
+\[
+    \langle n_\varepsilon\rangle =\frac{\partial \ln\Theta}{\partial( -\beta \varepsilon)} = \frac{1}{z^{-1} e^{\beta \varepsilon}+a}
+\]
+\end{justification}
+
+\subsection{经典极限}
+
+\subsection{占有数的统计}
