@@ -15,15 +15,15 @@
 \section{量子力学系综中的理想气体}\label{sec:量子力学系综中的理想气体}
 
 \subsection{配分函数}
-由于两种量子统计的引入，其对能级占有数的限制将会为正则配分函数 $Q_N$ 的计算带来麻烦， \textcolor{RoyalBlue}{\textbf{\kaishu 所以除了经典系统适合使用正则系综描述以外，玻色系统与费米系统更推荐使用巨正则系综来研究。}} 下面的推导将会明确地说明正则配分函数遇到的困难以及怎样转向巨正则配分函数 $\Theta$ 。
+由于两种量子统计的引入，其对能级占有数的限制将会为正则配分函数 $Q_N$ 的计算带来麻烦， \textcolor{RoyalBlue}{\textbf{\kaishu 所以除了经典系统适合使用正则系综描述以外，玻色系统与费米系统更推荐使用巨正则系综来研究。}} 下面的推导将会明确地说明正则配分函数遇到的困难以及怎样转向巨正则配分函数 $\Xi$ 。
 
-设系统包含 $N$ 个全同粒子（也就是说每个粒子所能够触及的能级都相同，为 $\{\epsilon\} = \{\epsilon_0,\epsilon_1\cdots\}$ ）设系统总能量值 $E$ 可以由单粒子的能量 $\epsilon$ 来表示，例如
+设系统包含 $N$ 个全同粒子（也就是说每个粒子所能够触及的能级都相同，为 $\{\varepsilon\} = \{\varepsilon_0,\varepsilon_1\cdots\}$ ）设系统总能量值 $E$ 可以由单粒子的能量 $\varepsilon$ 来表示，例如
 \[
-    E = \sum_\epsilon n_\epsilon \epsilon
+    E = \sum_\varepsilon n_\varepsilon \varepsilon
 \]
-这里对不同能级求和不会导致歧义，所以省去自然数下标。这些 $n_\epsilon$ 满足
+这里对不同能级求和不会导致歧义，所以省去自然数下标。这些 $n_\varepsilon$ 满足
 \[
-    \sum_\epsilon n_\epsilon = N
+    \sum_\varepsilon n_\varepsilon = N
 \]
 所以正则配分函数可以写为
 \begin{equation}\label{equ:canonical_quantum}
@@ -33,7 +33,7 @@
 
 \begin{justification}{\kaishu 反思与质疑}
     \kaishu \fontsize{11pt}{16pt}
-        由于全同性，前面两个约束条件只能将 $\{n_{\varepsilon}\}$ 确定到每个分量的大小 $\{n_1,n_2\cdots\}$ ，但系统仍然可以让不同的粒子去占据，也就是说这里的“组态”一词 $\{n_{\varepsilon}\}$ 是一个宏观小、微观大的状态。而“对 $\{n_{\varepsilon}\}$ 的求和”实际上和“对所有 $E$ 求和”等价。
+        由于全同性，前面两个约束条件只能将 $\{n_{\varepsilon}\}$ 确定到每个分量的大小 $\{n_1,n_2\cdots\}$ ，但系统仍然可以让不同的粒子去占据，也就是说这里的“组态”一词 $\{n_{\varepsilon}\}$ 实际上给一些微观态打了包而已。在 (\ref*{sec:配分函数的性质}) 节中我们使用自然数为这些集合标号，而这里需要使用一组自然数为它们标号。
 \end{justification}
 
 不过，这里的 $g\left\{n_{\varepsilon}\right\}$ 有点复杂：
@@ -44,7 +44,7 @@
 将它们带入正则配分函数 (\ref*{equ:canonical_quantum})式，发现对求和号的限制条件太多了，它的显式计算相当麻烦；而另一方面，巨正则配分函数却变得容易处理，我们有
 \begin{equation}\label{equ:grandcar}
     \begin{aligned}
-    \Theta(z, V, T) & =\sum_{N=0}^{\infty}\left[z^N \sum_{\left\{n_{\varepsilon}\right\}} e^{-\beta \sum_{\varepsilon} n_{\varepsilon} \varepsilon}\right] \\
+    \Xi(z, V, T) & =\sum_{N=0}^{\infty}\left[z^N \sum_{\left\{n_{\varepsilon}\right\}} e^{-\beta \sum_{\varepsilon} n_{\varepsilon} \varepsilon}\right] \\
     &= \sum_{N=0}^{\infty}\left[\prod_\varepsilon z^{n_\varepsilon} \sum_{\left\{n_{\varepsilon}\right\}} \prod_\varepsilon e^{-\beta \varepsilon n_{\varepsilon} }\right]\\
     & =\sum_{N=0}^{\infty}\sum_{\left\{n_{\varepsilon}\right\}}\prod_{\varepsilon}\left(z e^{-\beta \varepsilon}\right)^{n_{\varepsilon}} .
     \end{aligned}
@@ -52,27 +52,27 @@
 \textcolor{RoyalBlue}{\textbf{\kaishu 这样一来，双重求和 $\displaystyle\sum_{N=0}^{\infty}\sum_{\left\{n_{\varepsilon}\right\}}$ 实际上等效于彼此无关地按照 $n_\varepsilon$ 的所有可能值求和。}} 这也可以理解为将求和约束完全释放：
 \begin{equation}
     \begin{aligned}
-    \Theta(z, V, T) & =\sum_{n_0, n_1, \ldots}\left[\left(z e^{-\beta \varepsilon_0}\right)^{n_0}\left(z e^{-\beta \varepsilon_1}\right)^{n_1} \ldots\right] \\
+    \Xi(z, V, T) & =\sum_{n_0, n_1, \ldots}\left[\left(z e^{-\beta \varepsilon_0}\right)^{n_0}\left(z e^{-\beta \varepsilon_1}\right)^{n_1} \ldots\right] \\
     & =\left[\sum_{n_0}\left(z e^{-\beta \varepsilon_0}\right)^{n_0}\right]\left[\sum_{n_1}\left(z e^{-\beta \varepsilon_1}\right)^{n_1}\right] \ldots
     \end{aligned}
 \end{equation}
 
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
-这样的处理实际上也是概率的分离，它将总体事件的概率还原为了每个基本事件的概率。那么全同性所导致的繁琐计数也就被轻而易举地消除了——这与在 (\ref*{cha:正则系综})章节中的因子化方法在概率论的意义上是一致的。
+这样的处理实际上也是概率的分离，它将总体事件的概率还原为了每个基本事件的概率。那么全同性所导致的繁琐计数也就被轻而易举地消除了——这与在第\ref*{cha:正则系综}章中的因子化方法在概率论的意义上是一致的。
 \end{justification}
 
 现在，非常显然：
 \begin{equation}
-    \Theta(z, V, T)= \begin{cases}\displaystyle \prod_{\varepsilon} \frac{1}{\left(1-z e^{-\beta \varepsilon}\right)} & \text { in the Bose-Einstein case, with } \mathrm{ze}^{-\beta \varepsilon}<1, \\ \displaystyle\prod_{\varepsilon}\left(1+z e^{-\beta \varepsilon}\right) & \text { in the Fermi-Dirac case. }\end{cases}
+    \Xi(z, V, T)= \begin{cases}\displaystyle \prod_{\varepsilon} \frac{1}{\left(1-z e^{-\beta \varepsilon}\right)} & \text { in the Bose-Einstein case, with } \mathrm{ze}^{-\beta \varepsilon}<1, \\ \displaystyle\prod_{\varepsilon}\left(1+z e^{-\beta \varepsilon}\right) & \text { in the Fermi-Dirac case. }\end{cases}
 \end{equation}
 如果将经典情况也包含进来，这三种统计可以用一个式子表示：
 \begin{equation}
-    \ln\Theta \equiv \frac{P V}{k T}=\frac{1}{a} \sum_{\varepsilon} \ln \left(1+a z e^{-\beta \varepsilon}\right)
+    \ln\Xi \equiv \frac{P V}{k T}=\frac{1}{a} \sum_{\varepsilon} \ln \left(1+a z e^{-\beta \varepsilon}\right)
 \end{equation}
 其中 $a = -1,1,0$ 分别对应玻色系统、费米系统以及经典系统。对于经典系统，在 $a\rightarrow 0$ 情形下很容易得到
 \[
-    \ln\Theta = z \sum e^{-\beta\varepsilon} = zQ_1
+    \ln\Xi = z \sum e^{-\beta\varepsilon} = zQ_1
 \]
 这的确和经典情形是一致的。而系统的粒子数均值和能量均值则为
 \begin{equation}
@@ -91,14 +91,36 @@
 \kaishu \fontsize{11pt}{16pt}
 \quad\quad 将式 (\ref*{equ:grandcar}) 中的双重求和合并一下，并从求积中提出 z ：
 \[
-    \ln\Theta =\sum z^N\prod_{\varepsilon}e^{-\beta \varepsilon n_{\varepsilon}}
+    \ln\Xi =\sum z^N\prod_{\varepsilon}e^{-\beta \varepsilon n_{\varepsilon}}
 \]
-，可以看到它求和的每一项实际上仍然是 $e^{(\cdots)}$ ，和最原始的巨正则系综配分函数是一致的。那么要想求某个量的系综平均，只需要对括号内和这个量相乘的其他量求导即可，即
+可以看到它求和的每一项实际上仍然是 $e^{(\cdots)}$ ，和最原始的巨正则系综配分函数是一致的。那么要想求某个量的系综平均，只需要对括号内和这个量相乘的其他量求导即可，即
 \[
-    \langle n_\varepsilon\rangle =\frac{\partial \ln\Theta}{\partial( -\beta \varepsilon)} = \frac{1}{z^{-1} e^{\beta \varepsilon}+a}
+    \langle n_\varepsilon\rangle =\frac{\partial \ln\Xi}{\partial( -\beta \varepsilon)} = \frac{1}{z^{-1} e^{\beta \varepsilon}+a}
 \]
 \end{justification}
 
 \subsection{经典极限}
 
 \subsection{占有数的统计}
+
+\section{总结}
+
+到这里为止，我们可以将所有的知识总结为统计力学的一个主题： \textcolor{RoyalBlue}{\textbf{\kaishu 涨落}}。而在下一章中，我们将转向统计力学的另一个主题： \textcolor{RoyalBlue}{\textbf{\kaishu 相变}}。
+
+\begin{understanding}{\kaishu 平衡系统三部曲}
+\kaishu \fontsize{11pt}{16pt}
+    能谱：
+    \[
+        E_\nu = E_\nu\{n_1,n_2,\ldots,n_N\}
+    \]
+    配分函数：
+    \begin{align*}
+        Q &= \sum_\nu \exp(-\beta E_\nu)\\
+        \Xi &= \sum_{N}\sum_{\nu} \exp(-\alpha N-\beta E_\nu)
+    \end{align*}
+    微观到宏观：
+    \begin{align*}
+        S &= k \ln \Omega,& \frac{PV}{kT} &= \ln \Xi\\
+        A &= -kT\ln Q,& S &= -k\sum p_\nu \ln p_\nu
+    \end{align*}
+\end{understanding}
