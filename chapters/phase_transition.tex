@@ -39,6 +39,58 @@
     M = -\left(\frac{\partial G}{\partial H}\right)_{T}
 \end{equation}
 
+磁学系统的基本热力学函数大概就是以上这些，但一个物理系统我们非常关心这些热力学函数对外界变化的响应，而磁学系统对变化外场 $H$ 的响应就是磁感应系数 $\chi$ ：
+\begin{equation}\label{equ:磁感应系数}
+    \chi = \frac{kT}{N} \left(\frac{\partial M}{\partial H}\right)_{T} = \frac{1}{N} \langle \delta M^2 \rangle
+\end{equation}
+如 (\ref*{sec:粒子数与能量的涨落}) 节中所讲到的那样，响应函数正比于系统涨落。
+
 \section{Ising 模型}\label{sec:Ising模型}
 
-\subsection{}
+\subsection{基本模型}
+
+Ising 模型是一个非常简单的模型，它的基本假设是：自旋只有两个状态，即 $S_i = \pm 1$ ，并且自旋之间的相互作用只有最近邻的相互作用能 $J$ ，其余的相互作用能统统忽略。这样一来，Ising 模型一个微观态 $\nu$ 的能量为分为两部分：外场作用和相互作用：
+\begin{equation}\label{equ:Ising模型的哈密顿量}
+    E_\nu = - \sum_i \mu H S_i-J \sum_{\langle i,j \rangle} S_i S_j
+\end{equation}
+其中 $\langle i,j \rangle$ 表示求和只对最近邻自旋进行。这里我们假设外场 $H$ 是均匀的，即 $\mu H$ 是一个常数，并且 $J>0$ ，表明自旋倾向于平行排列。
+
+那么很容易写出 Ising 模型的配分函数：
+\begin{equation}\label{equ:Ising模型的配分函数}
+    Q = \sum_\nu e^{-\beta E_\nu} = \sum_{\{S_i\}} e^{\mu \beta H \sum_i  S_i + \beta J \sum_{\langle i,j \rangle} S_i S_j}
+\end{equation}
+在后面的讨论中，我们设 $\beta H = K, ~\beta J = K'$ 。从配分函数的表达式中很容易看出系统的磁矩 $M$ 可以写为：
+\begin{equation}\label{equ:Ising模型的磁矩表达式}
+    \langle M \rangle = \left(\frac{\partial \ln Q}{\partial K}\right)_{K'}
+\end{equation}
+同时回顾 (\ref*{equ:磁学系统的磁矩表达式}) 式，我们就能建立起热力学函数与配分函数的关系：
+\begin{equation}\label{equ:热力学函数与配分函数}
+    G = -kT\ln Q(P,H)
+\end{equation}
+
+
+\subsection{熵焓竞争与对称性破缺}
+
+有了以上的讨论，我们在外场 $H  =0$ 的条件下先来说明 \textcolor{RoyalBlue}{\textbf{\kaishu 熵焓竞争}} 怎样影响磁学系统的相变。总体而言，一维 Ising 模型不能相变的原因是熵占优，而二维 Ising 模型能相变的原因是焓占优，并且这样的竞争关系的根源在于边界的维数。我们的思路非常简单：假设系统处于有序状态，然后考虑打乱一部分后体系的自由能变化，如果自由能下降，那么系统就会倾向于无序状态，熵占优，无相变；反之则倾向于有序状态，焓占优，有相变。
+
+\textbf{\kaishu 对于周期边界的一维 Ising 链}，一个区域无论大小，永远只有两个端点，所以如果我们将一致向上的 N 个自旋磁子取出一部分磁畴翻转下去，那么相对最初的状态，能量变化为 $4J$ 。由于这样做有 N 个可能的构型，那么熵的变化为 $k\ln N$ 。而 
+\[
+    \delta G = \delta E - T\delta S = -4J + kT\ln N
+\]
+显然，我们可以定义一个临界温度 $T_c$ ，在 $2J = kT_c \ln N$ 就是系统相变发生的地方：：
+\begin{equation}\label{equ:一维Ising模型的临界温度}
+    T_c = \frac{4J}{k\ln N}
+\end{equation}
+可以看到，在热力学极限下，$T_c = 0$ ，也就是说，一维 Ising 模型在任何温度下都不会发生相变，$T = 0$ 是一个平凡解。
+
+\textbf{\kaishu 对于周期边界的二维 Ising 链}，一个区域的边界大小是随着区域大小的增加而增加的，所以如果我们将一致向上的 $N$ 个自旋磁子取出一部分磁畴翻转下去，那么相对最初的状态，能量变化 $\delta E \propto N^{1/2}$ 。但由于最多只能有 $N^\alpha$ 种可能的方式达成这一点，那么熵的变化为 $\alpha k\ln N$ 。这个时候，再写出自由能的变化：
+\[
+    \delta G = \delta E - T\delta S = -N^{1/2} + \alpha kT\ln N
+\]
+在热力学极限下，第一项就会超过第二项，也就是能量占优，磁畴的翻转变得困难，所以更倾向于保持同向，也就是相变。
+
+这也就解释了为什么我们实际观察到体系的对称性要小于系统哈密顿量的对称性，也就是 \textcolor{RoyalBlue}{\textbf{\kaishu 对称破缺}} 的问题。磁学系统哈密顿量虽然具有自旋翻转的对称性（系统所有自旋全部翻转，总能量不变），但要想在实际中体现这一点，必须要求这个态要能够自由地变换到另一个对称态。但如前所见，这样的翻转动作将会面临巨大的能垒，且在热力学极限下能垒高度为正无穷，所以动力学上不能发生。用一个公式来表示就是：
+\begin{equation}\label{equ:对称性破缺}
+    \langle M \rangle  = \lim_{H\rightarrow 0}  \lim_{N\rightarrow \infty} \left(-\frac{\partial G}{\partial H}\right)_T \neq 0  
+\end{equation}
+在 $N$ 有限的情况下，系统可以随意翻越能垒，所以磁矩可以为 $0$ ；现在为系统增加一个外场，那么系统将会聚集在某一边。现在让 $N\rightarrow \infty$ ，把门关上，系统就被困在了一个状态，纵使外场消失，系统即使想回去，也回不去了。所以宏观磁矩不为 $0$ ，这就是对称性破缺的本质。
