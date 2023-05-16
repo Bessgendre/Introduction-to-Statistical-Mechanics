@@ -59,7 +59,7 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
 \begin{equation}\label{equ:Ising模型的配分函数}
     Q = \sum_\nu e^{-\beta E_\nu} = \sum_{\{S_i\}} e^{\mu \beta H \sum_i  S_i + \beta J \sum_{\langle i,j \rangle} S_i S_j}
 \end{equation}
-在后面的讨论中，我们设 $\beta H = K, ~\beta J = K'$ 。从配分函数的表达式中很容易看出系统的磁矩 $M$ 可以写为：
+在后面的讨论中，我们设 $\mu\beta H = K, ~\beta J = K'$ 。从配分函数的表达式中很容易看出系统的磁矩 $M$ 可以写为：
 \begin{equation}\label{equ:Ising模型的磁矩表达式}
     \langle M \rangle = \left(\frac{\partial \ln Q}{\partial K}\right)_{K'}
 \end{equation}
@@ -73,7 +73,7 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
 
 有了以上的讨论，我们在外场 $H  =0$ 的条件下先来说明 \textcolor{RoyalBlue}{\textbf{\kaishu 熵焓竞争}} 怎样影响磁学系统的相变。总体而言，一维 Ising 模型不能相变的原因是熵占优，而二维 Ising 模型能相变的原因是焓占优，并且这样的竞争关系的根源在于边界的维数。我们的思路非常简单：假设系统处于有序状态，然后考虑打乱一部分后体系的自由能变化，如果自由能下降，那么系统就会倾向于无序状态，熵占优，无相变；反之则倾向于有序状态，焓占优，有相变。
 
-\textbf{\kaishu 对于周期边界的一维 Ising 链}，一个区域无论大小，永远只有两个端点，所以如果我们将一致向上的 N 个自旋磁子取出一部分磁畴翻转下去，那么相对最初的状态，能量变化为 $4J$ 。由于这样做有 N 个可能的构型，那么熵的变化为 $k\ln N$ 。而 
+\textcolor{RoyalBlue}{\textbf{\kaishu 对于周期边界的一维 Ising 链}}，一个区域无论大小，永远只有两个端点，所以如果我们将一致向上的 N 个自旋磁子取出一部分磁畴翻转下去，那么相对最初的状态，能量变化为 $4J$ 。由于这样做有 N 个可能的构型，那么熵的变化为 $k\ln N$ 。而 
 \[
     \delta G = \delta E - T\delta S = -4J + kT\ln N
 \]
@@ -83,14 +83,88 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
 \end{equation}
 可以看到，在热力学极限下，$T_c = 0$ ，也就是说，一维 Ising 模型在任何温度下都不会发生相变，$T = 0$ 是一个平凡解。
 
-\textbf{\kaishu 对于周期边界的二维 Ising 链}，一个区域的边界大小是随着区域大小的增加而增加的，所以如果我们将一致向上的 $N$ 个自旋磁子取出一部分磁畴翻转下去，那么相对最初的状态，能量变化 $\delta E \propto N^{1/2}$ 。但由于最多只能有 $N^\alpha$ 种可能的方式达成这一点，那么熵的变化为 $\alpha k\ln N$ 。这个时候，再写出自由能的变化：
+\textcolor{RoyalBlue}{\textbf{\kaishu 对于周期边界的二维 Ising 链}}，一个区域的边界大小是随着区域大小的增加而增加的，所以如果我们将一致向上的 $N$ 个自旋磁子取出一部分磁畴翻转下去，那么相对最初的状态，能量变化 $\delta E \propto N^{1/2}$ 。但由于最多只能有 $N^\alpha$ 种可能的方式达成这一点，那么熵的变化为 $\alpha k\ln N$ 。这个时候，再写出自由能的变化：
 \[
     \delta G = \delta E - T\delta S = -N^{1/2} + \alpha kT\ln N
 \]
 在热力学极限下，第一项就会超过第二项，也就是能量占优，磁畴的翻转变得困难，所以更倾向于保持同向，也就是相变。
 
-这也就解释了为什么我们实际观察到体系的对称性要小于系统哈密顿量的对称性，也就是 \textcolor{RoyalBlue}{\textbf{\kaishu 对称破缺}} 的问题。磁学系统哈密顿量虽然具有自旋翻转的对称性（系统所有自旋全部翻转，总能量不变），但要想在实际中体现这一点，必须要求这个态要能够自由地变换到另一个对称态。但如前所见，这样的翻转动作将会面临巨大的能垒，且在热力学极限下能垒高度为正无穷，所以动力学上不能发生。用一个公式来表示就是：
+这也就解释了为什么我们实际观察到体系的对称性要小于系统哈密顿量的对称性，也就是 \textcolor{RoyalBlue}{\textbf{\kaishu 对称破缺}} 的问题。磁学系统哈密顿量虽然具有自旋翻转的对称性（系统所有自旋全部翻转，总能量不变），但要想在实际中体现这一点， \textcolor{RoyalBlue}{\textbf{\kaishu 必须要求这个态要能够自由地变换到另一个对称态。}} 但如前所见，这样的翻转动作将会面临巨大的能垒，且在热力学极限下能垒高度为正无穷，所以动力学上不能发生。用一个公式来表示就是：
 \begin{equation}\label{equ:对称性破缺}
     \langle M \rangle  = \lim_{H\rightarrow 0}  \lim_{N\rightarrow \infty} \left(-\frac{\partial G}{\partial H}\right)_T \neq 0  
 \end{equation}
-在 $N$ 有限的情况下，系统可以随意翻越能垒，所以磁矩可以为 $0$ ；现在为系统增加一个外场，那么系统将会聚集在某一边。现在让 $N\rightarrow \infty$ ，把门关上，系统就被困在了一个状态，纵使外场消失，系统即使想回去，也回不去了。所以宏观磁矩不为 $0$ ，这就是对称性破缺的本质。
+\textcolor{RoyalBlue}{\textbf{\kaishu 在 $N$ 有限的情况下，系统可以随意翻越能垒，所以磁矩可以为 $0$ ；现在为系统增加一个外场，那么系统将会聚集在某一边。现在让 $N\rightarrow \infty$ ，把门关上，系统就被困在了一个状态，纵使外场消失，系统即使想回去，也回不去了。所以宏观磁矩不为 $0$ ，这就是对称性破缺的本质。}}
+
+\subsection{一维Ising模型的严格解}
+
+下面我们正式进入一维 Ising 模型的严格解。我们先来考虑无外场周期性边界一维 Ising 模型的配分函数：
+\begin{equation}\label{equ:一维Ising模型的配分函数}
+    Q_N = \sum_{S_1,S_2,S_3,\cdots S_N} \exp\left[K' (S_1 S_{2}+S_2S_3+\cdots+S_NS_1)\right]
+\end{equation}
+我们将它改写为如下形式：
+\begin{equation}
+    Q_N = \sum_{S_1,S_2,S_3,\cdots S_N} \exp(K' S_1 S_{2}) \exp(K' S_2 S_{3}) \cdots \exp(K' S_N S_{1})
+\end{equation}
+这样一来，我们就可以将配分函数视为 \textcolor{RoyalBlue}{\textbf{\kaishu 张量缩并}}。为了看出这一点，将 $\exp(K' S_1 S_2)$ 写成矩阵的形式：
+\begin{equation}
+    T(S_1,S_2) = \exp(K' S_1 S_{2}) = \begin{pmatrix}
+        e^{K'} & e^{-K'} \\
+        e^{-K'} & e^{K'}
+    \end{pmatrix}
+\end{equation}
+这叫做 \textcolor{RoyalBlue}{\textbf{\kaishu 转移矩阵}} ，再把被求和的 $\{S_1,S_2,\cdots,S_N\}$ 视为哑标，那么配分函数就可以写成：
+\begin{equation}
+    Q_N = \sum_{S_1,S_2,S_3,\cdots S_N} T(S_1,S_2) T(S_2,S_3) \cdots T(S_N,S_1) = \text{Tr}(T^N) = \lambda _1^N + \lambda_2^N
+\end{equation}
+其中 $\lambda_1,\lambda_2$ 是转移矩阵的两个本征值，易得
+\begin{equation}
+    \lambda_{1,2} = e^{K'} \pm e^{-K'}
+\end{equation}
+所以配分函数可以写成
+\begin{equation}
+    Q_N = (2\cosh K')^N + (2\sinh K')^N
+\end{equation}
+
+如果有外场，那么我们需要对外场所导致的额外能量做一点变换，因为要想构成二维张量，需要两个自旋：
+\[
+    E = -\sum_{i=1}^N JS_i S_{i+1} - \mu H\sum_{i=1}^N S_i = -\sum_{i=1}^N JS_i S_{i+1} - \frac{\mu H}{2} \sum_{i=1}^N (S_i + S_{i+1})
+\]
+其中 $S_{N+1} = S_1$ 。转移矩阵就变成了
+\begin{equation}
+    T(S_1,S_2) = \exp(\frac{1}{2}K (S_1+S_2) + K' S_1 S_{2}) = \begin{pmatrix}
+        e^{K+K'} & e^{-K'} \\
+        e^{-K'} & e^{-K+K'}
+    \end{pmatrix} 
+\end{equation}
+本征值
+\begin{equation}
+    \lambda_\pm = \mathrm{e}^{ K'}\left(\cosh K \pm \sqrt{\sinh ^2 K + \mathrm{e}^{-4 K'}}\right)
+\end{equation}
+在热力学极限下，较小的特征值 $\lambda_2$ 将会被忽略，所以配分函数可以写成
+\begin{equation}
+    Q=\mathrm{e}^{N K'}\left(\cosh K+\sqrt{\sinh ^2 K+\mathrm{e}^{-4 K'}}\right)^N
+\end{equation}
+由此可得磁学系统的各热力学函数：
+\begin{align*}
+    &G = -kT\ln Q = -NkT \ln (e^{\beta J} + e^{-\beta J}), \\
+    &S = -\left(\frac{\partial G}{\partial T}\right)_{H} = Nk\left[\ln (e^{\beta J} + e^{-\beta J}) - \beta J \tanh\beta J\right],\\
+    &U = G + TS =  NJ \tanh\beta J,\\
+    &C_H = T\left(\frac{\partial S}{\partial T}\right)_H = Nk\beta^2 J^2 \mathrm{sech}^2 \beta J,\\
+    &\langle M \rangle = \frac{\sinh \mu \beta H}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}},\\
+    &\chi = \left(\frac{\partial \langle M \rangle}{\partial H}\right)_T = \frac{\beta \mathrm{e}^{-2 \beta J}}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}}
+\end{align*}
+
+在 $\beta \rightarrow 0$ 时，$S \rightarrow Nk\ln 2$ ，表明系统有 $2^N$ 的配容数；在 $\beta \rightarrow \infty$ 时，$S \rightarrow 0$ ，表明系统处于绝对零度。
+ 
+可以看到，在 $H \neq 0$ 时，响应函数在温度趋于 $0$ 时收敛为 0， 而在 $H = 0$ 时发散。
+
+\begin{justification}{\kaishu 反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+\quad\quad 容易看出，转移矩阵方法其实也可以用在非周期条件上，只不过不再是张量的求和缩并为迹，而是张量的求和缩并为张量。这样一来，我们就可以将一维 Ising 模型的配分函数写成
+\begin{equation}
+    Q_N = \sum_{S_1,S_2,S_3,\cdots S_N} T(S_1,S_2) T(S_2,S_3) \cdots T(S_{N-1},S_{N}) = \sum_{S_1, S_N} T^{N-1}
+\end{equation}
+也就是矩阵 $T^{N-1}$ 的所有项之和。
+
+\quad\quad 当然，转移矩阵并不一定是 $2$ 维的，所以如果系统有三个可能状态，$S_i$ 的可能取值为 $-1,0,1$ ，那么这个方法仍然适用。
+\end{justification}
