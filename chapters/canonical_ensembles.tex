@@ -203,10 +203,10 @@
 \end{equation}
 而积分区域是在能量 $E$ 的附近，所以
 \[
-    \iiint\limits_{(E-\Delta) \leq \sum_{i=1}^{3 N}\left(p_i^2 / 2 m\right) \leq E \quad 2 m} d^{3 N} p=\quad \iiint\limits_{(E-\Delta) \leq \sum_{i=1}^{3 N} y_i^2 \leq 2 m E
+    \iiint\limits_{(E-\frac{1}{2} \Delta) \leq \sum_{i=1}^{3 N}\left(p_i^2 / 2 m\right) \leq (E +\frac{1}{2} \Delta)} d^{3 N} p=\quad \iiint\limits_{2m(E-\frac{1}{2} \Delta) \leq \sum_{i=1}^{3 N} y_i^2 \leq 2 m (E + \frac{1}{2} \Delta)
     } d^{3 N} y
 \]
-换到球坐标系，容易看出这是 $3N$ 维球壳的体积，其结果为
+换到球坐标系，容易看出这是 $3N$ 维球壳的体积，并且球壳厚度为 $\Delta$ ，其结果为
 \[
     \Delta\left(\frac{m}{2 E}\right)^{1 / 2}\left\{\frac{2 \pi^{3 N / 2}}{[(3 N / 2)-1] !}(2 m E)^{(3 N-1) / 2}\right\}
 \]
@@ -222,7 +222,7 @@
 
 对于量子系统，由于不确定性原理，我们再也无法使用经典的相空间来描述系统的状态了——这看起来与我们“使用相空间中的一定区域来代表一个量子态”的想法不谋而合： \textcolor{RoyalBlue}{\textbf{\kaishu  在相空间任一点 $(q,p)$ 的周围，存在着一定的体积，在这个体积内不可能准确地确定代表点的位置。换句话说，这些相体积可以和系统的量子态一一对应。}}而 Bohr 从这里出发，建立了旧量子论的一个重要假设：角动量量子化。
 
-通过简单的计算，对于一维量子系统我们可以同样说明，与一个量子态对应的“相空间体积”是 $\omega_0 = 2\pi \hbar = h$ 。
+所以，经典力学总是一种近似，但由于不确定性原理， $\Delta p\Delta q \geq h$ ，所以同样可以认为 $(\Delta p\Delta q)^{3N} \geq h^{3N}$ 。这样一来，与一个量子态对应的“相空间体积”也是 $\omega_0 = h^{3N}$ 。
 
 现在，我们发现自己处于这样一种境地： \textcolor{RoyalBlue}{\textbf{\kaishu 既然相空间中确定的体积对应于一个微观态，那么对微观态的求和则可以转化为对正则变量 $(q,p)$ 的积分，而且这个转换系数是常数！}}这无疑会为计算正则配分函数提供一种新的视角和随之而来的新方法。作为一个有意义的暗示，如果我们能对系统哈密顿量进行变量分离，那么对相空间的积分也会是变量分离的。
 
@@ -304,19 +304,19 @@
 有时视情况需要再除以一个不可分辨因子 $N!$ ，但这并不会对我们的思路造成什么影响。
 
 \textcolor{RoyalBlue}{\textbf{\kaishu 这是变量代换的一小步，但却是统计力学的一大步。}}它的一个显著的优点前面已经提到过了，即如果系统可以分解为若干无关联子系统，则哈密顿函数变量分离，配分函数的积分计算也变量分离。 \textcolor{RoyalBlue}{\textbf{\kaishu  而积分计算的分离导致系统总配分函数是各个子配分函数的乘积：}}
-\begin{equation}\label{equ:yinzihua}
+\begin{equation}\label{equ:配分函数的因子化}
     Q_N(V, T)=\left[Q_1(V, T)\right]^N \quad\text{or}\quad Q_N(V, T)=\frac{1}{N !}\left[Q_1(V, T)\right]^N
 \end{equation}
 这也叫做 \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数的因子化}}。显然，即使分子具有内部自由度，这个情况也不会发生任何改变。
 
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
-    \quad\quad 首先，这和概率论是一致的。因为配分函数的因子化其实相当于随机变量的独立性：$p(X = x, Y = y) = p(X = x)p(Y = y)$ ，所以条件期望满足 $E(X) = E[YE(X|Y = y)] = E(X)E(Y)$ 。
+    \quad\quad 热力学和概率论与以上结果都是一致的。首先配分函数的因子化其实相当于随机变量的独立性：$p(X = x, Y = y) = p(X = x)p(Y = y)$ ，所以条件期望满足 $E(X) = E[YE(X|Y = y)] = E(X)E(Y)$ 。其次，由于热力学量均是对配分函数的对数求偏导，而导数算符的线性性保证了无关联系统热力学量的加和性。
 
-    \quad\quad 其次，这和热力学是一致的。由于热力学量均是对配分函数的对数求偏导，而导数算符的线性性保证了无关联系统热力学量的加和性。
+    \quad\quad 从 (\ref*{equ:配分函数的因子化}) 式也可以看出，每一个微观态在相空间中的占据体积是相同的，这也可以用刘维尔定理 (\ref*{equ:刘维尔定理}) 来解释：由于我们总是可以在相空间中构造一个哈密顿场，使得任意给定的两个相点通过一条轨线联系起来（边值问题解的存在性），那么如果两个状态 $\nu_1,\nu_2$ 占据的相体积不同，但在时间演化的过程中相点又从状态 $\nu_1$ 运动到状态 $\nu_2$ ，那么就违背了刘维尔定理所规定的相体积不变的条件。
 \end{justification}
 
-这时有必要对本节的历程做一个简单的评述。我们从一个简单的想法（系综求和转换为相空间的积分）出发，推导出了宏观配分函数的等价形式 (\ref*{equ:phaseintegrate}) 式，它还可以被无关联性分解为 (\ref*{equ:yinzihua}) 的形式，即单个粒子的微观性质。所以，我们可以自豪的宣布： \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数，连同以之为巅峰的统计力学，是宏观与微观相互联系的桥梁。}}
+这时有必要对本节的历程做一个简单的评述。我们从一个简单的想法（系综求和转换为相空间的积分）出发，推导出了宏观配分函数的等价形式 (\ref*{equ:phaseintegrate}) 式，它还可以被无关联性分解为 (\ref*{equ:配分函数的因子化}) 的形式，即单个粒子的微观性质。所以，我们可以自豪的宣布： \textcolor{RoyalBlue}{\textbf{\kaishu 配分函数，连同以之为巅峰的统计力学，是宏观与微观相互联系的桥梁。}}
 
 \section{实例}
 
