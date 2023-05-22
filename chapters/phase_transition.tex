@@ -160,12 +160,12 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
 \end{equation}
 由此可得磁学系统的各热力学函数：
 \begin{align*}
-    &G = -kT\ln Q = -NkT \ln (e^{\beta J} + e^{-\beta J}), \\
-    &S = -\left(\frac{\partial G}{\partial T}\right)_{H} = Nk\left[\ln (e^{\beta J} + e^{-\beta J}) - \beta J \tanh\beta J\right],\\
-    &U = G + TS =  NJ \tanh\beta J,\\
-    &C_H = T\left(\frac{\partial S}{\partial T}\right)_H = Nk\beta^2 J^2 \mathrm{sech}^2 \beta J,\\
-    &\langle M \rangle = \frac{\sinh \mu \beta H}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}},\\
-    &\chi = \left(\frac{\partial \langle M \rangle}{\partial H}\right)_T = \frac{\beta \mathrm{e}^{-2 \beta J}}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}}
+    &G\bigg|_{H=0} = -kT\ln Q = -NkT \ln (e^{\beta J} + e^{-\beta J}), \\
+    &S\bigg|_{H=0} = \frac{\partial G}{\partial T} = Nk\left[\ln (e^{\beta J} + e^{-\beta J}) - \beta J \tanh\beta J\right],\\
+    &U\bigg|_{H=0} = G + TS =  NJ \tanh\beta J,\\
+    &C\bigg|_{H=0} = \frac{\partial U}{\partial T} = Nk\beta^2 J^2 \mathrm{sech}^2 \beta J,\\
+    &\langle M \rangle = \frac{\partial \ln Q}{\partial \beta H} = \frac{\sinh \mu \beta H}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}},\\
+    &\chi = \frac{\partial \langle M \rangle}{\partial \beta H} = \frac{\beta \mathrm{e}^{-2 \beta J}}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}}
 \end{align*}
 
 在 $\beta \rightarrow 0$ 时，$S \rightarrow Nk\ln 2$ ，表明系统有 $2^N$ 的配容数；在 $\beta \rightarrow \infty$ 时，$S \rightarrow 0$ ，表明系统处于绝对零度。
@@ -266,8 +266,15 @@ Ising 模型的解析解的求解难度随着维数的增加而增加，三维 I
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/one-dim-ising.png}
-    \caption{\kaishu 平均场下一维 Ising 模型序参量随温度的变化情况}
+    \caption{\kaishu 平均场近似序参量随温度的变化情况}
     \label{fig:one-dim-ising}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/sol-capa.png}
+    \caption{\kaishu 平均场序参量数值解随温度的变化情况、系统热容随温度的变化情况}
+    \label{fig:sol-capa}
 \end{figure}
 
 
