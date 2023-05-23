@@ -168,9 +168,7 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
     &\chi = \frac{\partial \langle M \rangle}{\partial \beta H} = \frac{\beta \mathrm{e}^{-2 \beta J}}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}}
 \end{align*}
 
-在 $\beta \rightarrow 0$ 时，$S \rightarrow Nk\ln 2$ ，表明系统有 $2^N$ 的配容数；在 $\beta \rightarrow \infty$ 时，$S \rightarrow 0$ ，表明系统处于绝对零度。
- 
-可以看到，在 $H \neq 0$ 时，响应函数在温度趋于 $0$ 时收敛为 $0$， 而在 $H = 0$ 时发散。
+在 $\beta \rightarrow 0$ 时，$S \rightarrow Nk\ln 2$ ，表明系统有 $2^N$ 的配容数；在 $\beta \rightarrow \infty$ 时，$S \rightarrow 0$ ，表明系统处于绝对零度。并且在 $H \neq 0$ 时，响应函数在温度趋于 $0$ 时收敛为 $0$， 而在 $H = 0$ 时发散。
 
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
@@ -188,7 +186,7 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
         e^{-K'} & 1 & e^{K'}
     \end{pmatrix}
 \end{equation}
-而实对称阵必能正交相似对角化。
+而实对称阵必能正交相似对角化，所以我们总是可以通过正交相似变换来计算 $T^N$ 的特征值。
 \end{justification}
 
 \subsection{二维 Ising 模型概要}\label{sub:二维 Ising 模型概要}
@@ -220,7 +218,7 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
     \end{aligned}\right.
 \end{equation}
 
-\section{平均场理论}\label{sec:平均场理论}
+\section{Ising 模型的零级近似：平均场理论}\label{sec:Ising 模型的零级近似：平均场理论}
 
 Ising 模型的解析解的求解难度随着维数的增加而增加，三维 Ising 模型没有解析解，只能通过数值模拟的方法完成。这表明 Ising 模型本身仍然需要做一定的近似，使得高维 Ising 模型也有近似的解析解。
 
@@ -256,6 +254,14 @@ Ising 模型的解析解的求解难度随着维数的增加而增加，三维 I
     \end{aligned}\right.
 \end{equation}
 
+平均场方程是一个非线性方程，我们可以通过数值方法求解，结果绘制在图 (\ref*{fig:one-dim-ising}) 中：
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/mean-field-mean-spin.png}
+    \caption{\kaishu 平均场序参量随温度的变化情况}
+    \label{fig:one-dim-ising}
+\end{figure}
+
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
 \quad\quad 三维 Ising 模型的临界温度的模拟结果为 $4J/k $ ，可见平均场理论总是高估相变温度。这是因为它仅仅考虑一个磁子在平均场下的涨落，而忽略了其他磁子的涨落——将取向一致的一碗米粒稍微摇晃一下，米在碗中的高度将会继续下降。
@@ -265,15 +271,8 @@ Ising 模型的解析解的求解难度随着维数的增加而增加，三维 I
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/one-dim-ising.png}
-    \caption{\kaishu 平均场近似序参量随温度的变化情况}
-    \label{fig:one-dim-ising}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/sol-capa.png}
-    \caption{\kaishu 平均场序参量数值解随温度的变化情况、系统热容随温度的变化情况}
+    \includegraphics[width=0.7\textwidth]{figures/meanfield-heat-capacity.png}
+    \caption{\kaishu 系统热容随温度的变化情况}
     \label{fig:sol-capa}
 \end{figure}
 
