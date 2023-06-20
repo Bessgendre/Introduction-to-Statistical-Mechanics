@@ -14,7 +14,7 @@
 
 \section{刘维尔定理}\label{sec:刘维尔定理}
 
-虽然每一个宏观态统摄下的微观态都具有相同的宏观性质，但它们在系综所包括的区域内的分布可能不是均匀的，有疏密之分。这驱使我们定义 \textcolor{RoyalBlue}{\textbf{\kaishu 相点密度}} $\rho(q,p,t)$ 如下：
+虽然每一个宏观态统摄下的微观态都具有相同的宏观性质，但它们在系综所包括的区域内的分布可能不是均匀的，有疏密之分。这驱使我们定义 \textcolor{RoyalBlue}{\textbf{\kaishu 代表点密度}} $\rho(q,p,t)$ 如下：
 \begin{equation}
     \rho = \lim_{\Delta V\rightarrow 0} \frac{\Delta N}{\Delta V} 
 \end{equation}
@@ -27,7 +27,7 @@
     \langle f \rangle =  \int_\Omega \rho(q,p,t)f(q,p,t)\,d\omega
 \end{equation}
 
-我们也可以这样理解相点密度 $\rho$：在系综内任意划定一个区域 $d \omega$，在某一相点在系综内进行遍历的过程中，在这个区域内找到这个相点的概率为 $\rho d \omega$，或者说在遍历过程中，系统的代表点在此处停留的时间与总时间的比 $\Delta t / T$  收敛于 $\rho d \omega$ 。
+我们也可以这样理解代表点密度 $\rho$：在系综内任意划定一个区域 $d \omega$，在某一代表点在系综内进行遍历的过程中，在某一相点附近找到代表点的概率为 $\rho d \omega$，或者说在遍历过程中，系统的代表点在此处停留的时间与总时间的比 $\Delta t / T$  收敛于 $\rho d \omega$ 。
 
 代表点的演化在相空间中对应于一个正则变换在时间上的连续伸展，而正则变换的Jacobi 行列式的绝对值恒等于 $1$（见附录），所以我们期望：系综的时间演化服从流体的连续性方程
 \begin{equation}
@@ -37,12 +37,12 @@
 \begin{equation}\label{equ:刘维尔定理}
     \frac{d \rho}{dt} \equiv \frac{\partial \rho}{\partial t} + [\rho ,H] = 0
 \end{equation}
-根据这个定理， \textcolor{RoyalBlue}{\textbf{\kaishu 正如随同一个相点一道运动的观察者所看到的那样，相点的局部密度随时间保持恒定，是运动积分。}}因此，这群相点在相空间中的运动，从本质上说，跟不可压缩流体在物理空间中的运动是一样的！
+根据这个定理， \textcolor{RoyalBlue}{\textbf{\kaishu 正如随同一个相点一道运动的观察者所看到的那样，相点周围代表点的局部密度随时间保持恒定，是运动积分。}}因此，这群代表点（也是相点）在相空间中的运动，从本质上说，跟不可压缩流体在物理空间中的运动是一样的！
 
 \begin{justification}{\kaishu 反思与质疑}
     \kaishu \fontsize{11pt}{16pt}
     
-    \quad\quad 当看到式子 $[\rho , H]$，一些读者可能会有这样的疑问： $\rho$ 是系综的局部性质， $\rho$ 在某一点的值是与该点周围的相点分布情况有关，而 $H$ 则是\textbf{这个相点}的哈密顿量。那么二者的对象不同，怎么能做 Poisson 括号呢？
+    \quad\quad 当看到式子 $[\rho , H]$，一些读者可能会有这样的疑问： $\rho$ 是系综的局部性质， $\rho$ 在某一点的值是与该点周围的代表点分布情况有关，而 $H$ 则是\textbf{这个相点}的哈密顿量。那么二者的对象不同，怎么能做 Poisson 括号呢？
     
     \quad\quad 对于这个问题，我觉得可以这样回答：$H$ 并不只是某个相点的哈密顿量，因为根据正则方程，我们实际上在整个相空间内都定义了一个相场
     \[
