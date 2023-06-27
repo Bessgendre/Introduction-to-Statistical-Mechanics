@@ -1,4 +1,8 @@
-# 统计力学笔记
+# Introduction to Statistical Mechanics
+
+- 作者：[禤科材](https://github.com/Bessgendre)
+- 课程：统计力学（003024.01）
+- 授课老师：[侯中怀](http://staff.ustc.edu.cn/~hzhlj/), [徐瑞雪](staff.ustc.edu.cn/~rxxu)
 
 ## 前言
 
@@ -29,5 +33,24 @@ $$
 
 &emsp;&emsp;统计力学将会爆发出的能量，我想是不言而喻的。
 
+## 目录
 
+### [前言](chapters/foreword.tex)
+
+### [系综理论的基本原理](chapters/foreword.tex)
+
+### [正则系综](chapters/canonical_ensembles.tex)
+
+### [相变的统计力学](chapters/phase_transition.tex)
+
+### [非平衡统计力学](chapters/nonequilibrium.tex)
+
+## 写作计划
+
+* [x] 非平衡提纲
+* [x] 再论刘维尔定理
+* [ ] 分布的演化：薛定谔绘景
+* [ ] 力学量的演化：海森堡绘景
+* [ ] 线性响应与涨落耗散定理
+* [ ] 总结
 
