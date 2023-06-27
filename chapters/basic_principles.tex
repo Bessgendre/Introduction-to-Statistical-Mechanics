@@ -106,8 +106,8 @@
 这个最优化问题显然还受到一定的条件约束：总粒子个数、总体积、总能量不能变。这样一来，系综在相空间中所占据的区域就有了一定的边界。所以，现在我们写出自然界每时每刻都在“求解”的约束最优化问题：
 \begin{equation}\label{equ:optimizeI}
     \begin{split}
-        \max \Omega&(N,V,E)\\
-        \text{s.t.}\sum n_i = \mathcal{N},&\quad\sum n_iE_i = \mathcal{E}
+        \text{argmax}~ \Omega&(N,V,E)\\
+        \text{s.t.}\sum n_i = \mathcal{N},&~\sum n_iE_i = \mathcal{E}
     \end{split}
 \end{equation}
 

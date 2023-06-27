@@ -164,11 +164,11 @@ Ising 模型是一个非常简单的模型，它的基本假设是：自旋只�
     &S\bigg|_{H=0} = \frac{\partial G}{\partial T} = Nk\left[\ln (e^{\beta J} + e^{-\beta J}) - \beta J \tanh\beta J\right],\\
     &U\bigg|_{H=0} = G + TS =  NJ \tanh\beta J,\\
     &C\bigg|_{H=0} = \frac{\partial U}{\partial T} = Nk\beta^2 J^2 \mathrm{sech}^2 \beta J,\\
-    &\langle M \rangle = \frac{\partial \ln Q}{\partial \beta H} = \frac{\sinh \mu \beta H}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}},\\
-    &\chi = \frac{\partial \langle M \rangle}{\partial \beta H} = \frac{\beta \mathrm{e}^{-2 \beta J}}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}}
+    &\langle M \rangle = \frac{\partial \ln Q}{\partial \beta H} = \frac{\mu N\sinh \mu \beta H}{\sqrt{\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}}},\\
+    &\chi = \frac{1}{N} \frac{\partial \langle M \rangle}{\partial \beta H} = \frac{\mu^2 \mathrm{e}^{-4 \beta J}\cosh \mu\beta H}{\left(\sinh ^2 \mu \beta H+\mathrm{e}^{-4 \beta J}\right)^{3/2}}
 \end{align*}
 
-在 $\beta \rightarrow 0$ 时，$S \rightarrow Nk\ln 2$ ，表明系统有 $2^N$ 的配容数；在 $\beta \rightarrow \infty$ 时，$S \rightarrow 0$ ，表明系统处于绝对零度。并且在 $H \neq 0$ 时，响应函数在温度趋于 $0$ 时收敛为 $0$， 而在 $H = 0$ 时发散。
+在 $\beta \rightarrow 0$ 时，$S \rightarrow Nk\ln 2$ ，表明系统有 $2^N$ 的配容数；在 $\beta \rightarrow \infty$ 时，$S \rightarrow 0$ ，表明系统处于绝对零度。对于响应函数，当 $H \neq 0$ ，温度趋于 $0$ 时收敛为 $0$ ；而当 $H = 0$ ，温度趋于 $0$ 时发散。
 
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}

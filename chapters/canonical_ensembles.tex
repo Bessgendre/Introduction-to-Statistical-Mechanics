@@ -9,7 +9,7 @@
 
 所以，我们希望找到一个容易测量的，并且和能量具有相同内涵的量来等价地替代 $E$ 作为决策变量的地位——此时我们回想起了理论力学中的勒让德变换。所以我们的目标是：找到一个作用于决策变量 $E$ 的勒让德变换，同时目标函数 $\Omega$ 变为一个新的目标函数 $A$ ：
 \[
-    A = E\frac{\partial \Omega}{\partial E} - \Omega
+    A = E\frac{\partial \ln\Omega}{\partial E} - \ln\Omega
 \]
 此时我们再次回想起热力学公式
 \[
@@ -18,8 +18,8 @@
 显然，\textcolor{RoyalBlue}{\textbf{\kaishu 温度 $T$ 就是我们要找的变量}}，并且固定一个系统的温度也是可以做到的，因为只需要把系统与一个足够大的大热库耦合即可。随后，再对我们想法的一些调整让它能够和热力学建立联系，我们将会看到：变换完全等价地将最优化问题 (\ref*{equ:optimizeI}) 转换成另一个最优化问题：
 \begin{equation}\label{equ:optimizeII}
     \begin{split}
-        \min A&(N,V,T)\\
-        \text{s.t.}\sum n_i = &\mathcal{N},\quad T = T_0
+        \text{argmin}~ A&(N,V,T)\\
+        \text{s.t.}\sum n_i = &\mathcal{N},~ T = T_0
     \end{split}
 \end{equation}
 
@@ -451,7 +451,7 @@
 \end{equation}
 所以配分函数
 \begin{equation}
-    \therefore Q_1(V, T)=\int_0^{\infty} g(\epsilon) d \epsilon=\frac{4 \pi V}{(h c)^3} \int_0^{\infty} \epsilon^2 e^{-\beta \epsilon} d \epsilon=8 \pi V\left(\frac{k T}{h c}\right)^3
+    \therefore Q_1(V, T)=\int_0^{\infty} g(\epsilon)e^{-\beta \epsilon} d \epsilon=\frac{4 \pi V}{(h c)^3} \int_0^{\infty} \epsilon^2 e^{-\beta \epsilon} d \epsilon=8 \pi V\left(\frac{k T}{h c}\right)^3
 \end{equation}
 总配分函数
 \begin{equation}
