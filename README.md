@@ -37,7 +37,7 @@ $$
 
 ### [前言](chapters/foreword.tex)
 
-### [系综理论的基本原理](chapters/foreword.tex)
+### [系综理论的基本原理](chapters/basic_principles.tex)
 
 ### [正则系综](chapters/canonical_ensembles.tex)
 
