@@ -11,7 +11,7 @@
 
 由此可见，对于非平衡系统， \textcolor{RoyalBlue}{\textbf{\kaishu 演化}} 二字是核心。本章将从两个方面来研究非平衡系统的演化：一是 \textcolor{RoyalBlue}{\textbf{\kaishu 分布的演化}}，即如何从初始分布演化到平衡分布，也就是说一个不处于平衡态的分布函数如何最终逼近平衡分布，并继续维持平衡分布；二是 \textcolor{RoyalBlue}{\textbf{\kaishu 力学量的演化}}，即力学量如何从初始状态演化到平衡态，这将涉及关联函数的概念。这两种视角分别相当于量子力学中的薛定谔绘景和海森堡绘景，为了看出这一点，我们必须再次将目光投向 \textcolor{RoyalBlue}{\textbf{\kaishu 刘维尔定理}} 。
 
-\section{再论刘维尔定理}
+\section{再论刘维尔定理}\label{sec:再论刘维尔定理}
 
 对于一个不显含时的力学量 $A$，其演化方程为
 \begin{equation}\label{equ:刘维尔定理，不显含时}
@@ -70,19 +70,54 @@
 
 所以，与平衡系统不同，对于非平衡系统我们有两种方式来求一个力学量的系综平均，即 \eqref{equ:力学量的系综平均，薛定谔绘景} 和 \eqref{equ:力学量的系综平均，海森堡绘景} 。运用前者，我们将从 \textcolor{RoyalBlue}{\textbf{\kaishu 布朗运动}} 开始，研究分布函数随时间的演化，导出其所满足的偏微分方程，即 \textcolor{RoyalBlue}{\textbf{\kaishu 福克尔-普朗克方程}} ；运用后者，我们将力学量视为随机过程，引入 \textcolor{RoyalBlue}{\textbf{\kaishu 关联函数}} ，建立其与 \textcolor{RoyalBlue}{\textbf{\kaishu 响应函数}} 的联系，研究 \textcolor{RoyalBlue}{\textbf{\kaishu 涨落耗散定理}} 。
 
-\section{分布的演化：薛定谔绘景}
+\section{分布的演化：薛定谔绘景}\label{sec:分布的演化：薛定谔绘景}
 
 \subsection{布朗运动的爱因斯坦理论}
 
-独立和，概率密度的推导以及使用斯特林公式后的渐进形式
+在薛定谔绘景下，我们希望研究系统分布的演化，其中最常见的就是坐标分布的演化，也就是 \textcolor{RoyalBlue}{\textbf{\kaishu 扩散行为}}。而粒子扩散的根源在于周围的液体分子对布朗粒子进行的永不停歇的和不同程度上是随机的撞击。这样一来，如果追踪单一布朗粒子的运动，我们发现它可以被看做一种步长为 $l$ 、频率为 $\tau$ 的 \textcolor{RoyalBlue}{\textbf{\kaishu 随机行走问题}} ，其中 $l$ 为粒子平均自由程，$\tau$ 为粒子平均自由时间。同时，粒子所行走的每一步都是独立同分布的：
+\begin{equation}\label{equ:S_N}
+    S_N = \sum_{i=1}^N X_i,\quad X_i = \left\{\begin{array}{lll}
+        ~~~1 & P = 0.5 \\
+        -1& P = 0.5
+        \end{array}\right.
+\end{equation}
+其中 $X_i$ 独立同分布。根据中心极限定理，当 $N\rightarrow \infty$ 时，$S_N$ 的分布趋于正态分布，即
+\begin{equation}\label{equ:S_N的分布}
+    P(S_N = n)\mathrm{d}n = \frac{1}{\sqrt{2\pi N}}\exp\left(-\frac{n^2}{2N}\right) \mathrm{d}n
+\end{equation}
+粒子平均 $\tau$  时间做一次随机跳跃，所以 $N = t / \tau$ ，同时做变量代换 $x = nl$ ，则粒子在 $N$ 步后的位置 $x$ 的概率分布为
+\begin{equation}\label{equ:布朗运动的概率分布}
+    P(x,t)\mathrm{d}x = P(S_N = n)\mathrm{d}n = \frac{1}{\sqrt{2\pi t / \tau}}\exp\left(-\frac{x^2}{2t / \tau}\right) \mathrm{d}x
+\end{equation}
+令 $D = \frac{1}{2} l^2/\tau$ ，我们就可以得到非常标准的扩散方程的一个解：
+\begin{equation}\label{equ:扩散方程的解}
+    P(x,t) = \frac{1}{\sqrt{4\pi Dt}}\exp\left(-\frac{x^2}{4Dt}\right)
+\end{equation}
+这里引入的 $D$ 与给定系统的宏观 \textcolor{RoyalBlue}{\textbf{\kaishu 扩散系数}} 完全相同，也就是说微观量 $l,\tau$ 和宏观量 $D$ 建立起了联系。三维情况下，由于各维度独立，所以联合概率密度等于边缘概率密度的乘积：
+\begin{equation}\label{equ:三维扩散方程}
+    P(\bm{r},t) = \frac{1}{(4\pi Dt)^{3/2}}\exp\left(-\frac{\bm{r}^2}{4Dt}\right)
+\end{equation}
+\begin{justification}{反思与质疑}
+\kaishu \fontsize{11pt}{16pt}
+    \quad\quad  三维扩散方程的形式为
+    \[
+        \frac{\partial }{\partial t}n(\bm r, t) = D\nabla^2 n(\bm r, t)
+    \]
+    通过傅里叶变换，方程的解正好就是 \eqref{equ:三维扩散方程} 的解，其中的道理蕴含在概率与统计的关系中：扩散方程作为唯像的总结，它所描述的结果是统计性的，而这样的统计性是对单一粒子大量抽样的结果，而在大数定律的极限下将会收敛于概率本身。因此，扩散方程的解正好就是随机过程的解，而随机过程的解也正好就是扩散方程的解。
+\end{justification}
 
-引入扩散方程，指出扩散方程的解和这里相同，从而指出概率的微观解释与宏观解释的等价性将导致随机过程与扩散方程的等价性
+那么这样一来，借助分布函数 \eqref{equ:三维扩散方程} 式，我们可以求得布朗粒子的方均位移为
+\begin{equation}\label{equ:布朗粒子的方均位移}
+    \langle r^2(t) \rangle = \int_{-\infty}^{+\infty} \bm r^2 P(x,t)\mathrm{d}x = 6Dt
+\end{equation}
+
+可以看到，最初集聚在原点的布朗粒子系综随着时间的增加而扩散出去，并且这种行为宏观上显然是不可逆的，并且无论我们把注意力放在单一粒子上，还是放在粒子系综上，都可以看到这种不可逆性。这个现象的最终根源在于布朗粒子受到流体中分子永不停息、或多或少是随机的碰撞。换句话说，\textcolor{RoyalBlue}{\textbf{\kaishu  这个现象的不可逆性归根结底来源于流体分子对布朗粒子所施加的随机力的涨落}} 。
 
 \subsection{福克尔-普朗克方程}
 
 抄 pathria
 
-\section{力学量的演化：海森堡绘景}
+\section{力学量的演化：海森堡绘景}\label{sec:力学量的演化：海森堡绘景}
 
 
 \subsection{关联函数及其稳态性质}
@@ -91,9 +126,15 @@
 
 \subsection{布朗运动的朗之万理论}
 
-抄pathria，给出唯像的朗之万方程、爱因斯坦关系，并指出爱因斯坦关系是涨落耗散定理的一种表述形式
+在布朗运动的爱因斯坦理论中我们已经指出，布朗粒子的不可逆运动来自流体分子所施加随机力的涨落，现在我们来看看这种涨落的统计性质。首先，我们来考虑一个布朗粒子在 $t$ 时刻的速度 $v(t)$ ，它是由于流体分子的碰撞而产生的随机力 $f(t)$ 所引起的，而这个随机力 $f(t)$ 的统计性质是已知的，即
+\begin{equation}\label{equ:随机力的统计性质}
+    \langle f(t) \rangle = 0, \quad \langle f(t)f(t') \rangle = 2m\gamma k_BT\delta(t-t')
+\end{equation}
 
-\section{线性响应与涨落耗散定理}
+
+<-- 抄pathria，给出唯像的朗之万方程、爱因斯坦关系，并指出爱因斯坦关系是涨落耗散定理的一种表述形式 -->
+
+\section{线性响应与涨落耗散定理}\label{sec:线性响应与涨落耗散定理}
 
 \subsection{昂萨格回归假说}
 
@@ -113,4 +154,4 @@
 
 三个关键认识
 
-\section{总结}
+\section{总结}\label{sec:非平衡总结}
