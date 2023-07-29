@@ -19,26 +19,26 @@
 \end{equation}
 为了将它写成更一般的微分方程形式，我们定义 \textcolor{RoyalBlue}{\textbf{\kaishu 刘维尔算符}} 为
 \begin{equation}\label{equ:刘维尔算符}
-    \mathcal{L}A \equiv [A, H]
+    \mathcal{\hat L}A \equiv [A, H]
 \end{equation}
 这样，\eqref{equ:刘维尔定理，不显含时} 就可以写成
 \begin{equation}\label{equ:刘维尔定理，不显含时，微分方程形式}
-    \frac{\mathrm{d} A}{\mathrm{d} t} =  \mathcal{L}A
+    \frac{\mathrm{d} A}{\mathrm{d} t} =  \mathcal{\hat L}A
 \end{equation}
 那么自然而然地，形式解
 \begin{equation}\label{equ:形式解}
-    A(\Gamma,t) = e^{t\mathcal{L}}A(\Gamma,0)
+    A(\Gamma,t) = e^{t\mathcal{\hat L}}A(\Gamma,0)
 \end{equation}
 
 代表点密度也是一个特殊的力学量，但由于刘维尔定理的存在，它的演化方程可以写成
 \begin{equation}\label{equ:代表点密度的演化方程}
-    f(\Gamma,t) =  e^{-t\mathcal{L}}f(\Gamma,0)
+    f(\Gamma,t) =  e^{-t\mathcal{\hat L}}f(\Gamma,0)
 \end{equation}
 
 同时，刘维尔算符具有反自伴性（Posson括号的微分性质导致的），即
 \begin{align}\label{equ:反自伴性}
-    \int (\mathcal{L}A)*B \,\mathrm{d}\Gamma= -\int A*(\mathcal{L}B) \,\mathrm{d}\Gamma \\
-    \int (e^{t\mathcal{L}}A)*B \,\mathrm{d}\Gamma= \int A*(e^{-t\mathcal{L}}B) \,\mathrm{d}\Gamma
+    \int (\mathcal{\hat L}A)*B \,\mathrm{d}\Gamma= -\int A*(\mathcal{\hat L}B) \,\mathrm{d}\Gamma \\
+    \int (e^{t\mathcal{\hat L}}A)*B \,\mathrm{d}\Gamma= \int A*(e^{-t\mathcal{\hat L}}B) \,\mathrm{d}\Gamma
 \end{align}
 
 有了刘维尔算符，我们就可以将力学量的系综平均写为较为简洁的形式。不过这样的平均有两种角度来看待： \textcolor{RoyalBlue}{\textbf{\kaishu 从薛定谔绘景的角度，力学量 $A$ 仅是相点位置的函数 $A(\Gamma)$ ，而占据这些相点的概率分布是随时间变化的}} ，因此力学量的系综平均可以写为
@@ -51,8 +51,8 @@
 \end{equation}
 这二者的联系可以通过如下方式说明：
 \begin{align*}
-    \int A(\Gamma) f(\Gamma, t) \,\mathrm{d}\Gamma = \int A(\Gamma) e^{-t\mathcal{L}}f(\Gamma,0) \,\mathrm{d}\Gamma \\
-    = \int e^{t\mathcal{L}}A(\Gamma) f(\Gamma,0) \,\mathrm{d}\Gamma = \int A(\Gamma,t) f(\Gamma) \,\mathrm{d}\Gamma
+    \int A(\Gamma) f(\Gamma, t) \,\mathrm{d}\Gamma = \int A(\Gamma) e^{-t\mathcal{\hat L}}f(\Gamma,0) \,\mathrm{d}\Gamma \\
+    = \int e^{t\mathcal{\hat L}}A(\Gamma) f(\Gamma,0) \,\mathrm{d}\Gamma = \int A(\Gamma,t) f(\Gamma) \,\mathrm{d}\Gamma
 \end{align*}
 \begin{justification}{\kaishu 反思与质疑}
 \kaishu \fontsize{11pt}{16pt}
@@ -65,14 +65,14 @@
 
 此外，平衡分布是一个与系统哈密顿量对易的力学量：
 \begin{equation}\label{equ:平衡分布和哈密顿量对易}
-    f_{eq}(H) = \frac{e^{-\beta H}}{Z} ,\quad\mathcal{L}f_{eq}(H) = [f_{eq}(H), H] = 0
+    f_{eq}(H) = \frac{e^{-\beta H}}{Z} ,\quad\mathcal{\hat L}f_{eq}(H) = [f_{eq}(H), H] = 0
 \end{equation}
 
 所以，与平衡系统不同，对于非平衡系统我们有两种方式来求一个力学量的系综平均，即 \eqref{equ:力学量的系综平均，薛定谔绘景} 和 \eqref{equ:力学量的系综平均，海森堡绘景} 。运用前者，我们将从 \textcolor{RoyalBlue}{\textbf{\kaishu 布朗运动}} 开始，研究分布函数随时间的演化，导出其所满足的偏微分方程，即 \textcolor{RoyalBlue}{\textbf{\kaishu 福克尔-普朗克方程}} ；运用后者，我们将力学量视为随机过程，引入 \textcolor{RoyalBlue}{\textbf{\kaishu 关联函数}} ，建立其与 \textcolor{RoyalBlue}{\textbf{\kaishu 响应函数}} 的联系，研究 \textcolor{RoyalBlue}{\textbf{\kaishu 涨落耗散定理}} 。
 
 \section{分布的演化：薛定谔绘景}\label{sec:分布的演化：薛定谔绘景}
 
-\subsection{布朗运动的爱因斯坦理论}
+\subsection{布朗运动的爱因斯坦理论}\label{subsec:布朗运动的爱因斯坦理论}
 
 在薛定谔绘景下，我们希望研究系统分布的演化，其中最常见的就是坐标分布的演化，也就是 \textcolor{RoyalBlue}{\textbf{\kaishu 扩散行为}}。而粒子扩散的根源在于周围的液体分子对布朗粒子进行的永不停歇的和不同程度上是随机的撞击。这样一来，如果追踪单一布朗粒子的运动，我们发现它可以被看做一种步长为 $l$ 、频率为 $\tau$ 的 \textcolor{RoyalBlue}{\textbf{\kaishu 随机行走问题}} ，其中 $l$ 为粒子平均自由程，$\tau$ 为粒子平均自由时间。同时，粒子所行走的每一步都是独立同分布的：
 \begin{equation}\label{equ:S_N}
@@ -103,7 +103,7 @@
     \[
         \frac{\partial }{\partial t}n(\bm r, t) = D\nabla^2 n(\bm r, t)
     \]
-    通过傅里叶变换，方程的解正好就是 \eqref{equ:三维扩散方程} 的解，其中的道理蕴含在概率与统计的关系中：扩散方程作为唯像的总结，它所描述的结果是统计性的，而这样的统计性是对单一粒子大量抽样的结果，而在大数定律的极限下将会收敛于概率本身。因此，扩散方程的解正好就是随机过程的解，而随机过程的解也正好就是扩散方程的解。
+    通过傅里叶变换，方程的解正好就是 \eqref{equ:三维扩散方程} 的解，其中的道理蕴含在概率与统计的关系中：扩散方程作为唯像的总结，它所描述的结果是统计性的，而这样的统计性是对单一粒子大量抽样的结果，在大数定律的极限下将会收敛于概率本身。因此，扩散方程的解正好就是随机过程的解，而随机过程的解也正好就是扩散方程的解。
 \end{justification}
 
 那么这样一来，借助分布函数 \eqref{equ:三维扩散方程} 式，我们可以求得布朗粒子的方均位移为
@@ -113,18 +113,75 @@
 
 可以看到，最初集聚在原点的布朗粒子系综随着时间的增加而扩散出去，并且这种行为宏观上显然是不可逆的，并且无论我们把注意力放在单一粒子上，还是放在粒子系综上，都可以看到这种不可逆性。这个现象的最终根源在于布朗粒子受到流体中分子永不停息、或多或少是随机的碰撞。换句话说，\textcolor{RoyalBlue}{\textbf{\kaishu  这个现象的不可逆性归根结底来源于流体分子对布朗粒子所施加的随机力的涨落}} 。
 
-\subsection{福克尔-普朗克方程}
+\subsection{福克尔-普朗克方程}\label{subsec:福克尔-普朗克方程}
 
 抄 pathria
 
 \section{力学量的演化：海森堡绘景}\label{sec:力学量的演化：海森堡绘景}
 
+应用薛定谔绘景，我们最后得到了描述分布函数随时间演化的福克尔-普朗克方程，它指出一切非平衡分布在 $t\rightarrow \infty$ 的极限下都趋于平衡分布。现在，我们将目光转移到单个粒子上来，研究一个粒子力学量的演化。显然，这里的力学量只能用随机过程来描述，而其中的一个重要概念就是 \textcolor{RoyalBlue}{\textbf{\kaishu 关联函数}}。
 
-\subsection{关联函数及其稳态性质}
+\subsection{关联函数及其稳态性质}\label{subsec:关联函数及其稳态性质}
 
-抄笔记
+随机过程 $A(t)$ 的自相关函数 $C_{AA}(t,t')$ 也就是物理量 $A(t)$ 的时间关联函数，它刻画了两个随机变量 $A(t)$ 和 $A(t')$ 的相互制约程度的大小：
+\begin{equation}\label{equ:时间关联函数}
+    C_{AA}(t,t') = \langle A(t)A(t') \rangle = \int A(t)A(t') f(\Gamma) \,\mathrm{d}\Gamma
+\end{equation}
+并且我们默认它具有一定的 \textcolor{RoyalBlue}{\textbf{\kaishu  平稳性}}，即
+\begin{equation}\label{equ:关联函数的平稳性}
+    C_{AA}(t,t') = C_{AA}(t-t') = C_{AA}(\tau)
+\end{equation}
+也就是说，关联函数只依赖于时间间隔，具有 \textcolor{RoyalBlue}{\textbf{\kaishu 时间平移不变性}}。这样一来，时间关联函数就可以写为
+\begin{equation}\label{equ:时间关联函数的形式}
+    C_{AA}(\tau) = \int A(\Gamma,t)A(\Gamma,t+\tau)f(\Gamma) \,\mathrm{d}\Gamma = \int A(\Gamma,0)A(\Gamma,\tau) f(\Gamma)\,\mathrm{d}\Gamma
+\end{equation}
 
-\subsection{布朗运动的朗之万理论}
+下面来研究关联函数的稳态性质。首先，当 $t\rightarrow \infty$ ，系统分布函数 $f(\Gamma,t)$ 趋于平衡分布 $f_{eq}(\Gamma)$，所以
+\begin{align}\label{equ:关联函数的稳态性质}
+    C_{AA}(\tau) &= \int A(\Gamma)\left[e^{\tau\mathcal{\hat L}}A(\Gamma)\right]f_{eq}(\Gamma)\,\mathrm{d}\Gamma = \int A(\Gamma)\left[e^{-\tau\mathcal{\hat L}}A(\Gamma)\right]f_{eq}(\Gamma)\,\mathrm{d}\Gamma \\
+    &= \langle A(-\tau)A(0) \rangle_{eq} \\&= C_{AA}(-\tau)
+\end{align}
+其中用到了 $\mathcal{\hat L}f_{eq}(H) = [f_{eq}(H), H] = 0$，所以 \textcolor{RoyalBlue}{\textbf{\kaishu 稳态关联函数是偶函数}}。
+
+当时间间隔为 $0$ 时，时间关联函数即是二阶矩 $\langle A(0)^2 \rangle$ ；并且基于物理直觉，两个时间间隔无穷大的力学量应当毫不相关，甚至独立。所以关联函数应当满足
+\begin{equation}\label{equ:关联函数的稳态性质，无穷大}
+    C_{AA}(\infty) = \langle A(\infty)A(0) \rangle = \langle A(\infty) \rangle \langle A(0) \rangle = \langle A \rangle^2
+\end{equation}
+这样一来，仿照协方差，我们可以定义涨落关联函数 $C^\delta_{AA}(\tau)$ ：
+\begin{equation}\label{equ:涨落关联函数}
+    C^\delta_{AA}(\tau) = \langle \delta A(\tau)\delta A(0) \rangle = \langle A(\tau)A(0) \rangle - \langle A(\tau) \rangle \langle A(0) \rangle = C_{AA}(\tau) - \langle A(\tau) \rangle \langle A(0) \rangle
+\end{equation}
+在 $\tau \rightarrow \infty$ 的极限下，它趋于零：
+\begin{equation}\label{equ:涨落关联函数的极限}
+    C^\delta_{AA}(\infty) = \langle A \rangle^2 - \langle A \rangle^2 = 0
+\end{equation}
+
+力学量和其时间导数的关联也很重要：
+\begin{equation}\label{equ:力学量和其时间导数的关联}
+    \langle  A(0)\dot{A}(t) \rangle = \int A(0) [\mathcal{\hat L}A(t)]f_{eq}(\Gamma)\, \mathrm{d}\Gamma = -\int [\mathcal{\hat L}A(0)] A(t)f_{eq}(\Gamma)\, \mathrm{d}\Gamma = -\langle  \dot{A}(0)A(t) \rangle
+\end{equation}
+当 $t = 0$，易得 $\langle A(0)\dot{A}(0)\rangle = - \langle A(0)\dot{A}(0)\rangle$ ，则 $\langle A(0)\dot{A}(0)\rangle = 0$ ，也就是说 \textcolor{RoyalBlue}{\textbf{\kaishu 力学量与其同一时刻的时间导数正交}}。
+
+不过我们发现，时间关联函数的时间导数恰是 $\displaystyle \frac{\mathrm{d}}{\mathrm{d}t}C_{AA}(t) = \langle  A(0)\dot{A}(t) \rangle$ （如果可微的话），那么根据 \eqref{equ:力学量和其时间导数的关联}，我们可以得到
+\begin{equation}\label{equ:时间关联函数的时间导数}
+    \frac{\mathrm{d}}{\mathrm{d}\tau}C_{AA}(\tau)\bigg|_{\tau = 0}  = \langle  A(0)\dot{A}(\tau) \rangle \bigg|_{\tau = 0} = 0
+\end{equation}
+同理，时间关联函数的二阶导数也可以写为
+\begin{equation}\label{equ:时间关联函数的二阶时间导数}
+    \frac{\mathrm{d}^2}{\mathrm{d}\tau^2}C_{AA}(\tau)\bigg|_{\tau = 0}  = \langle  A(0)\ddot{A}(\tau) \rangle \bigg|_{\tau = 0} = - \langle  \dot{A}^2(0) \rangle \leqslant 0
+\end{equation}
+那么关联函数随时间间隔的变化将呈现如下形式：
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/time-corr.png}
+    \caption{时间关联函数随时间间隔的变化}
+    \label{fig:time-corr}
+\end{figure}
+
+其中左图处处可微，但右图情形是最常见的布朗运动的涨落关联。注意，我们只知道涨落关联函数在两个极限处的值，但对一个极限过渡到另一个极限的过程全然不知，只能通过体系的动力学来确定。
+
+\subsection{布朗运动的朗之万理论}\label{subsec:布朗运动的朗之万理论}
 
 在布朗运动的爱因斯坦理论中我们已经指出，布朗粒子的不可逆运动来自流体分子所施加随机力的涨落，现在我们来看看这种涨落的统计性质。首先，我们来考虑一个布朗粒子在 $t$ 时刻的速度 $v(t)$ ，它是由于流体分子的碰撞而产生的随机力 $f(t)$ 所引起的，而这个随机力 $f(t)$ 的统计性质是已知的，即
 \begin{equation}\label{equ:随机力的统计性质}
@@ -136,21 +193,21 @@
 
 \section{线性响应与涨落耗散定理}\label{sec:线性响应与涨落耗散定理}
 
-\subsection{昂萨格回归假说}
+\subsection{昂萨格回归假说}\label{subsec:昂萨格回归假说}
 
 首先从回归假说的神秘性开始，即自然涨落和弛豫不可分辨，抄一点chandler，指出在扩散中的应用。
 
-\subsection{静态响应与静态弛豫}
+\subsection{静态响应与静态弛豫}\label{subsec:静态响应与静态弛豫}
 
 研究静态弛豫，证明假说的正确性，抄笔记
 
-\subsection{响应函数}
+\subsection{响应函数}\label{subsec:响应函数}
 
 一般情况的弛豫——定义响应函数，物理意义、因果性、稳态性，抄笔记
 
 指出响应函数与关联函数的关系，这就是涨落耗散定理
 
-\subsection{从线性响应理论到朗之万方程}
+\subsection{从线性响应理论到朗之万方程}\label{subsec:从线性响应理论到朗之万方程}
 
 三个关键认识
 
